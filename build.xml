@@ -11,7 +11,7 @@
 
 	<target name="jar">
 		<mkdir dir="build/jar"/>
-		<jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+		<jar destfile="build/jar/AlgDat.jar" basedir="build/classes">
 			<manifest>
 				<attribute name="Main-Class" value="no.forsen.algdat.Main"/>
 			</manifest>
@@ -19,7 +19,7 @@
 	</target>
 
 	<target name="run">
-		<java jar="build/jar/HelloWorld.jar" fork="true"/>
+		<java jar="build/jar/AlgDat.jar" fork="true"/>
 	</target>
 </project>
 
