@@ -1,14 +1,22 @@
 package no.forsen.algdat; 
 
 import javax.swing.JOptionPane;
+import java.util.*;
+import no.forsen.hjelpeklasser.*;
 
 public class Main
 {
+
 	public static void main(String[] args)
 	{
-		int[] m = {8,4,17,10,6,20,1,11,15,3,18,9,2,7,19, 20};
+		long tid = System.currentTimeMillis();
+		int[] a = Tabell.randPerm(1000000);
+		tid = System.currentTimeMillis() - tid;
 
-		System.out.println( "min: " + Minmax.min(m) + ", maks: " + Minmax.max(m) + ", min og maks: " + Minmax.minmax(m)[0] + ", " + Minmax.minmax(m)[1] );
-		System.out.println( "\n\n 5! = " + Factorial.fac(15));
+		int m = Tabell.maks(a, -1, 5);
+
+	
+
+		System.out.println(tid);
 	}
 }

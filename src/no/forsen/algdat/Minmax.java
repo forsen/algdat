@@ -10,9 +10,30 @@ public class Minmax
 		int m = 0;
 
 		for( int i = 1; i < a.length; i++ )
-			if( a[i] >= a[m] ) m = i; 
+			if( a[i] >= a[m] )
+				m = i; 
 
 		return m;
+	}
+
+	public static int max( int[] a, int from, int to )
+	{
+		if (from < 0 || to > a.length || from >= to )
+			throw new IllegalArgumentException("Illegalt argument");
+		
+		int m = from; 
+		int maxvalue = a[from];
+
+		for( int i = from + 1; i < to; i++ )
+		{
+			if (a[i] > maxvalue )
+			{
+				maxvalue = a[i];
+				m = i;
+			}
+		}
+		return m;
+
 	}
 
 	public static int min( int[] a )
