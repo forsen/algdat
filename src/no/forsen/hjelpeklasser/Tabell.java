@@ -64,16 +64,46 @@ public class Tabell
 	
 	public static int maks( int[] a )
 	{
-		if ( a.length < 1 )
-			throw new java.util.NoSuchElementException("a er tom");
+		return maks(a, 0, a.length );
+	}
 
-		int m = 0;
+	public static int[] nestMaks(int[] a)
+	{
+		int m = 0, nm = 1; 
 
-		for( int i = 1; i < a.length; i++ )
-			if( a[i] >= a[m] )
-				m = i; 
+		if( a[1] > a[0] )
+		{
+			m = 1; 
+			nm = 0; 
+		}
 
-		return m;
+		int maksverdi = a[m]; 
+		int nestmaksverdi = a[nm];
+
+		for( int i = 2; i < a.length; i++ )
+		{
+			if( a[i] > nestmaksverdi )
+			{
+				if( a[i] > maksverdi )
+				{
+					nm = m; 
+					nestmaksverdi = maksverdi; 
+
+					m = i; 
+					maksverdi = a[m];
+				}
+				else
+				{
+					nm = i; 
+					nestmaksverdi = a[nm];
+				}
+			}
+		}
+
+		int[] b = {m,nm};
+
+		return b; 
+
 	}
 
 

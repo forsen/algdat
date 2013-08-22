@@ -12,18 +12,8 @@ public class Main
 		int[] a = Tabell.randPerm(20);
 		System.out.println(Arrays.toString(a));
 
-		int m = Tabell.maks(a); 
+		int[] b = Tabell.nestMaks(a);
 
-		Tabell.bytt(a, m, 0 );
-
-		int nm = Tabell.maks(a, 1, a.length); 
-	
-		if( nm == m )
-			nm = 0;
-
-		Tabell.bytt(a, m, 0);
-
-		System.out.println(m);
-		System.out.println(nm );
+		System.out.println(b[0] + " " + b[1] );
 	}
 }
