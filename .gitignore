@@ -3,4 +3,5 @@
 .DS_Store
 
 build/classes
+*.jar
 algdat.sublime-workspace
