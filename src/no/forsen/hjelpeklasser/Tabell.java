@@ -14,7 +14,7 @@ public class Tabell
 
 /**
   * Bytter om plassen til to verdier i en tabell.
-  * @param a Tabellen som skal endres
+  * @param a tabellen som skal endres
   * @param i indeksen til verdien som skal bytte plass med j
   * @param j indeksen til verdien som skal bytte plass med i
   */
@@ -23,13 +23,23 @@ public class Tabell
 		int temp = a[i]; a[i] = a[j]; a[j] = temp;
 	}
 
+/**
+  * Bytter om plassen til to tegn i en tabell.
+  * @param c tabellen som skal endres
+  * @param i indeksen til tegnet som skal bytte plass med j
+  * @param j indeksen til tegnet som skal bytte plass med i
+  */
 	public static void bytt( char[] c, int i, int j )
 	{
 		char temp = c[i];
 		c[i] = c[j];
 		c[j] = temp; 
 	}
-
+/**
+  * Genererer en heltallstabell med lengde n og fyller den med tallene fra og med 1 til og med n på tilfeldige plasser.
+  * @param n lengden på tabellen
+  * @return tabellen
+  */
 	public static int[] randPerm(int n)
 	{
 		Random r = new Random();         // en randomgenerator
@@ -46,6 +56,7 @@ public class Tabell
 		return a;                        // permutasjonen returneres
 	}
 
+
 	public static void randPerm( int[] a )
 	{
 		Random r = new Random();
@@ -58,7 +69,13 @@ public class Tabell
 	}
 
 
-
+/**
+  * Finner maksverdien i et gitt intervall fra en tabell. 
+  * @param a heltallstabellen som man skal finne maksverdien i
+  * @param fra indeksposisjon man skal lete fra og med
+  * @param til indeksposisjon man skal lete til (men ikke med)
+  * @return returnerer posisjonen til maksverdien (dersom maksverdien forekommer flere ganger, vil første posisjon bli returnert)
+  */
 	public static int maks( int[] a, int fra, int til )
 	{
 		fratilKontroll(a.length, fra, til);
@@ -81,12 +98,21 @@ public class Tabell
 		return m;
 
 	} 
-	
+/**
+  * Finner maksverdien i en heltallstabell
+  * @param a heltallstabellen som man skal finne maksverdien i
+  * @return returnerer posisjonen til maksverdien (dersom maksverdien forekommer flere ganger, vil første posisjon bli returnert)
+  */
 	public static int maks( int[] a )
 	{
 		return maks(a, 0, a.length );
 	}
 
+/**
+  * Finner største og nest største verdien i en heltallstabell
+  * @param a heltallstabellen som man skal finne verdiene i
+  * @return returnerer en tabell som inneholder posisjonen til maksverdi og nestmaksverdi. Returnerer to høyeste verdiene, uavhengig om de er like eller ei.
+  */
 	public static int[] nestMaks(int[] a)
 	{
 		int m = 0, nm = 1; 
@@ -125,7 +151,13 @@ public class Tabell
 		return b; 
 
 	}
-
+/**
+  * Finner minverdien i et gitt intervall fra en tabell. 
+  * @param a heltallstabellen som man skal finne minverdien i
+  * @param fra indeksposisjon man skal lete fra og med
+  * @param til indeksposisjon man skal lete til (men ikke med)
+  * @return returnerer posisjonen til minverdien (dersom minverdien forekommer flere ganger, vil første posisjon bli returnert)
+  */
 	public static int min( int[] a, int fra, int til )
 	{
 		fratilKontroll( a.length, fra, til );
@@ -147,13 +179,17 @@ public class Tabell
 
 		return m; 
 	}
-
+/**
+  * Finner minverdien i en heltallstabell
+  * @param a heltallstabellen som man skal finne minverdien i
+  * @return returnerer posisjonen til minverdien (dersom minverdien forekommer flere ganger, vil første posisjon bli returnert)
+  */
 	public static int min( int[] a )
 	{
 		return min( a, 0, a.length );
 	}
 
-	public static void fratilKontroll(int tablengde, int fra, int til)
+	private static void fratilKontroll(int tablengde, int fra, int til)
 	{
 		if (fra < 0)                                  // fra er negativ
 			throw new ArrayIndexOutOfBoundsException("fra(" + fra + ") er negativ!");
@@ -165,6 +201,12 @@ public class Tabell
 			throw new IllegalArgumentException("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
 	}
 
+/**
+  * Skriver ut innholdet i en heltallstabell innenfor et gitt intervall. Tallene blir skrevet ut på én linje, med mellomrom, uten linjeskift.
+  * @param a heltallstabellen til å skrive ut
+  * @param fra indeksposisjon man skal starte å skrive ut
+  * @param til indeksposisjonen etter siste tall som blir skrevet ut
+  */
 	public static void skriv( int[] a, int fra, int til )
 	{
 		fratilKontroll( a.length, fra, til ); 
@@ -176,7 +218,10 @@ public class Tabell
 
 		System.out.print(utskrift); 
 	}
-
+/**
+  * Skriver ut alle tallene i a, på én linje, med mellomrom som skille, uten linjeskift.
+  * @param a inneholder tallene som skal skrives ut
+  */
 	public static void skriv(int... a )
 	{
 		StringBuilder utskrift = new StringBuilder(); 
@@ -187,7 +232,12 @@ public class Tabell
 		System.out.print(utskrift);
 
 	}
-
+/**
+  * Skriver ut innholdet i en heltallstabell innenfor et gitt intervall. Tallene blir skrevet ut på én linje, med mellomrom, med linjeskift til slutt.
+  * @param a heltallstabellen til å skrive ut
+  * @param fra indeksposisjon man skal starte å skrive ut
+  * @param til indeksposisjonen etter siste tall som blir skrevet ut
+  */
 	public static void skrivln( int[] a, int fra, int til )
 	{
 		fratilKontroll( a.length, fra, til );
@@ -199,7 +249,10 @@ public class Tabell
 
 		System.out.println(utskrift);
 	}
-
+/**
+  * Skriver ut alle tallene i a, på én linje, med mellomrom som skille, med linjeskift til slutt.
+  * @param a inneholder tallene som skal skrives ut
+  */
 	public static void skrivln( int... a )
 	{
 		StringBuilder utskrift = new StringBuilder(); 
