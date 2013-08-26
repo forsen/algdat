@@ -3,7 +3,7 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "src/no/forsen/algdat"
+			"path": "src/no/forsen"
 		}
 	]
 }
