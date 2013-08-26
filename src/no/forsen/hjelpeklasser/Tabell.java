@@ -3,10 +3,21 @@ package no.forsen.hjelpeklasser;
 import java.util.*; 
 import java.lang.StringBuilder; 
 
+/**
+  * Tabell er en hjelpeklasse for tabeller. 
+  *
+  * @author Erik Haider Forsén
+  */
 public class Tabell
 {
 	private Tabell(){}
 
+/**
+  * Bytter om plassen til to verdier i en tabell.
+  * @param a Tabellen som skal endres
+  * @param i indeksen til verdien som skal bytte plass med j
+  * @param j indeksen til verdien som skal bytte plass med i
+  */
 	public static void bytt(int[] a, int i, int j)
 	{
 		int temp = a[i]; a[i] = a[j]; a[j] = temp;
