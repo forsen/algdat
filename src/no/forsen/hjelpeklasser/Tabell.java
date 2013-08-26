@@ -338,5 +338,54 @@ public class Tabell
 
 	}
 
+	private static void vhKontroll( int tablengde, int v, int h )
+	{
+		if( v < 0 )
+			throw new ArrayIndexOutOfBoundsException( "v(" + v + ") < 0" );
+
+		if( h >= tablengde )
+			throw new ArrayIndexOutOfBoundsException( "h(" + h + ") >= tablengde(" + tablengde + ")" );
+
+		if( v > h + 1 )
+			throw new IllegalArgumentException( "v = " + v + ", h = " + h );
+	}
+
+/**
+  *	Snur rekkefølgen på tallene i intervallet a[v:h].
+  * @param a tabellen for å snu tallene i 
+  * @param v fra og med posisjon for intervallet
+  * @param h til og med posisjon for intervallet
+  */
+
+	public static void snu( int[] a, int v, int h )
+	{
+		vhKontroll( a.length, v, h );
+		int il = h - v; 
+		int[] b = new int[il];
+
+		for( int  i = v; i <= h; i++ )
+			bytt( a, i, h--);
+
+
+	}
+
+/**
+  * Snur rekkefølgen på verdiene i en tabell.
+  * @param a tabellen der rekkefølgen skal snus
+  */
+	public static void snu( int[] a )
+	{
+		if( a.length < 2 )
+			return;
+
+		int i = 0;
+		int j = a.length - 1;
+
+		do
+		{
+			bytt(a, i++, j--);
+		} while (j>i); 
+	}
+
 
 }

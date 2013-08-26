@@ -9,7 +9,9 @@ public class Program
 	public static void main(String[] args)
 	{
 
-		int[] a = Tabell.heleTall(-13,6);
+		int[] a = {0,3};
+
+		Tabell.snu(a);
 
 		Tabell.skriv(a);
 	}
