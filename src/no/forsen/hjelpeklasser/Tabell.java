@@ -179,6 +179,53 @@ public class Tabell
 
 
 	}
+
+/**
+  * Finner største og nest største verdien i en heltallstabell
+  * @param a heltallstabellen som man skal finne verdiene i
+  * @return returnerer en tabell som inneholder posisjonen til maksverdi og nestmaksverdi. Returnerer to høyeste verdiene, uavhengig om de er like eller ei.
+  */
+
+	public static int[] nestMin( int[] a )
+	{
+		int n = a.length;
+		if( n < 2 ) 
+			throw new NoSuchElementException("a.length(" + n + ") < 2!" );
+		
+		int m = 0, nm = 1; 
+
+		if( a[1] < a[0] )
+		{
+			m = 1; 
+			nm = 0; 
+		}
+
+		int minverdi = a[m];
+		int nestminverdi = a[nm]; 
+
+		for( int i = 2; i < n; i++ )
+		{
+			if( a[i] < nestminverdi )
+			{
+				if( a[i] < minverdi )
+				{
+					nm = m;
+					nestminverdi = minverdi; 
+
+					m = i;
+					minverdi = a[m];
+				}
+				else
+				{
+					nm = i; 
+					nestminverdi = a[nm];
+				}
+			}
+		}
+
+		return new int[] {m,nm};
+
+	}
 /**
   * Sorterer en gitt heltallstabell i stigende rekkefølge.
   * @param a heltallstabellen som skal sorteres
