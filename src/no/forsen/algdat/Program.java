@@ -9,10 +9,11 @@ public class Program
 	public static void main(String[] args)
 	{
 
-		int[] a = {0,3};
+		int[] a = Tabell.randPerm(20);
+		Tabell.skrivln(a);
 
-		Tabell.snu(a);
+		Tabell.skrivln(Tabell.nestMin(a));
 
-		Tabell.skriv(a);
+ 
 	}
 }
