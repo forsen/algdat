@@ -127,20 +127,46 @@ public class Tabell
 			nm = 0; 
 		}
 
+		int sist = n-1; 
+
 		int maksverdi = a[m]; 
 		int nestmaksverdi = a[nm];
 
-		for( int i = 2; i < a.length; i++ )
+		int temp = a[sist];
+		a[sist] = 0x7fffffff; 
+
+		for( int i = 2; ; i++ )
 		{
 			if( a[i] > nestmaksverdi )
 			{
 				if( a[i] > maksverdi )
 				{
-					nm = m; 
-					nestmaksverdi = maksverdi; 
+					if(i == sist)
+					{
 
-					m = i; 
-					maksverdi = a[m];
+						if(temp >= maksverdi ) 
+						{
+							nm = m;
+							m = i; 
+						}
+						else if( temp >= nestmaksverdi )
+						{
+							nm = i; 
+						}
+
+						a[sist] = temp; 
+						
+						return new int[] {m,nm}; 	 
+					}
+					else
+					{	
+						nm = m; 
+						nestmaksverdi = maksverdi; 
+
+						m = i; 
+						maksverdi = a[m];
+					}
+									
 				}
 				else
 				{
@@ -150,8 +176,24 @@ public class Tabell
 			}
 		}
 
-		return new int[] {m,nm}; 
 
+
+	}
+/**
+  * Sorterer en gitt heltallstabell i stigende rekkefølge.
+  * @param a heltallstabellen som skal sorteres
+  */
+	public static void sortering( int[] a )
+	{
+		int n = a.length;
+		if( n < 2 )
+			throw new NoSuchElementException("a.length(" + n + ") < 2!" );
+
+		for( int i = a.length - 1; i > 0; i-- )
+		{
+			int m = maks(a,0,i+1);
+			bytt(a,m,i); 
+		}
 	}
 /**
   * Finner minverdien i et gitt intervall fra en tabell. 
@@ -164,8 +206,12 @@ public class Tabell
 	{
 		fratilKontroll( a.length, fra, til );
 
+		if( a == null )
+			throw new NullPointerException( "a = null" );
+
 		if( fra == til )
 			throw new NoSuchElementException( "fra(" + fra + ") = til(" + til + ") - tomt tabellintervall!" );
+
 
 		int m = fra;
 		int minverdi = a[fra];
