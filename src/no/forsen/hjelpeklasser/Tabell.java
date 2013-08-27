@@ -115,6 +115,10 @@ public class Tabell
   */
 	public static int[] nestMaks(int[] a)
 	{
+		int n = a.length;
+		if( n < 2 ) 
+			throw new NoSuchElementException("a.length(" + n + ") < 2!" );
+		
 		int m = 0, nm = 1; 
 
 		if( a[1] > a[0] )
@@ -146,9 +150,7 @@ public class Tabell
 			}
 		}
 
-		int[] b = {m,nm};
-
-		return b; 
+		return new int[] {m,nm}; 
 
 	}
 /**
