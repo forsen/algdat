@@ -65,23 +65,33 @@ public class Program
 	{
 		kvikksortering( a, 0, a.length - 1 );
 	}
+
+	public static int kvikksøk( int[] a, int k )
+	{
+		if( k < 0 || k >= a.length )
+			throw new IllegalArgumentException( "k(" + k + ") er ulovlig!" );
+
+		int v = 0, h = a.length - 1; 
+
+		while( true )
+		{
+			int p = sParter( a, v, h, (v+h)/2 );
+			if( k < p )
+				h = p - 1;
+			else if ( k > p )
+				v = p + 1;
+			else return a[p]; 
+		}
+	}
+	
 	public static void main(String[] args)
 	{
 
-		
-		int[] a = Tabell.randPerm( 10000000 );
+		int[] a = { 5, 2, 9, 11, 7, 8, 13, 5};
 
-		//Tabell.skrivln( a ); 
+		int verdi = kvikksøk(a, 7 );
 
-		
-		long tid = System.currentTimeMillis();
-		kvikksortering( a );
-		tid = System.currentTimeMillis() - tid;
-		System.out.println( tid );
+		System.out.println( verdi );
 
-		//System.out.println( v );
-
-		//Tabell.skrivln( a ); 
- 
 	}
 }
