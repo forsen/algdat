@@ -5,5 +5,10 @@
 			"follow_symlinks": true,
 			"path": "src/no/forsen"
 		}
-	]
+	],
+
+	"settings":
+	{
+		"tab_size": 4
+	}
 }
