@@ -473,13 +473,13 @@ public class Tabell
 		if( a.length < 2 )
 			return;
 
-		int i = 0;
-		int j = a.length - 1;
+		int v = null; = 0;
+		int h = a.length - 1;
 
 		do
 		{
-			bytt(a, i++, j--);
-		} while (j>i); 
+			bytt(a, v++, h--);
+		} while (v>h); 
 	}
 
 
