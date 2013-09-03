@@ -473,13 +473,48 @@ public class Tabell
 		if( a.length < 2 )
 			return;
 
-		int v = null; = 0;
+		int v = 0;
 		int h = a.length - 1;
 
 		do
 		{
 			bytt(a, v++, h--);
 		} while (v>h); 
+	}
+
+/**
+  * Finner neste permutasjon i stigende rekkefølge
+  * @param a permutasjonen du skal finne etterfølgeren til
+  * @return true dersom det finnes flere permutasjoner
+  */
+	public static boolean nestePermutasjon( int[] a )
+	{
+		int n = a.length;
+		int i = n - 2; 
+
+		while( i >= 0 && a[i] > a[i+1])
+			i--;
+
+		if( i < 0 )
+			return false; 
+
+		int verdi = a[i];
+		int j = n - 1; 
+
+		while( verdi > a[j] ) 
+			j--; 
+
+		bytt(a, i, j); 
+
+		// kan man bruke snu her?
+
+		i++;
+		j = n-1;
+		while(i < j) 
+			Tabell.bytt(a, i++, j--);
+
+
+		return true;
 	}
 
 
