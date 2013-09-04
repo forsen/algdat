@@ -60,11 +60,12 @@ public class Oblig1
 	// Oppgave 3
 	public static int antallUlikeSortert( int[] a )
 	{
-		if( a.length == 0 )
+		int n = a.length; 
+		if( n == 0 )
 			return 0;
 
 		int antall = 1;
-		for( int i = 0; i < a.length - 1; i++ )
+		for( int i = 0; i < n - 1; i++ )
 		{
 			if( a[i] > a[i+1] )
 				throw new IllegalStateException("Tabellen må være sortert");
@@ -75,6 +76,32 @@ public class Oblig1
 
 		return antall;
 	}
+	// Metoden er av første orden uansett tilfelle.
+
+	// Oppgave 4
+	public static int antallUlikeUsortert( int[] a )
+	{
+		int n = a.length;
+		if( n == 0 )
+			return 0;
+
+		int antall = 0; 
+
+		for( int i = 0; i < n - 1; i++ ) 
+		{
+			antall++;
+
+			for( int j = i + 1; j < n - 1; j++ )
+			{
+				if( a[i] == a[j] )
+					antall--;
+			}
+		}
+
+		return antall;
+	}
+	// Metoden er av andre orden i verste tilfelle
+	
 }
 
 
