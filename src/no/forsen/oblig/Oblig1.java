@@ -2,6 +2,7 @@ package no.forsen.oblig;
 
 import java.util.NoSuchElementException;
 import java.lang.StringBuilder;
+import java.util.*;
 
 public class Oblig1
 {
@@ -188,6 +189,9 @@ public class Oblig1
 	{
 		int n = a.length;
 
+		if( n == 0 )
+			throw new NoSuchElementException( "Tabellen er tom" ); 
+
 		if( n < 3 )
 			throw new IllegalArgumentException( "a.length(" + n + ") < 3!");
 
@@ -255,6 +259,55 @@ public class Oblig1
 			}
 		}
 		return new int[] {m,nm,nnm};
+	}
+
+	// Oppgave 8b
+	public static void tredjeMinstTest()
+	{
+		int[][] a = {{0,1,2}, {0,2,1}, {1,0,2}, {1,2,0}, {2,0,1}, {2,1,0} };
+
+		for( int i = 0; i < a.length; i++ )
+		{
+			int[] b = tredjeMinst( a[i] );
+
+			if( a[i][b[0]] > a[i][b[1]] || a[i][b[1]] > a[i][b[2]] )
+				System.out.println("Gir feil posisjon for min, nestmin og nestnestmin " );
+		}
+
+		int[] b = new int[0]; 
+		boolean unntak = false; 
+
+		try
+		{
+			tredjeMinst(b);
+		}
+		catch( Exception e )
+		{
+			unntak = true; 
+			if( !(e instanceof NoSuchElementException) )
+				System.out.println("Feil unntak for en tom tabell");
+		
+		}
+
+		if(!unntak)
+			System.out.println( "Det skal kastes unntak for en tom tabell" ); 
+		
+		unntak = false;
+		b = new int[2];
+
+		try
+		{
+			tredjeMinst(b);
+		}
+		catch( Exception e )
+		{
+			unntak = true;
+			if( !(e instanceof IllegalArgumentException ) )
+				System.out.println( "Feil unntak for en tabell med færre enn 3 verdier" );
+		}
+
+		if(!unntak)
+			System.out.println( "Det skal kastes unntak for tabell med færre enn 3 verdier" );
 	}
 }
 
