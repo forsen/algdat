@@ -183,8 +183,79 @@ public class Oblig1
 		return utskrift.toString(); 
 	}
 
-	
-		
+	// Oppgave 8 a)
+	public static int[] tredjeMinst( int[] a )
+	{
+		int n = a.length;
+
+		if( n < 3 )
+			throw new IllegalArgumentException( "a.length(" + n + ") < 3!");
+
+		int m = 0;
+		int nm = 1;
+		int nnm = 2; 
+
+		if( a[1] < a[0] )
+		{
+			m = 1;
+			nm = 0; 
+		}
+
+		if( a[2] < a[nm] )
+		{
+
+			if( a[2] < a[m] )
+			{
+				nnm = nm;
+				nm = m; 
+				m = 2;
+			}
+			else
+			{
+				nnm = nm;
+				nm = 2; 
+			}
+		}
+
+		int minverdi = a[m];
+		int nestminverdi = a[nm];
+		int nestnestminverdi = a[nnm];
+
+		for( int i = 3; i < n; i++ )
+		{
+			if( a[i] < nestnestminverdi )
+			{
+				if( a[i] < nestminverdi )
+				{
+					if( a[i] < minverdi )
+					{
+						nnm = nm;
+						nestnestminverdi = nestminverdi;
+						
+						nm = m; 
+						nestminverdi = minverdi;
+						
+						m = i;
+						minverdi = a[m]; 
+					}
+					else
+					{
+						nnm = nm; 
+						nestnestminverdi = nestminverdi;
+						
+						nm = i;
+						nestminverdi = a[nm];
+					}
+				}
+				else
+				{
+					nnm = i;
+					nestnestminverdi = a[nnm];
+				}
+			}
+		}
+		return new int[] {m,nm,nnm};
+	}
 }
 
 
