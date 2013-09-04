@@ -119,6 +119,44 @@ public class Oblig1
 
 		a[0] = siste;
 	}
+
+	// Oppgave 6
+	public static void rotasjon( char[] a, int k )
+	{
+		int n = a.length;
+
+		if( n == 0 )
+			return; 
+
+		if( k > 0 )
+		{
+			while( k != 0 )
+			{
+				char siste = a[n - 1];
+
+				for( int i = n - 1; i > 0; i-- )
+					a[i] = a[i - 1];
+
+				a[0] = siste;
+				k--; 
+			}
+
+		}
+		else
+		{
+			while( k != 0 )
+			{
+				char første = a[0];
+				for( int i = 0; i < n - 1; i++ )
+					a[i] = a[i + 1];
+
+				a[n - 1] = første; 
+
+				k++;
+			}
+		} 
+	}
+	
 }
 
 
