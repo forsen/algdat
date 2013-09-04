@@ -1,6 +1,7 @@
 package no.forsen.oblig; 
 
 import java.util.NoSuchElementException;
+import java.lang.StringBuilder;
 
 public class Oblig1
 {
@@ -156,7 +157,34 @@ public class Oblig1
 			}
 		} 
 	}
+
+	// Oppgave 7
+	public static String toString( int[] a, char v, char h, String mellomrom )
+	{
+		StringBuilder utskrift = new StringBuilder(); 
+
+		utskrift.append( v );
+
+		int n = a.length; 
+
+		if( n != 0 )
+		{
+			utskrift.append( a[0] );
+
+			for( int i = 1; i < n; i++ )
+			{
+				utskrift.append( mellomrom ); 
+				utskrift.append( a[i] );
+			}
+		}
+
+		utskrift.append( h );
+
+		return utskrift.toString(); 
+	}
+
 	
+		
 }
 
 
