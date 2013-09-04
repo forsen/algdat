@@ -4,6 +4,8 @@ import java.util.NoSuchElementException;
 
 public class Oblig1
 {
+
+	// Oppgave 1
 	public static int maks( int[] a )
 	{
 		int n = a.length; 
@@ -30,6 +32,8 @@ public class Oblig1
 	// Det blir flest ombyttinger når den største verdien ligger først i tabellen. Resten av verdiene spiller ingen rolle, 
 	// da den største verdien vil bli flyttet alle plassene uansett.
 
+
+	// Oppgave 2
 	public static void sortering( int[] a )
 	{
 		int n = a.length;
@@ -52,18 +56,24 @@ public class Oblig1
 	}
 	// For en tabell med lengde n vil det bli (n^2 - n) / 2 sammenligninger.
 
+
+	// Oppgave 3
 	public static int antallUlikeSortert( int[] a )
 	{
+		if( a.length == 0 )
+			return 0;
+
+		int antall = 1;
 		for( int i = 0; i < a.length - 1; i++ )
 		{
 			if( a[i] > a[i+1] )
 				throw new IllegalStateException("Tabellen må være sortert");
-			
-			//while( a[i] == a[i+1] )
-
+		
+			if( a[i] != a[i+1])
+				antall++;
 		}
 
-		return 0;
+		return antall;
 	}
 }
 
