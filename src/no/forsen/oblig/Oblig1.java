@@ -101,7 +101,24 @@ public class Oblig1
 		return antall;
 	}
 	// Metoden er av andre orden i verste tilfelle
-	
+
+	// Oppgave 5
+	public static void rotasjon( char[] a )
+	{
+		int n = a.length;
+
+		if( n == 0 )
+			return; 
+
+		char siste = a[n - 1]; 
+
+		for( int i = n - 1; i > 0; i-- )
+		{
+			a[i] = a[i - 1];
+		}
+
+		a[0] = siste;
+	}
 }
 
 
