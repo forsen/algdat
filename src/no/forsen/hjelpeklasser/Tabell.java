@@ -632,5 +632,33 @@ public class Tabell
 			return -(i + 1);
 	}
 
+	public static int binærsøk( int[] a, int fra, int til, int verdi )
+	{
+		fratilKontroll( a.length, fra, til );
+
+		int v = fra;
+		int h = til - 1; 
+
+		while( v <= h )
+		{
+			int m = (v+h)/2; 
+			int midtverdi = a[m];
+
+			if( verdi == midtverdi )
+				return m;
+			else if( verdi > midtverdi )
+				v = m + 1; 
+			else 
+				h = m - 1; 
+		}
+
+		return -(v + 1); 
+	}
+
+	public static int binærsøk( int[] a, int verdi )
+	{
+		return binærsøk(a, 0, a.length, verdi );
+	}
+
 
 }
