@@ -611,5 +611,26 @@ public class Tabell
 
 	}
 
+	public static void utvalgssortering( int[] a )
+	{
+		for( int k = a.length; k > 1; k-- )
+			bytt( a, maks(a, 0, k), k-1);
+	}
+
+	public static int lineærsøk( int[] a, int verdi )
+	{
+		if( a.length < 1 || verdi > a[a.length - 1] )
+			return -(a.length + 1);
+
+		int i = 0; 
+
+		for( ; a[i] < verdi; i++ ); 
+
+		if ( a[i] == verdi )
+			return i; 
+		else
+			return -(i + 1);
+	}
+
 
 }
