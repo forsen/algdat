@@ -11,18 +11,16 @@ public class Program
 	
 	public static void main(String[] args)
 	{
+		Heltall a = new Heltall(5);
+		Heltall b = new Heltall(5);
 
-		int[] a = { 2,4,7,12,15,16,20,25};
+		List<Heltall> liste = new ArrayList<>();
+		liste.add(a);
 
-		int p = Tabell.lineærsøk(a, 26 );
+		boolean x = a.compareTo(b) == 0;
+		boolean y = a.equals(b);
 
-//		if( p < 0 ) 
-//			System.out.println( -(p+1) );
-//		else
-			System.out.print(p);
-
-
-		//System.out.println( verdi );
+		System.out.println( x + " " + y );
 
 	}
 }

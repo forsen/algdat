@@ -644,12 +644,12 @@ public class Tabell
 			int m = (v+h)/2; 
 			int midtverdi = a[m];
 
-			if( verdi == midtverdi )
-				return m;
-			else if( verdi > midtverdi )
-				v = m + 1; 
-			else 
+			if( verdi > midtverdi )
+				v = m + 1;
+			else if( verdi < midtverdi )
 				h = m - 1; 
+			else 
+				return m;   
 		}
 
 		return -(v + 1); 

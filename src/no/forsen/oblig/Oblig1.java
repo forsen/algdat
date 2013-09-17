@@ -356,14 +356,16 @@ public class Oblig1
 		for( int i = 0; i < k; i++ )
 			verdier[i] = a[i];
 		
-		sortering(verdier);
+		//sortering(verdier);
+		Arrays.sort(verdier);
 
 		for( int i = k; i < n; i++ )
 		{
 			if( a[i] < verdier[k - 1] )
 			{
 				verdier[k-1] = a[i];
-				sortering( verdier );
+				//sortering( verdier );
+				Arrays.sort(verdier);
 			}
 		}
 
