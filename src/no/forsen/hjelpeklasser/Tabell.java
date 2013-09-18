@@ -632,6 +632,33 @@ public class Tabell
 			return -(i + 1);
 	}
 
+	public static int lineærsøk( int[] a, int k, int verdi )
+	{
+		if( k < 1)
+			throw new IllegalArgumentException( "k: " + k + " må være større enn 0");
+
+		if( a.length < 1 || verdi > a[a.length - 1] )
+			return -(a.length + 1);
+
+		int i = 0; 
+
+		for( ; a[i] < verdi; i += k);
+
+		if( a[i] >= verdi )
+		{
+			for( i -= k ; a[i] < verdi; i++ );
+
+			if( a[i] == verdi )
+				return i;
+			else
+				return -(i + 1);
+		}
+
+		return i;
+
+
+	}
+
 	public static int binærsøk( int[] a, int fra, int til, int verdi )
 	{
 		fratilKontroll( a.length, fra, til );
@@ -660,5 +687,70 @@ public class Tabell
 		return binærsøk(a, 0, a.length, verdi );
 	}
 
+	public static boolean erSortertAvtagende( int[] a )
+	{
+		for( int i = 1; i < a.length; i++ )
+		{
+			if( a[i - 1] < a[i] )
+				return false;
+		}
 
+		return true;
+	}
+
+	public static boolean erSortertStigende( int[] a, int fra, int til )
+	{
+		fratilKontroll( a.length, fra, til );
+
+		for( int i = fra + 1; i < til; i++ )
+		{
+			if( a[i - 1] > a[i] )
+				return false;
+		}
+
+		return true;
+	}
+
+	public static void minimumssortering( int[] a )
+	{
+
+
+		for( int i = 0; i < a.length; i++ )
+		{
+			int indeks = i; 
+			int minverdi = a[i];
+
+			for( int j = i; j < a.length; j++ )
+			{
+				
+				if( a[j] < minverdi )
+				{
+					minverdi = a[j];
+					indeks = j; 
+				}
+			}
+			int temp = a[i]; 
+			a[i] = minverdi; 
+			a[indeks] = temp; 
+
+		}
+	}
+
+	public static int søkUsortert( int[] a, int verdi )
+	{
+		int n = a.length;
+		int vakt = a[n - 1];
+		a[n - 1] = verdi; 
+		for( int i = 0; ; i++ )
+		{
+			if( verdi == a[i] )
+			{
+				a[n - 1] = vakt;
+				if( i == n - 1 && vakt != verdi )
+					return -1;
+				else
+					return i; 
+			}
+		}
+	}
 }

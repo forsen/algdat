@@ -37,7 +37,8 @@ public class Person implements Comparable<Person>
 		if( !(o instanceof Person ) )
 			return false; 
 
-		return etternavn == ((Person).o).etternavn && fornavn == ((Person)o).fornavn;
+		//return etternavn == ((Person).o).etternavn && fornavn == ((Person)o).fornavn;
+		return true;
 	}
 
 	public String toString()
