@@ -754,4 +754,36 @@ public class Tabell
 			}
 		}
 	}
+
+	public static <T extends Comparable<? super T>> void innsettingssortering(T[] a)
+	{
+		for (int i = 1; i < a.length; i++)
+		{
+			T temp = a[i];
+			int j = i -1;
+
+			for(; j >= 0 && temp.compareTo(a[j]) < 0; j--)
+			{
+				a[j+1] = a[j];
+			}
+
+			a[j+1] = temp;
+		}
+	}
+
+	public static <T> void innsettingssortering(T[] a, Comparator<? super T> c )
+	{
+		for (int i = 1; i < a.length; i++)
+		{
+			T temp = a[i];
+			int j = i -1;
+
+			for(; j >= 0 && c.compare( temp, a[j] ) < 0; j--)
+			{
+				a[j+1] = a[j];
+			}
+
+			a[j+1] = temp;
+		}
+	}
 }

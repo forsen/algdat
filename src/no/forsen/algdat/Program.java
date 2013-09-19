@@ -2,51 +2,29 @@ package no.forsen.algdat;
 
 import java.util.*;
 import no.forsen.hjelpeklasser.*;
+import javax.swing.JOptionPane;
 
 
 public class Program
 {
-
-
-	
 	public static void main(String[] args)
 	{
+		Student[] s = new Student[5];
 
-		// a) 2 3 6 1 4 5 skal bli 2 3 6 1 5 4
-		// b) 2 3 6 1 5 4 skal bli 2 3 6 4 1 5
-		// c) 2 3 1 6 5 4 skal bli 2 3 4 1 5 6
-		// d) 2 3 6 5 4 1 skal bli 2 4 1 3 5 6
-		// e) 2 6 5 4 3 1 skal bli 3 1 2 4 5 6 
+		s[0] = new Student( "Kari","Svendsen","2AA" );
+		s[1] = new Student( "Boris", "Zukanovic", "2IA" );
+		s[2] = new Student( "Ali", "Khan", "2IA" );
+		s[3] = new Student( "Azra", "Zukanovic", "1AB" );
+		s[4] = new Student( "kari", "Pettersen", "3AA" );
 
-		// 3 1 7 9 4 10 8 6 5 2 
+		int cmp = s[3].compareTo(s[3]);
 
-		// 3 1 7 9 5 2 4 6 8 10
-		// 3 1 7 9 5 2 4 6 10 8
-		// 3 1 7 9 5 2 4 8 6 10
-		// 3 1 7 9 5 2 4 8 10 6 
-		// 3 1 7 9 5 2 4 10 6 8
-		// 3 1 7 9 5 2 4 10 8 6
-		// 3 1 7 9 5 2 6 4 8 10
-		// 3 1 7 9 5 2 6 4 10 8
-		// 3 1 7 9 5 2 6 8 4 10
-		// 3 1 7 9 5 2 6 8 10 4
+		Comparator<Person> c = new FornavnKomparator();
+		Tabell.innsettingssortering( s,c );
 
-		int[] a = new int[100000000];
-		for( int i = 0 ; i < 100000000; i++ )
-		{
-			a[i] = i;
-		}
-		//Tabell.skrivln( a );
+		Arrays.sort(s,c);
 
-		long tid;
-		tid = System.currentTimeMillis();
-		Tabell.skrivln( Tabell.lineærsøk( a, 4000000 ) );
-		tid = System.currentTimeMillis() - tid;
-		System.out.println( tid );
 
-		tid = System.currentTimeMillis();
-		Tabell.skrivln( Tabell.lineærsøk( a, (int) Math.sqrt(a.length), 4000000) );
-		tid = System.currentTimeMillis() - tid;
-		System.out.println( tid );
+
 	}
 }
