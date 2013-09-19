@@ -9,6 +9,22 @@ public class Program
 {
 	public static void main(String[] args)
 	{
+/*
+		Integer[] a = {6,3,8,2,1,10,7,5,4,9};
+
+		class IntegerKomparator implements Comparator<Integer>
+		{
+			public int compare( Integer i1, Integer i2 )
+			{
+				return i1.compareTo(i2);
+			}
+		}
+
+		Tabell.innsettingssortering(a, new IntegerKomparator() );
+
+		System.out.println(Arrays.toString(a));
+*/
+
 		Student[] s = new Student[5];
 
 		s[0] = new Student( "Kari","Svendsen","2AA" );
@@ -19,10 +35,12 @@ public class Program
 
 		int cmp = s[3].compareTo(s[3]);
 
-		Comparator<Person> c = new FornavnKomparator();
-		Tabell.innsettingssortering( s,c );
+		String[] p = {"Ola","Kari","Per","Åse","Bo","Petter"};
 
-		Arrays.sort(s,c);
+		Tabell.innsettingssortering(p, new StrenglengdeKomparator() );
+
+		System.out.println(Arrays.toString( p ));
+
 
 
 

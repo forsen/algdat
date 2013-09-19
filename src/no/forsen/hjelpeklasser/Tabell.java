@@ -380,6 +380,11 @@ public class Tabell
 		System.out.print( utskrift ); 
 	}
 
+	public static <T extends Number> void skriv( T t )
+	{
+		System.out.println(t);
+	}
+
 	public static void skrivln( char[] c, int fra, int til )
 	{
 		fratilKontroll( c.length, fra, til );
@@ -754,7 +759,7 @@ public class Tabell
 			}
 		}
 	}
-
+/*
 	public static <T extends Comparable<? super T>> void innsettingssortering(T[] a)
 	{
 		for (int i = 1; i < a.length; i++)
@@ -770,7 +775,7 @@ public class Tabell
 			a[j+1] = temp;
 		}
 	}
-
+*/
 	public static <T> void innsettingssortering(T[] a, Comparator<? super T> c )
 	{
 		for (int i = 1; i < a.length; i++)
@@ -786,4 +791,5 @@ public class Tabell
 			a[j+1] = temp;
 		}
 	}
+
 }
