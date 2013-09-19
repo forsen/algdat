@@ -663,23 +663,24 @@ public class Tabell
 	{
 		fratilKontroll( a.length, fra, til );
 
-		int v = fra;
+		int v = fra; 
 		int h = til - 1; 
 
-		while( v <= h )
+		while( v < h )
 		{
-			int m = (v+h)/2; 
-			int midtverdi = a[m];
-
-			if( verdi > midtverdi )
-				v = m + 1;
-			else if( verdi < midtverdi )
-				h = m - 1; 
-			else 
-				return m;   
+			int m = (v+h) / 2; 
+			if( verdi > a[m] ) 
+				v = m + 1; 
+			else
+				h = m; 
 		}
 
-		return -(v + 1); 
+		if( h < v || verdi < a[v] ) 
+			return -( v + 1 );
+		else if( verdi == a[v] )
+			return v;
+		else 
+			return -( v + 2 ); 
 	}
 
 	public static int binærsøk( int[] a, int verdi )
