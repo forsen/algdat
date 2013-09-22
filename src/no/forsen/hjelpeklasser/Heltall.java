@@ -2,7 +2,7 @@ package no.forsen.hjelpeklasser;
 
 public final class Heltall implements Comparable<Heltall>
 {
-	private int verdi; 
+	private final int verdi; 
 
 	public Heltall( int verdi )
 	{

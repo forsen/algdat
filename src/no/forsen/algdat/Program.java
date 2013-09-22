@@ -24,7 +24,7 @@ public class Program
 
 		System.out.println(Arrays.toString(a));
 */
-
+/*
 		Student[] s = new Student[5];
 
 		s[0] = new Student( "Kari","Svendsen","2AA" );
@@ -40,9 +40,12 @@ public class Program
 		Tabell.innsettingssortering(p, new StrenglengdeKomparator() );
 
 		System.out.println(Arrays.toString( p ));
+*/
 
+		int[] a = {1,3,5,2};
 
-
-
+		
+		Tabell.skrivln( a );
+		Tabell.skriv( a );
 	}
 }

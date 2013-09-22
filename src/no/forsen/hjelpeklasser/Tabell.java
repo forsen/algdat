@@ -35,6 +35,13 @@ public class Tabell
 		c[i] = c[j];
 		c[j] = temp; 
 	}
+
+	public static void bytt( Object[] a, int i, int j ) 
+	{
+		Object temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+	}
 /**
   * Genererer en heltallstabell med lengde n og fyller den med tallene fra og med 1 til og med n på tilfeldige plasser.
   * @param n lengden på tabellen
@@ -68,7 +75,72 @@ public class Tabell
 		}
 	}
 
+	public static Integer[] randPermInteger( int n ) 
+	{
+		Integer[] a = new Integer[n];
+		for( int i = 0; i < n; i++ ) 
+			a[i] = i+1;
+		
+		Random r = new Random();
 
+		for( int k = n-1; k < 0; k-- ) 
+		{
+			int i = r.nextInt(k+1);
+			bytt( a, k, i );
+		}
+
+		return a;
+	}
+
+
+	public static int maks( double[] a )
+	{
+		int m = 0;
+		double maksverdi = a[0];
+
+		for (int i = 0; i < a.length ; i++ ) {
+			if( a[i] > maksverdi )
+			{
+				maksverdi = a[i];
+				m = i;
+			}
+		}
+
+		return m; 
+	}
+
+	public static <T extends Comparable<T>> int maks( T[] a ) 
+	{
+		int m = 0;
+		T maksverdi = a[0];
+
+		for( int i = 1; i < a.length; i++ ) 
+		{
+			if( a[i].compareTo(maksverdi) > 0 ) 
+			{
+				maksverdi = a[i];
+				m = i;
+			}
+		}
+		return m;
+	}
+
+	public static int maks( char[] a ) 
+	{
+		int m = 0;
+		char maksverdi = a[0];
+
+		for( int i = 1; i < a.length; i++ ) 
+		{
+			if( a[i] > maksverdi )
+			{
+				maksverdi = a[i];
+				m = i; 
+			}
+		}
+
+		return m;
+	}
 /**
   * Finner maksverdien i et gitt intervall fra en tabell. 
   * @param a heltallstabellen som man skal finne maksverdien i
@@ -385,6 +457,28 @@ public class Tabell
 		System.out.println(t);
 	}
 
+	public static void skriv( Object[] a, int fra, int til ) 
+	{
+		StringBuilder utskrift = new StringBuilder();
+
+		for( int i = fra; i < til; i++ ) 
+		{
+			utskrift.append( a[i] );
+		}
+
+		System.out.print( utskrift );
+	}
+
+	public static void skriv( Object... a ) 
+	{
+		StringBuilder utskrift = new StringBuilder();
+		for( Object o : a ) 
+		{
+			utskrift.append( o + " " );
+		}
+
+		System.out.print( utskrift );
+	}
 	public static void skrivln( char[] c, int fra, int til )
 	{
 		fratilKontroll( c.length, fra, til );
@@ -405,6 +499,29 @@ public class Tabell
 			utskrift.append( i + " " ); 
 
 		System.out.println( utskrift ); 
+	}
+
+	public static void skrivln( Object[] a, int fra, int til ) 
+	{
+		StringBuilder utskrift = new StringBuilder();
+
+		for( int i = fra; i < til; i++ )
+		{
+			utskrift.append( a[i] + " " );
+		}
+
+		System.out.println( utskrift );
+	}
+
+	public static void skrivln( Object[] a ) 
+	{
+		StringBuilder utskrift = new StringBuilder();
+
+		for( Object o : a ) 
+		{
+			utskrift.append( o + " " );
+		}
+		System.out.println( utskrift );
 	}
 
 	public static int[] naturligeTall( int n )
@@ -673,17 +790,17 @@ public class Tabell
 
 		while( v < h )
 		{
-			int m = (v+h) / 2; 
-			if( verdi > a[m] ) 
-				v = m + 1; 
+			int m = (v+h+1) / 2; 
+			if( verdi < a[m] ) 
+				h = m - 1; 
 			else
-				h = m; 
+				v = m; 
 		}
 
 		if( h < v || verdi < a[v] ) 
 			return -( v + 1 );
-		else if( verdi == a[v] )
-			return v;
+		else if( verdi == a[h] )
+			return h;
 		else 
 			return -( v + 2 ); 
 	}
@@ -776,6 +893,8 @@ public class Tabell
 		}
 	}
 */
+
+/*
 	public static <T> void innsettingssortering(T[] a, Comparator<? super T> c )
 	{
 		for (int i = 1; i < a.length; i++)
@@ -791,5 +910,165 @@ public class Tabell
 			a[j+1] = temp;
 		}
 	}
+*/
+	public static void innsettingssortering( int[] a, int fra, int til )
+	{
+		fratilKontroll( a.length, fra, til );
+
+		for( int i = fra + 1; i < til; i++ )
+		{
+			int temp = a[i]; 
+			int j = i - 1; 
+			for( ; j >= fra && temp < a[j]; j-- )
+				a[j + 1] = a[j];
+
+			a[j + 1] = temp; 
+		}
+	}
+
+	public static void innsettingssortering( int[] a )
+	{
+		innsettingssortering( a, 0, a.length );
+	}
+
+	private static void flett( int[] a, int[] b, int fra, int m, int til )
+	{
+		int n = m - fra; 
+		System.arraycopy( a, fra, b, 0, n );
+
+		int i = 0, j = m, k = fra;
+
+		while( i < n && j < til )
+		{
+			a[k++] = b[i] <= a[j] ? b[i++] : a[j++];
+		}
+
+		while( i < n )
+			a[k++] = b[i++];
+	}
+
+	public static int flett( int[] a, int m, int[] b, int n, int[] c )
+	{
+		int i = 0, j = 0, k = 0;
+
+		while( i < m && j < n )
+			c[k++] = a[i] <= b[j] ? a[i++] : b[j++];
+
+		while( j < m )
+			c[k++] = a[i++];
+
+		while( i < n )
+			c[k++] = b[j++];
+
+		return k;
+	}
+
+	public static void flettesortering( int[] a, int[] b, int fra, int til )
+	{
+		if( til - fra <= 1 )
+			return;
+
+		int m = ( fra + til ) / 2;
+
+		flettesortering( a,b,fra,m);
+		flettesortering( a,b,m,til);
+
+		flett( a, b, fra, m, til );
+
+	}
+
+	public static void flettesortering( int[] a )
+	{
+		int[] b = new int[a.length/2];
+		flettesortering(a,b,0,a.length);
+	}
+
+	public static int differans( int[] a, int m, int[] b, int n, int[] c )
+	{
+		int i = 0, j = 0, k = 0; 
+
+		while( i < m && j < n )
+		{ 
+			if( a[i] < b[j] )
+				c[k++] = a[i++];
+			else if (a[i] == b[j] ) 
+			{
+				i++;
+				j++;	
+			}
+			else
+				j++;
+		}
+
+		while( i < m )
+			c[k++] = a[i++];
+
+		return k;
+	}
+
+	public static boolean inklusjon( int[] a, int m, int[] b, int n )
+	{
+		int i = 0, j = 0;
+		while( i < m && j < n )
+		{
+			if( a[i] == b[j] )
+			{
+				i++;
+				j++;
+			}
+			else if (a[i] > b[j]) {
+				j++;
+			}
+			else 
+				return false;
+		}
+
+		return true;
+	}
+
+	public static int xunion( int[] a, int m, int[] b, int n, int[] c )
+	{
+		int i = 0, j = 0, k = 0;
+
+		while( i < m && j < n )
+		{
+			if( a[i] < b[j] )
+				c[k++] = a[i++];
+			else if ( a[i] == b[j] ) 
+			{
+				i++; j++; 	
+			}
+			else
+				c[k++] = b[j++]; 
+
+		}
+
+		while( i < m )
+			c[k++] = a[i++];
+		while( j < n )
+			c[k++] = b[j++];
+
+		return k;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
