@@ -1061,14 +1061,4 @@ public class Tabell
 
 
 
-
-
-
-
-
-
-
-
-
-
 }
