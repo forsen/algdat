@@ -1,6 +1,5 @@
 package no.forsen.hjelpeklasser;
 
-
 import java.util.*; 
 import java.lang.StringBuilder; 
 
