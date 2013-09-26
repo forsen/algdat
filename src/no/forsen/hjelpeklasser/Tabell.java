@@ -109,7 +109,7 @@ public class Tabell
 		return m; 
 	}
 
-	public static <T extends Comparable<T>> int maks( T[] a ) 
+	public static <T extends Comparable<? super T>> int maks( T[] a ) 
 	{
 		int m = 0;
 		T maksverdi = a[0];
@@ -639,13 +639,13 @@ public class Tabell
 		return true;
 	}
 
-	public static int parter(int[] a, int v, int h, int skilleverdi)
+	public static <T extends Comparable<? super T>> int parter(T[] a, int v, int h, T skilleverdi)
 	{
 		int antall = 0; 
 
-		while( v <= h && a[v] < skilleverdi ) 
+		while( v <= h && a[v].compareTo(skilleverdi) < 0 ) 
 			v++; 
-		while( v <= h && a[h] >= skilleverdi )
+		while( v <= h && a[h].compareTo(skilleverdi) >= 0 )
 			h--; 
 
 		while( true )
@@ -659,17 +659,17 @@ public class Tabell
 			else 
 				return v; 
 
-			while( a[v] < skilleverdi ) 
+			while( a[v].compareTo(skilleverdi) < 0 ) 
 				v++;
 
-			while( a[h] >= skilleverdi ) 
+			while( a[h].compareTo(skilleverdi) >= 0 ) 
 				h--;
 
 		}
 	}
 
 
-	public static int sParter( int[] a, int v, int h, int indeks )
+	public static <T extends Comparable<? super T>> int sParter( T[] a, int v, int h, int indeks )
 	{
 		Tabell.bytt( a, indeks, h );
 
@@ -681,7 +681,7 @@ public class Tabell
 
 	}
 
-	public static void kvikksortering( int[] a, int v, int h )
+	public static <T extends Comparable<? super T>> void kvikksortering( T[] a, int v, int h )
 	{
 		if( v < h )
 		{
@@ -693,12 +693,12 @@ public class Tabell
 		}
 	}
 
-	public static void kvikksortering( int[] a )
+	public static <T extends Comparable<? super T>> void kvikksortering( T[] a )
 	{
 		kvikksortering( a, 0, a.length - 1 );
 	}
 
-	public static int kvikksøk( int[] a, int k )
+	public static int kvikksøk( Integer[] a, int k )
 	{
 		if( k < 0 || k >= a.length )
 			throw new IllegalArgumentException( "k(" + k + ") er ulovlig!" );
@@ -717,7 +717,7 @@ public class Tabell
 	}
 	
 
-	public static double median( int[] a )
+	public static double median( Integer[] a )
 	{
 		int n = a.length; 
 
@@ -911,22 +911,22 @@ public class Tabell
 		}
 	}
 */
-	public static void innsettingssortering( int[] a, int fra, int til )
+	public static <T extends Comparable<? super T>> void innsettingssortering( T[] a, int fra, int til )
 	{
 		fratilKontroll( a.length, fra, til );
 
 		for( int i = fra + 1; i < til; i++ )
 		{
-			int temp = a[i]; 
+			T temp = a[i]; 
 			int j = i - 1; 
-			for( ; j >= fra && temp < a[j]; j-- )
+			for( ; j >= fra && temp.compareTo(a[j]) < 0; j-- )
 				a[j + 1] = a[j];
 
 			a[j + 1] = temp; 
 		}
 	}
 
-	public static void innsettingssortering( int[] a )
+	public static <T extends Comparable<? super T>> void innsettingssortering( T[] a )
 	{
 		innsettingssortering( a, 0, a.length );
 	}
