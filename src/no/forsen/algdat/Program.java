@@ -11,21 +11,22 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		Liste<Integer> liste = new TabellListe<>();
+		Integer[] a = {6,2,10,9,5,1,8,4,3,7};
+		//Comparator<String> c = new Komparator.<String>naturlig();
+		//Tabell.innsettingssortering( a, c );
+		//Tabell.skriv(a); 
+/*		Student[] s = new Student[5]; 
 
-		for( int i = 1; i <= 10; i++ )
-			liste.leggInn( i ); 
+		s[0] = new Student("Kari", "Svendsen", "2AA");
+		s[1] = new Student("Boris", "Zukanovic", "2IA");
+		s[2] = new Student("Ali", "Kahn", "2IA");
+		s[3] = new Student("Azra", "Zukanovic", "1AB");
+		s[4] = new Student("Kari", "Pettersen", "3AA");
 
-		System.out.println(liste);
+		Arrays.sort( s, new FornavnKomparator() );
 
-		Iterator<Integer> i = liste.iterator();
-		Iterator<Integer> j = liste.iterator(); 
-
-
-		System.out.println(i.next());
-		i.remove();
-
-		System.out.println(j.next());
+		for( Student t : s )
+			System.out.println( t );*/
 	}
 
 /*	public static void HanoisTårn( char a, char b, char c, int n) 

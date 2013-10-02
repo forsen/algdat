@@ -894,7 +894,7 @@ public class Tabell
 	}
 */
 
-/*
+
 	public static <T> void innsettingssortering(T[] a, Comparator<? super T> c )
 	{
 		for (int i = 1; i < a.length; i++)
@@ -910,7 +910,7 @@ public class Tabell
 			a[j+1] = temp;
 		}
 	}
-*/
+
 	public static <T extends Comparable<? super T>> void innsettingssortering( T[] a, int fra, int til )
 	{
 		fratilKontroll( a.length, fra, til );
