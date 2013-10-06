@@ -191,12 +191,74 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public T fjern(int indeks)
 	{
-		return null;  // foreløpig kode 
+		indeksKontroll( indeks ); 
+		T returverdi; 
+
+		if( indeks == 0 )
+		{
+			returverdi = hode.verdi; 
+			hode = hode.neste; 
+			if( hode != null )
+				hode.forrige = null;
+		}
+		else if( indeks == antall - 1 )
+		{
+			returverdi = hale.verdi; 
+			hale = hale.forrige; 
+			hale.neste = null; 
+		}
+		else
+		{
+			Node<T> p = hode; 
+
+			for( int i = 0; i < indeks - 1; i++ ) 
+				p = p.neste; 	
+			
+			returverdi = p.neste.verdi; 
+
+			p.neste = p.neste.neste; 
+			p.neste.forrige = p; 
+		}
+
+		antallEndringer++;
+		antall--;
+
+		return returverdi;
+
+
 	}
 
 	public boolean fjern(T verdi)
 	{
-		return false;  // foreløpig kode
+		if( verdi == null || tom() )
+			return false; 
+
+		Node<T> p = hode; 
+
+		for( int i = 0; i < antall; i++ ) 
+		{
+			if( p.verdi == verdi )
+			{
+				if( i == 0 || i == antall - 1 )
+					fjern( i );
+				else
+				{
+					p = p.forrige; 
+
+					p.neste = p.neste.neste;
+					p.neste.forrige = p;  
+				}
+
+				antall--;
+				antallEndringer++;
+
+				return true;
+			}
+
+			p = p.neste; 
+		}
+
+		return false; 
 	}
 
 	private class DobbeltLenketListeIterator implements Iterator<T>
