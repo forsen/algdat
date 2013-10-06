@@ -90,7 +90,42 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public void leggInn(int indeks, T verdi)
 	{
-		// foreløpig kode
+/*	
+		Vurderte koden under, men selv om det gir unntak i riktige tilfeller, blir feilmeldingen litt misvisende
+		if( indeks != 0 )	
+			indeksKontroll( indeks - 1 ); 
+*/
+		if (indeks < 0 )
+			throw new IndexOutOfBoundsException("Indeks " + indeks + " er negativ!");
+		else if (indeks > antall)
+			throw new IndexOutOfBoundsException("Indeks " + indeks + " > antall(" + antall + ") noder!");		
+	
+		nullSjekk( verdi ); 
+
+		if( tom() )
+			hode = hale = new Node<T>( verdi, null, null );
+		else if( indeks == 0 )
+		{
+			Node<T> p = new Node<T>( verdi, null, hode );
+			hode = hode.forrige = p; 
+		}
+
+		else if( indeks == antall )
+		{
+			Node<T> p = new Node<T>( verdi, hale, null );
+			hale = hale.neste = p; 
+		}
+		else
+		{
+			Node<T> settEtter = finnNode( indeks - 1 ); 
+			Node<T> settFør = settEtter.neste; 
+			settEtter.neste = settFør.forrige = new Node<T>( verdi, settEtter, settFør ); 
+		}
+
+		antall++;
+		antallEndringer++; 
+
+		
 	}
 
 	public boolean leggInn(T verdi)
