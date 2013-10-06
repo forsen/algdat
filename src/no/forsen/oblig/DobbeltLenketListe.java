@@ -53,12 +53,12 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public boolean tom()
 	{
-		return false;  // foreløpig kode
+		return antall == 0;
 	}
 
 	public int antall()
 	{
-		return 0;  // foreløpig kode 
+		return antall;
 	}
 
 	public void nullstill()
