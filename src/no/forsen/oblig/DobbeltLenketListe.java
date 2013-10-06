@@ -164,12 +164,53 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public String toString()
 	{
-		return null;  // foreløpig kode
+		if( tom() )
+			return "[]";
+
+		StringBuilder utskrift = new StringBuilder();
+
+		utskrift.append( '[' );
+		
+		Node<T> p = hode; 
+
+		utskrift.append( p.verdi ); 
+
+		p = p.neste; 
+
+		while( p != null )
+		{
+			utskrift.append( ", " ).append( p.verdi );
+			p = p.neste; 
+		} 
+
+		utskrift.append( ']' );
+		return utskrift.toString();
 	}
 
 	public String omvendtString()
 	{
-		return null;  // foreløpig kode
+		if( tom() )
+			return "[]";
+
+		StringBuilder utskrift = new StringBuilder(); 
+
+		utskrift.append( '[' );
+
+		Node<T> p = hale; 
+
+		utskrift.append( p.verdi ); 
+
+		p = p.forrige; 
+
+		while( p != null )
+		{
+			utskrift.append( ", " ).append( p.verdi );
+			p = p.forrige;
+		}
+
+		utskrift.append( ']' );
+		return utskrift.toString();
+
 	}
 
 } // class DobbeltLenketListe
