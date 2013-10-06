@@ -281,14 +281,33 @@ public class DobbeltLenketListe<T> implements Liste<T>
 			forventetAntallEndringer = antallEndringer;  // teller endringer
 		}
 
+		private DobbeltLenketListeIterator( int indeks )
+		{
+			p = finnNode( indeks ); 
+			fjernOK = false; 
+			forventetAntallEndringer = antallEndringer; 
+		}
+
 		public boolean hasNext()
 		{
-			return false;  // foreløpig kode 
+			return p != null;
 		}
 
 		public T next()
 		{
-			return null;  // foreløpig kode
+			if( antallEndringer != forventetAntallEndringer )
+				throw new ConcurrentModificationException();
+
+			if( !hasNext() )
+				throw new NoSuchElementException("Ikke flere elementer igjen i listen"); 
+
+			fjernOK = true; 
+
+			T verdi = p.verdi; 
+
+			p = p.neste; 
+
+			return verdi; 
 		}
 
 		public void remove()
@@ -305,7 +324,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public Iterator<T> iterator(int indeks)
 	{
-		return null; // foreløpig kode
+		return new DobbeltLenketListeIterator( indeks ); 
 	}
 
 	public String toString()
