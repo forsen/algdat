@@ -35,7 +35,8 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	private static <T> void nullSjekk(T verdi)
 	{
-	
+		if( verdi == null )
+			throw new NullPointerException( "Objektet eksisterer ikke" );
 	}
 
 	private Node<T> finnNode(int indeks)
