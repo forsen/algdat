@@ -312,7 +312,43 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 		public void remove()
 		{
-			// foreløpig kode
+			if( !fjernOK )
+				throw new IllegalStateException(); 
+			if( antallEndringer != forventetAntallEndringer )
+				throw new ConcurrentModificationException(); 
+
+			fjernOK = false; 
+
+			if( antall == 1 )
+				nullstill();  
+			
+			else if( p == null )
+			{
+				hale = hale.forrige; 
+				hale.neste = null; 
+			}
+
+			else if( p.forrige == hode )
+			{
+				hode = hode.neste; 
+				hode.forrige = null; 
+			}
+
+			else
+			{
+				p = p.forrige.forrige; 
+				p.neste = p.neste.neste; 
+				p.neste.forrige = p; 
+			}
+
+			// har med denne if-testen i tilfelle nullstill-metoden blir kalt, slik at vi ikke ender med antall = -1.
+			if( antall != 0 )
+				antall--; 
+
+			antallEndringer++;
+			forventetAntallEndringer++; 
+
+
 		}
 
 	} // class DobbeltLenketListeIterator  
