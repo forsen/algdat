@@ -80,7 +80,14 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public void nullstill()
 	{
-		// foreløpig kode
+		if( !tom() )
+		{
+			hode.neste = null; 
+			hale.forrige = null; 
+			hode = hale = null; 
+			antall = 0; 
+			antallEndringer++;
+		}
 	}
 
 	public boolean inneholder(T verdi)
