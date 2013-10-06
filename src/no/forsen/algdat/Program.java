@@ -11,7 +11,22 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		Integer[] a = {6,2,10,9,5,1,8,4,3,7};
+		Liste<String> liste = new EnkeltLenketListe<>();
+		liste.leggInn("Per");
+		liste.leggInn("Kari");
+		liste.leggInn("Ole");
+		liste.leggInn("Åse");
+		liste.leggInn("Jens");
+
+		
+
+		System.out.println( liste );
+
+		for( String s : liste )
+			System.out.print( s + " " );
+		
+
+		// System.out.println( liste.hent(2) );
 		//Comparator<String> c = new Komparator.<String>naturlig();
 		//Tabell.innsettingssortering( a, c );
 		//Tabell.skriv(a); 
