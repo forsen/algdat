@@ -78,7 +78,23 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public boolean leggInn(T verdi)
 	{
-		return false;  // foreløpig kode
+		nullSjekk( verdi ); 
+
+		if( tom() )
+		{
+			Node<T> p = new Node<T>( verdi, null, null );
+			hode = hale = p; 
+		}
+		else
+		{
+			Node<T> p = new Node<T>( verdi, hale, null );
+			hale = hale.neste = p; 
+		}
+
+		antall++; 
+		antallEndringer++; 
+
+		return true; 
 	}
 
 	public T hent(int indeks)
