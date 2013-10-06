@@ -40,8 +40,25 @@ public class DobbeltLenketListe<T> implements Liste<T>
 	}
 
 	private Node<T> finnNode(int indeks)
-	{
-		return null;  // foreløpig kode 
+	{ 
+		Node<T> p;
+
+		if( indeks < antall/2 )
+		{
+			p = hode; 
+
+			for( int i = 0; i < indeks; i++ )
+				p = p.neste; 	
+		}
+		else
+		{
+			p = hale; 
+
+			for( int i = antall - 1; i > indeks; i-- ) 
+				p = p.forrige; 
+		}
+
+		return p; 
 	}
 
 	public DobbeltLenketListe()  // konstruktør
@@ -99,7 +116,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public T hent(int indeks)
 	{
-		return null;  // foreløpig kode
+		indeksKontroll( indeks ); 
+
+		return finnNode( indeks ).verdi;
 	}
 
 	public int indeksTil(T verdi)
@@ -109,7 +128,17 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public T oppdater(int indeks, T nyverdi)
 	{
-		return null;  // foreløpig kode 
+		nullSjekk( nyverdi );
+		indeksKontroll( indeks );
+
+		Node<T> p = finnNode( indeks ); 
+		T gammelverdi = p.verdi; 
+		p.verdi = nyverdi; 
+
+		antallEndringer++; 
+
+		return gammelverdi; 
+
 	}
 
 	public T fjern(int indeks)
