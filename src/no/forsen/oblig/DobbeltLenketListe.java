@@ -85,7 +85,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public boolean inneholder(T verdi)
 	{
-		return false;  // foreløpig kode
+		return indeksTil( verdi ) != -1; 
 	}
 
 	public void leggInn(int indeks, T verdi)
@@ -123,7 +123,20 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public int indeksTil(T verdi)
 	{
-		return -1;  // foreløpig kode
+		if( verdi == null )
+			return -1; 
+
+		Node<T> p = hode;
+		
+		for( int i = 0; i < antall; i++ ) 
+		{
+			if( p.verdi == verdi )
+				return i;	
+
+			p = p.neste;
+		}
+
+		return -1; 
 	}
 
 	public T oppdater(int indeks, T nyverdi)
