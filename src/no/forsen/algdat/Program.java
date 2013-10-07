@@ -4,6 +4,7 @@ import java.util.*;
 import java.net.*;
 import java.io.*;
 import no.forsen.hjelpeklasser.*;
+import no.forsen.oblig.*;
 import javax.swing.JOptionPane;
 
 
@@ -11,20 +12,16 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		Liste<String> liste = new EnkeltLenketListe<>();
-		liste.leggInn("Per");
-		liste.leggInn("Kari");
-		liste.leggInn("Ole");
-		liste.leggInn("Åse");
-		liste.leggInn("Jens");
-
+		int[] a = {4,1,8,6,3,7,9,10,5,2};
+		Liste<Integer> liste = new EnkeltLenketListe<>(); 
+		for( int k : a ) 
+			liste.leggInn(k);
 		
-
 		System.out.println( liste );
 
-		for( String s : liste )
-			System.out.print( s + " " );
-		
+		int m = DobbeltLenketListe.maks( liste, Komparator.<Integer>naturlig() );
+		System.out.println( m );
+
 
 		// System.out.println( liste.hent(2) );
 		//Comparator<String> c = new Komparator.<String>naturlig();
