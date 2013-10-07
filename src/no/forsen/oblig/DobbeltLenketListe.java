@@ -363,6 +363,33 @@ public class DobbeltLenketListe<T> implements Liste<T>
 		return new DobbeltLenketListeIterator( indeks ); 
 	}
 
+	public static <T> int maks( Liste<T> liste, Comparator<? super T> c ) 
+	{
+		Iterator<T> i = liste.iterator(); 
+
+		if( !i.hasNext() )
+			throw new NoSuchElementException( "Listen er tom" );
+
+		int indeks = 0;
+		int maksIndeks = 0; 
+
+		T maksverdi = i.next(); 
+
+		while( i.hasNext() )
+		{
+			T verdi = i.next(); 
+			if( c.compare( verdi, maksverdi ) > 0 )
+			{
+				maksverdi = verdi; 
+				maksIndeks = indeks; 
+			}
+
+			indeks++; 
+		}
+
+		return maksIndeks; 
+	}
+
 	public String toString()
 	{
 		if( tom() )
