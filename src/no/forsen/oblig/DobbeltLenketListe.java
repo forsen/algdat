@@ -1,5 +1,11 @@
 package no.forsen.oblig; 
 
+/*
+		Erik Haider Forsén
+		s188086
+		2AA
+*/
+
 import java.util.*;
 import no.forsen.hjelpeklasser.*;
 
