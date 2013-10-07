@@ -4,6 +4,7 @@ import java.util.*;
 import java.net.*;
 import java.io.*;
 import no.forsen.hjelpeklasser.*;
+import no.forsen.oblig.DobbeltLenketListe;
 import javax.swing.JOptionPane;
 
 
@@ -11,7 +12,26 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		Liste<String> liste = new EnkeltLenketListe<>();
+
+		DobbeltLenketListe liste = new DobbeltLenketListe();
+
+		liste.leggInn( "1" );
+		liste.leggInn( "2" );
+		liste.leggInn( "3" );
+		liste.leggInn( "4" );
+		liste.leggInn( "5" );
+		liste.leggInn( "6" );
+
+		liste.nullstill();
+
+		System.out.println( liste );
+		System.out.println( liste.omvendtString() );
+		System.out.println( liste.antall() );
+		System.out.println( liste.tom() );
+
+
+
+/*		Liste<String> liste = new EnkeltLenketListe<>();
 		liste.leggInn("Per");
 		liste.leggInn("Kari");
 		liste.leggInn("Ole");
@@ -25,7 +45,7 @@ public class Program
 		for( String s : liste )
 			System.out.print( s + " " );
 		
-
+*/
 		// System.out.println( liste.hent(2) );
 		//Comparator<String> c = new Komparator.<String>naturlig();
 		//Tabell.innsettingssortering( a, c );
