@@ -378,13 +378,13 @@ public class DobbeltLenketListe<T> implements Liste<T>
 		while( i.hasNext() )
 		{
 			T verdi = i.next(); 
+			indeks++;
 			if( c.compare( verdi, maksverdi ) > 0 )
 			{
 				maksverdi = verdi; 
 				maksIndeks = indeks; 
 			}
 
-			indeks++; 
 		}
 
 		return maksIndeks; 
