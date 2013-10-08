@@ -35,7 +35,7 @@ public class TabellStakk<T> implements Stakk<T>
 	{
 		if( antall == a.length ) 
 		{
-			a = Arrays.copyOf( a, 2*antall );
+			a = Arrays.copyOf( a, antall == 0 ? 1 : 2*antall );
 		}
 		a[antall++] = verdi; 
 	}
@@ -64,6 +64,24 @@ public class TabellStakk<T> implements Stakk<T>
 		
 	}
 
+	public String toString()
+	{
+		StringBuilder s = new StringBuilder();
+		s.append('[');
 
+		if( !tom() ) 
+		{
+			s.append( a[antall - 1] );
+			for( int i = antall - 2; i >= 0; i-- ) 
+			{
+				s.append(',').append( ' ' ).append(a[i]);
+			}
+
+		}
+		s.append(']');
+		return s.toString(); 
+
+		
+	}
 
 }
