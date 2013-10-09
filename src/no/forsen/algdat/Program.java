@@ -13,22 +13,19 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		System.out.println( a(10) );
+		System.out.println( tverrsum(72416) );
 	}
 
-	public static int a( int n )
+	public static int tverrsum( int n )
 	{
-		int an = 0; 
-		int an1 = 2;
-		int an2 = 1; 
-
-		for( int i = 1; i < n; i++ )
+		int tverrsum = 0; 
+		while( n > 0 )
 		{
-			an = 2*an1 + 3*an2; 
-			an2 = an1; 
-			an1 = an; 
+			tverrsum += n%10;
+			n = n/10;
 		}
 
-		return an; 
+		return tverrsum;
 	}
+	
 }
