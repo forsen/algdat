@@ -13,7 +13,7 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		System.out.println( tverrsum(72416) );
+		System.out.println( siffersum(956847) );
 	}
 
 	public static int tverrsum( int n )
@@ -27,5 +27,12 @@ public class Program
 
 		return tverrsum;
 	}
-	
+
+	public static int siffersum( int n )
+	{
+		while( n > 9 )
+			n = tverrsum( n );
+
+		return n;
+	}
 }
