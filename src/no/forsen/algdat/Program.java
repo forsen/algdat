@@ -11,44 +11,24 @@ import no.forsen.oblig.*;
 
 public class Program
 {
-	public static <T> void snu( Stakk<T> a )
-	{
-		if( a.antall() < 2 ) 
-		{
-			return; 
-		}
-
-		Stakk<T> b = new TabellStakk<>(); 
-
-		int n = a.antall() - 1; 
-
-		while( n > 0 )
-		{
-			T temp = a.taUt(); 
-			for( int i = 0; i < n; i++ ) 
-				b.leggInn( a.taUt() ); 
-			
-			a.leggInn( temp );
-			while( !b.tom() )
-				a.leggInn( b.taUt() );
-			n--;
-		}
-	}
 	public static void main( String[] args )
 	{
-		Stakk<String> a = new TabellStakk<>(0);
+		System.out.println( a(10) );
+	}
 
-		a.leggInn( "Per" );
-		a.leggInn( "Kari" );
-		a.leggInn( "Ole" );
-		a.leggInn( "Aase" );
+	public static int a( int n )
+	{
+		int an = 0; 
+		int an1 = 2;
+		int an2 = 1; 
 
-		System.out.println( a );
+		for( int i = 1; i < n; i++ )
+		{
+			an = 2*an1 + 3*an2; 
+			an2 = an1; 
+			an1 = an; 
+		}
 
-		snu( a );
-
-		System.out.println( a );
-
-
+		return an; 
 	}
 }
