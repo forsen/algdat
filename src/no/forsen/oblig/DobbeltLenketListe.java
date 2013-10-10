@@ -178,7 +178,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 		
 		for( int i = 0; i < antall; i++ ) 
 		{
-			if( p.verdi == verdi )
+			if( p.verdi.equals( verdi ))
 				return i;	
 
 			p = p.neste;
@@ -248,10 +248,12 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 		Node<T> p = hode; 
 
+
 		for( int i = 0; i < antall; i++ ) 
 		{
-			if( p.verdi == verdi )
+			if( p.verdi.equals( verdi ) )
 			{
+				
 				if( i == 0 || i == antall - 1 )
 					fjern( i );
 				else
@@ -260,10 +262,13 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 					p.neste = p.neste.neste;
 					p.neste.forrige = p;  
+ 
+ 					antall--;
+					antallEndringer++;
+
 				}
 
-				antall--;
-				antallEndringer++;
+
 
 				return true;
 			}
@@ -366,6 +371,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
 	public Iterator<T> iterator(int indeks)
 	{
+		indeksKontroll( indeks );
 		return new DobbeltLenketListeIterator( indeks ); 
 	}
 
