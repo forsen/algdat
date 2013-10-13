@@ -1,5 +1,7 @@
 package no.forsen.hjelpeklasser; 
 
+import java.util.*;
+
 public class LenketStakk<T> implements Stakk<T>
 {
 	private static final class Node<T>
@@ -47,6 +49,16 @@ public class LenketStakk<T> implements Stakk<T>
 		return temp; 
 	}
 
+	public boolean tom()
+	{
+		return antall == 0; 
+	}
+
+	public int antall()
+	{
+		return antall;
+	}
+
 	public void nullstill()
 	{
 
@@ -65,6 +77,6 @@ public class LenketStakk<T> implements Stakk<T>
 
 		}
 		s.append(']');
-		return s;
+		return s.toString();
 	}
 }
