@@ -13,14 +13,14 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		System.out.println( kvadratsum(5) );
+		System.out.println( sum(5,10) );
 	}
 
-	public static int kvadratsum( int n )
+	public static int sum( int k, int n )
 	{
-		if( n == 1 )
-			return 1; 
-		int sum = n*n; 
-		return kvadratsum(n - 1) + sum; 
+		if( k == n )
+			return n; 
+		int m = (k + n)/2;
+		return sum( m+1, n) + sum(k, m);
 	}
 }
