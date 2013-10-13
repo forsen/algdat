@@ -13,14 +13,17 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		System.out.println( fakultet(5) );
+		System.out.println( "main() utføres!" );
+		int sum = tverrsum(72958);
+		System.out.println( "main() er ferdig!" );
 	}
 
-	public static int fakultet( int n )
+	public static int tverrsum( int n )
 	{
-		if( n == 1 )
-			return 1; 
-
-		return fakultet( n - 1 ) * n; 
+		System.out.println( "tverrsum(" + n + ") utføres!" );
+		int sum = (n < 10) ? n : tverrsum( n / 10 ) + ( n % 10 );
+		System.out.println( "tverrsum(" + n + ") er ferdig!" );
+		return sum; 
 	}
+
 }
