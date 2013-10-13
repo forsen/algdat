@@ -13,26 +13,14 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		System.out.println( siffersum(956847) );
+		System.out.println( kvadratsum(5) );
 	}
 
-	public static int tverrsum( int n )
+	public static int kvadratsum( int n )
 	{
-		int tverrsum = 0; 
-		while( n > 0 )
-		{
-			tverrsum += n%10;
-			n = n/10;
-		}
-
-		return tverrsum;
-	}
-
-	public static int siffersum( int n )
-	{
-		while( n > 9 )
-			n = tverrsum( n );
-
-		return n;
+		if( n == 1 )
+			return 1; 
+		int sum = n*n; 
+		return kvadratsum(n - 1) + sum; 
 	}
 }
