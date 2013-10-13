@@ -13,14 +13,14 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		System.out.println( sum(5,10) );
+		System.out.println( fakultet(5) );
 	}
 
-	public static int sum( int k, int n )
+	public static int fakultet( int n )
 	{
-		if( k == n )
-			return n; 
-		int m = (k + n)/2;
-		return sum( m+1, n) + sum(k, m);
+		if( n == 1 )
+			return 1; 
+
+		return fakultet( n - 1 ) * n; 
 	}
 }
