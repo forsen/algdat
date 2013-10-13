@@ -115,7 +115,15 @@ public class TabellListe<T> implements Liste<T>
 	}
 	public boolean fjern( T t )
 	{
-		return false; 
+		for( int i = 0; i < antall; i++ )
+		{
+			if( a[i].equals( t ))
+			{
+				fjern(i); 
+				return true;
+			}
+		}
+		return false;
 	}
 	public void nullstill()
 	{
