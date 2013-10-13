@@ -127,6 +127,11 @@ public class TabellListe<T> implements Liste<T>
 	}
 	public void nullstill()
 	{
+		if( a.length > 10 )
+			a = (T[])new Object[10];
+		else
+			for( int i = 0; i < antall; i++)
+				a[i] = null; 
 		antall = 0; 
 		antallEndringer++;
 	}
