@@ -196,7 +196,10 @@ public class EnkeltLenketListe<T> implements Liste<T>
 				q = p.neste;
 				p.neste = q.neste; 
 				antall--; 
-				antallEndringer++;  
+				antallEndringer++;
+				if( q == hale )  
+					hale = p; 
+				
 				return true; 
 			}
 
