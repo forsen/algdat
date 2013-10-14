@@ -191,6 +191,17 @@ public class EnkeltLenketListe<T> implements Liste<T>
 	}
 	public int indeksTil( T t )
 	{
+		nullTest( t );
+
+		Node<T> p = hode; 
+
+		for( int i = 0; i < antall; i++ ) 
+		{
+			if( p.verdi.equals( t ) )
+				return i; 
+			p = p.neste; 
+		}
+
 		return -1; 
 	}
 	public T hent( int indeks )
@@ -200,7 +211,7 @@ public class EnkeltLenketListe<T> implements Liste<T>
 	}
 	public boolean inneholder( T t )
 	{
-		return false;
+		return indeksTil( t ) != -1; 
 	}
 
 	public String toString()
