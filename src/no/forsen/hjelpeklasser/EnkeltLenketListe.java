@@ -175,7 +175,35 @@ public class EnkeltLenketListe<T> implements Liste<T>
 	}
 	public boolean fjern( T t )
 	{
-		return false;
+		nullTest( t ); 
+
+		if( hode.verdi.equals( t ) )
+		{
+			hode = hode.neste; 
+			antall--; 
+			antallEndringer++;
+			return true; 
+		}
+
+		Node<T> q; 
+		Node<T> p = hode; 
+
+
+		for( int i = 0; i < antall; i++ ) 
+		{
+			if( p.neste.verdi.equals( t ) )
+			{
+				q = p.neste;
+				p.neste = q.neste; 
+				antall--; 
+				antallEndringer++;  
+				return true; 
+			}
+
+			p = p.neste; 
+		}
+
+		return false; 
 	}
 
 	public T oppdater( int indeks, T t )
