@@ -29,6 +29,13 @@ public class EnkeltLenketListe<T> implements Liste<T>
 		antall = 0;
 	}
 
+	public EnkeltLenketListe( Iterable<T> itererbar )
+	{
+		this(); 
+		for( T t : itererbar )
+			leggInn( t );
+	}
+
 	private static <T> void nullTest( T t )
 	{
 		if( t == null )
