@@ -63,7 +63,6 @@ public class TabellStakk<T> implements Stakk<T>
 	{
 		while( antall != 0 )
 			a[antall--] = null; 
-	
 	}
 
 	public String toString()

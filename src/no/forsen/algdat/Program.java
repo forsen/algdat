@@ -13,25 +13,35 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		EnkeltLenketListe<String> liste = new EnkeltLenketListe<>(); 
+		Stakk<Integer> a = new TabellStakk<>(4);
 
-		System.out.println( liste.tom() );
+		a.leggInn( 4 );
+		a.leggInn( 3 );
+		a.leggInn( 2 );
+		a.leggInn( 1 );
 
-		liste.leggInn("Erik");
-		liste.leggInn("Lars");
-		liste.leggInn("Per");
+		System.out.println( a );
 
-		System.out.println( liste.tom() );
+		snu( a );
 
-		liste.leggInn( 3, "Lisa");
-
-		System.out.println( liste.antall() );
-
-		System.out.println( liste );
-
-		System.out.println( liste.inneholder( "Lis" )  );
-
-		System.out.println( liste );
+		System.out.println( a );
 	}
+
+	public static <T> void snu( Stakk<T> a )
+	{
+		int størrelse = a.antall(); 
+		Stakk<T> b = new TabellStakk<T>( størrelse );
+		Stakk<T> c = new TabellStakk<T>( størrelse );
+
+		for( int i = 0; i < størrelse; i++ )
+			b.leggInn( a.taUt() );
+	
+		for( int i = 0; i < størrelse; i++ ) 
+			c.leggInn( b.taUt() );
+		
+		for( int i = 0; i < størrelse; i++ )
+			a.leggInn( c.taUt() );
+	}
+
 
 }
