@@ -213,6 +213,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
 			hode = hode.neste; 
 			if( hode != null )
 				hode.forrige = null;
+			else
+				hale = null; 
+
 		}
 		else if( indeks == antall - 1 )
 		{
