@@ -61,7 +61,9 @@ public class TabellStakk<T> implements Stakk<T>
 
 	public void nullstill() 
 	{
-		
+		while( antall != 0 )
+			a[antall--] = null; 
+	
 	}
 
 	public String toString()
