@@ -13,17 +13,25 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		System.out.println( "main() utføres!" );
-		int sum = tverrsum(72958);
-		System.out.println( "main() er ferdig!" );
-	}
+		EnkeltLenketListe<String> liste = new EnkeltLenketListe<>(); 
 
-	public static int tverrsum( int n )
-	{
-		System.out.println( "tverrsum(" + n + ") utføres!" );
-		int sum = (n < 10) ? n : tverrsum( n / 10 ) + ( n % 10 );
-		System.out.println( "tverrsum(" + n + ") er ferdig!" );
-		return sum; 
+		System.out.println( liste.tom() );
+
+		liste.leggInn("Erik");
+		liste.leggInn("Lars");
+		liste.leggInn("Per");
+
+		System.out.println( liste.tom() );
+
+		liste.leggInn( 3, "Lisa");
+
+		System.out.println( liste.antall() );
+
+		System.out.println( liste );
+
+		System.out.println( liste.inneholder( "Lis" )  );
+
+		System.out.println( liste );
 	}
 
 }

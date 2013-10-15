@@ -29,6 +29,13 @@ public class EnkeltLenketListe<T> implements Liste<T>
 		antall = 0;
 	}
 
+	public EnkeltLenketListe( Iterable<T> itererbar )
+	{
+		this(); 
+		for( T t : itererbar )
+			leggInn( t );
+	}
+
 	private static <T> void nullTest( T t )
 	{
 		if( t == null )
@@ -168,7 +175,38 @@ public class EnkeltLenketListe<T> implements Liste<T>
 	}
 	public boolean fjern( T t )
 	{
-		return false;
+		nullTest( t ); 
+
+		if( hode.verdi.equals( t ) )
+		{
+			hode = hode.neste; 
+			antall--; 
+			antallEndringer++;
+			return true; 
+		}
+
+		Node<T> q; 
+		Node<T> p = hode; 
+
+
+		for( int i = 0; i < antall; i++ ) 
+		{
+			if( p.neste.verdi.equals( t ) )
+			{
+				q = p.neste;
+				p.neste = q.neste; 
+				antall--; 
+				antallEndringer++;
+				if( q == hale )  
+					hale = p; 
+				
+				return true; 
+			}
+
+			p = p.neste; 
+		}
+
+		return false; 
 	}
 
 	public T oppdater( int indeks, T t )
@@ -184,6 +222,17 @@ public class EnkeltLenketListe<T> implements Liste<T>
 	}
 	public int indeksTil( T t )
 	{
+		nullTest( t );
+
+		Node<T> p = hode; 
+
+		for( int i = 0; i < antall; i++ ) 
+		{
+			if( p.verdi.equals( t ) )
+				return i; 
+			p = p.neste; 
+		}
+
 		return -1; 
 	}
 	public T hent( int indeks )
@@ -193,7 +242,7 @@ public class EnkeltLenketListe<T> implements Liste<T>
 	}
 	public boolean inneholder( T t )
 	{
-		return false;
+		return indeksTil( t ) != -1; 
 	}
 
 	public String toString()
