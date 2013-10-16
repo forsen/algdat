@@ -3,9 +3,23 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": "src/no/forsen"
+			"path": "src/main/java/no/forsen",
+			"name": "Main"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "src/test/java/no/forsen",
+			"name": "Test"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "../algdat",
+			"folder_exclude_patterns": ["src"],
+			"file_exclude_patterns": [".gitignore"],
+			"name": "Project Files"
 		}
 	],
+
 
 	"settings":
 	{
