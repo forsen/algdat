@@ -2,6 +2,6 @@
 
 .DS_Store
 
-target/classes
+target/
 *.jar
 algdat.sublime-workspace
