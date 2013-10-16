@@ -23,7 +23,7 @@ public class Program
 		System.out.println( a );
 		snu( a );
 
-		System.out.println( a );
+		System.out.println( "hei" );
 	}
 
 	public static <T> void kopier( Stakk<T> a, Stakk<T> b )
