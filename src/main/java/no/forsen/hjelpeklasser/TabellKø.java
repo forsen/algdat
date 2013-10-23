@@ -60,4 +60,25 @@ public class TabellKø<T> implements Kø<T>
 			fra = 0; 
 		return temp;
 	}
+
+	public T kikk()
+	{
+		if( fra == til )
+			throw new NoSuchElementException( "Køen er tom!" );
+
+		return a[fra]; 
+	}
+
+	public boolean tom()
+	{
+		return fra == til;
+	}
+
+	public void nullstill()
+	{
+		for( int i = 0; i < a.length; i++ ) 
+			a[i] = null; 
+
+		fra = til = 0; 
+	}
 }
