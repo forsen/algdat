@@ -46,6 +46,7 @@ public class LenketStakk<T> implements Stakk<T>
 			throw new NoSuchElementException("Stakken er tom!");
 		T temp = hode.verdi; 
 		hode = hode.neste; 
+		antall--; 
 		return temp; 
 	}
 
