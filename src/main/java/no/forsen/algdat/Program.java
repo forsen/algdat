@@ -13,37 +13,22 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		
-		String s = "(((1 + 2) * (3)) - 4 + (5 / 6)";
+		long tid = System.currentTimeMillis();
 
-		System.out.println(sjekkParanteser( s, '(', ')' ));
+		Stakk<Integer> s = new LenketStakk<>();
+		Integer k = 0; 
 
-		/*
-		Stakk<String> a = new TabellStakk<>(4);
-		
-		a.leggInn( "1234" );
-		a.leggInn( "123" );
-		a.leggInn( "12345" );
-		a.leggInn( "12" );
-		a.leggInn( "123456789");
-		a.leggInn( "123456");
-		a.leggInn( "1234567");
-		a.leggInn( "12345678");
+		for( int i = 0; i < 10000000; i++ ) 
+		{
+			s.leggInn( k );
+		}
 
+		while( !s.tom() )
+			s.taUt();
 
-		a.leggInn( "12345" );
-		a.leggInn( "123" );
-		a.leggInn( "1234" );
-		a.leggInn( "12" );
+		tid = System.currentTimeMillis() - tid; 
+		System.out.println( tid );
 
-		Comparator c = new StrenglengdeKomparator(); 
-
-		System.out.println( a );
-		//snu(a);
-		//System.out.println( c.compare("12345","1234") );
-		sorter( a, c );
-		System.out.println( a );
-		*/
 	}
 
 	public static <T> void kopier( Stakk<T> a, Stakk<T> b )
