@@ -13,6 +13,12 @@ public class Program
 {
 	public static void main( String[] args )
 	{
+		
+		String s = "(((1 + 2) * (3)) - 4 + (5 / 6)";
+
+		System.out.println(sjekkParanteser( s, '(', ')' ));
+
+		/*
 		Stakk<String> a = new TabellStakk<>(4);
 		
 		a.leggInn( "1234" );
@@ -24,11 +30,11 @@ public class Program
 		a.leggInn( "1234567");
 		a.leggInn( "12345678");
 
-/*
+
 		a.leggInn( "12345" );
 		a.leggInn( "123" );
 		a.leggInn( "1234" );
-		a.leggInn( "12" );*/
+		a.leggInn( "12" );
 
 		Comparator c = new StrenglengdeKomparator(); 
 
@@ -37,6 +43,7 @@ public class Program
 		//System.out.println( c.compare("12345","1234") );
 		sorter( a, c );
 		System.out.println( a );
+		*/
 	}
 
 	public static <T> void kopier( Stakk<T> a, Stakk<T> b )
@@ -58,6 +65,28 @@ public class Program
 		
 		for( int i = 0; i < størrelse; i++ )
 			b.leggInn( c.taUt() );*/
+	}
+
+	public static boolean sjekkParanteser( String s, char v, char h )
+	{
+		Stakk<Integer> a = new TabellStakk<>(); 
+		try
+		{
+
+			for( int i = 0; i < s.length(); i++ )
+			{
+				if( s.charAt(i) == v )
+					a.leggInn(1);
+				else if ( s.charAt(i) == h )
+					a.taUt();
+			}
+		}
+		catch( Exception e )
+		{
+			return false;
+		}
+
+		return a.tom();
 	}
 
 	public static <T> void sorter( Stakk<T> a, Comparator<? super T> c )
