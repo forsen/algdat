@@ -81,4 +81,21 @@ public class TabellKø<T> implements Kø<T>
 
 		fra = til = 0; 
 	}
+
+	public String toString()
+	{
+		StringBuilder s = new StringBuilder();
+
+		s.append('['); 
+
+		if( !tom() )
+			s.append( a[fra] ); 
+		for( int i = fra + 1; i < til ; i++ ) 
+		{
+			s.append( ',' ).append( ' ' ).append( a[i] );
+		}
+
+		s.append(']');
+		return s.toString();
+	}
 }
