@@ -61,7 +61,8 @@ public class LenketStakk<T> implements Stakk<T>
 
 	public void nullstill()
 	{
-
+		hode.neste = null; 
+		hode = null; 
 	}
 
 	public String toString()
@@ -72,10 +73,15 @@ public class LenketStakk<T> implements Stakk<T>
 		{
 			s.append( hode.verdi );
 
-			Node<T> p = hode.neste; 
-			// mangler masse kode
+			Node<T> p = hode.neste;
+			while( p != null )
+			{
+				s.append( ',' ).append( ' ' ).append( p.verdi ); 
+				p = p.neste; 
+			} 
 
 		}
+		
 		s.append(']');
 		return s.toString();
 	}
