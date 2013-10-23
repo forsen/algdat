@@ -82,6 +82,19 @@ public class TabellKø<T> implements Kø<T>
 		fra = til = 0; 
 	}
 
+	public int indeksTil( T t )
+	{
+		if( fra == til )
+			throw new NoSuchElementException( "Køen er tom!" );
+		for( int i = fra; i < til; i++ ) 
+		{
+			if( a[i].equals(t) )
+				return i; 
+		}
+
+		return -1; 
+	}
+
 	public String toString()
 	{
 		StringBuilder s = new StringBuilder();
