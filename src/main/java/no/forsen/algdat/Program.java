@@ -13,7 +13,7 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		Ko<Integer> a = new TabellKo<>(5);
+		Ko<Integer> a = new TabellKo<>(100);
 
 		a.leggInn(1);
 		a.leggInn(2);
@@ -41,31 +41,25 @@ public class Program
 	public static <T> void snu( Ko<T> a )
 	{
 		int antall = a.antall(); 
-		Ko<T> b = new TabellKo<>(antall);
-		Ko<T> c = new TabellKo<>(antall); 
-		int j = antall - 1; 
-		while( j >= 0 )
-		{
-			for( int i = 0; i < antall; i++ ) 
-			{
-				if( i == j )
-					c.leggInn( a.kikk() );
-				b.leggInn( a.taUt() );
+		Ko<T> b = new TabellKo<>(100);
 
-			}
-			j--; 
-			for( int i = 0; i < antall; i++ )
+		int j = antall - 1;  
+		T verdi = null; 
+		while( j > 0 )
+		{
+			for(int i = 0; i < j + 1; i++ )
 			{
 				if( i == j )
-					c.leggInn( b.kikk() );
-				a.leggInn( b.taUt() );
+					verdi = a.taUt(); 
+				else
+					b.leggInn(a.taUt());
 			}
+
+			a.leggInn( verdi );
+			for( int i = 0; i < j; i++ )
+				a.leggInn( b.taUt() );
 			j--;
 		}
-	
-		a.nullstill();
-		for( int i = 0; i < antall; i++ )
-			a.leggInn( c.taUt() );	
 
 	}
 
