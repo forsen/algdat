@@ -41,16 +41,31 @@ public class Program
 	public static <T> void snu( Ko<T> a )
 	{
 		int antall = a.antall(); 
-		Stakk<T> b = new TabellStakk<>(antall);
+		Ko<T> b = new TabellKo<>(antall);
+		Ko<T> c = new TabellKo<>(antall); 
+		int j = antall - 1; 
+		while( j >= 0 )
+		{
+			for( int i = 0; i < antall; i++ ) 
+			{
+				if( i == j )
+					c.leggInn( a.kikk() );
+				b.leggInn( a.taUt() );
 
-		for( int i = 0; i < antall; i++ ) 
-			b.leggInn( a.taUt() );
-
-
+			}
+			j--; 
+			for( int i = 0; i < antall; i++ )
+			{
+				if( i == j )
+					c.leggInn( b.kikk() );
+				a.leggInn( b.taUt() );
+			}
+			j--;
+		}
+	
+		a.nullstill();
 		for( int i = 0; i < antall; i++ )
-			a.leggInn( b.taUt() );
-		
-		
+			a.leggInn( c.taUt() );	
 
 	}
 
