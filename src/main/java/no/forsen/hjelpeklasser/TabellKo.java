@@ -112,10 +112,10 @@ public class TabellKo<T> implements Ko<T>
 			indeks = til;
 		else
 			indeks = til+a.length;
-		
+
 		for( int i = fra + 1; i < indeks ; i++ ) 
 		{
-			s.append( ',' ).append( ' ' ).append( a[i] );
+			s.append( ',' ).append( ' ' ).append( i >= a.length?a[i-a.length]:a[i] );
 		}
 
 		s.append(']');
