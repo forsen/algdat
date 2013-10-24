@@ -13,7 +13,7 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		Stakk<Integer> a = new TabellStakk<>(5);
+		Ko<Integer> a = new TabellKo<>(5);
 
 		a.leggInn(1);
 		a.leggInn(2);
@@ -36,6 +36,22 @@ public class Program
 		
 		for( int i = 0; i < antall; i++ )
 			a.leggInn( b.taUt() );
+	}
+
+	public static <T> void snu( Ko<T> a )
+	{
+		int antall = a.antall(); 
+		Stakk<T> b = new TabellStakk<>(antall);
+
+		for( int i = 0; i < antall; i++ ) 
+			b.leggInn( a.taUt() );
+
+
+		for( int i = 0; i < antall; i++ )
+			a.leggInn( b.taUt() );
+		
+		
+
 	}
 
 }
