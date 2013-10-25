@@ -1,6 +1,6 @@
 package no.forsen.hjelpeklasser; 
 
-import java.util.IllegalArgumentException;
+
 
 public class BinTre<T>
 {

@@ -13,40 +13,10 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		int[] a = {3,1,2,5,4,6,8,12,13};
-		System.out.println( girBinærtre( a ) );
-	}
+		int[] a = {1,2,3,5,6,7,10,11,12,13,21,24,25,42,43};
 
-	public static boolean girBinærtre( int[] a )
-	{
-		if( a.length == 0 )
-			return true; 
+		Character[] b = {'D','I','H','L','O','B','A','E','N','G','K','M','J','F','C'};
 
-		Arrays.sort( a );
-
-		if( a[0] != 1 )
-			return false; 
-
-		for( int i = 0; i < a.length - 1; i++ )
-		{
-			if( a[i+1] == a[i] )
-				return false; 
-
-		}
-
-		for( int i = 1; i < a.length; i++ )
-		{
-			int j = i - 1; 
-			int forelder = a[i]/2; 
-
-			for(; j >= 0; j-- )
-				if( forelder == a[j] )
-					break; 
-
-			if( j < 0 )
-				return false; 
-		}
-
-		return true;
+		BinTre<Character> tre = new BinTre<>( a, b ); 
 	}
 }
