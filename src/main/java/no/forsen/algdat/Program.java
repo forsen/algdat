@@ -21,10 +21,7 @@ public class Program
 		for (int i = 0; i < p.length; i++)
 			tre.leggInn(p[i],v.charAt(i));
 
-		Tegnstreng s = new Tegnstreng(); 
-
-		tre.preorden( s ); 
-		System.out.println( s );
+		System.out.println( tre.toPostString() );
 
 	}
 }

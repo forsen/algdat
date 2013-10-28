@@ -235,4 +235,25 @@ public class BinTre<T>
 		if( rot != null )
 			postorden( rot, oppgave );
 	}
+
+	public String toNivåString()
+	{
+		Tegnstreng s = new Tegnstreng();
+		nivåorden( s ); 
+		return s.toString(); 
+	}
+
+	public String toPostString()
+	{
+		Tegnstreng s = new Tegnstreng(); 
+		postorden( s );
+		return s.toString();
+	}
+
+	public String toPreString()
+	{
+		Tegnstreng s = new Tegnstreng(); 
+		preorden( s ); 
+		return s.toString();
+	}
 }
