@@ -25,5 +25,12 @@ public class Program
 		BinTre<Character> tre2 = new BinTre<>( c, d );
 
 		System.out.println( tre2 );
+
+		int[] e = {5,23,2,10,3,11,47,1,22,44};
+		Integer[] f = {4,8,2,5,3,6,10,1,7,9}; 
+		Arrays.sort(e);
+		Arrays.sort(f);
+
+		BinTre<Integer> tre3 = new BinTre<>( e, f );
 	}
 }
