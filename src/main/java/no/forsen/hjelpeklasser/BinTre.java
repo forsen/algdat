@@ -190,4 +190,34 @@ public class BinTre<T>
 				kø.leggInn( p.høyre ); 
 		} 
 	}
+
+	private static <T> void preorden( Node<T> p, Oppgave<? super T> oppgave )
+	{
+		oppgave.utførOppgave( p.verdi );
+		if( p.venstre != null )
+			preorden( p.venstre, oppgave );
+		if( p.høyre != null )
+			preorden( p.høyre, oppgave ); 
+	}
+
+	public void preorden( Oppgave<? super T> oppgave )
+	{
+		if( rot != null )
+			preorden( rot, oppgave ); 
+	}
+
+	private static <T> void inorden( Node<T> p, Oppgave<? super T> oppgave )
+	{
+		if( p.venstre != null )
+			inorden( p.venstre, oppgave );
+		oppgave.utførOppgave( p.verdi ); 
+		if( p.høyre != null )
+			inorden( p.høyre, oppgave ); 
+	}
+
+	public void inorden( Oppgave<? super T> oppgave )
+	{
+		if( rot != null )
+			inorden( rot, oppgave ); 
+	}
 }
