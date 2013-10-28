@@ -38,5 +38,15 @@ public class Program
 		for( int i = 1; i <= 15; i++ )
 			tre4.leggInn( i, i);
 	
+		BinTre<Integer> tre5 = new BinTre<>(); 
+
+		int antall = 0; 
+		int node = 1; 
+		while( antall < 15 )
+		{
+			tre5.leggInn(node, node);
+			node *= 2; 
+			antall++; 
+		}
 	}
 }
