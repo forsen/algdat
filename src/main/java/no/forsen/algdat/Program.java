@@ -16,14 +16,14 @@ public class Program
 		BinTre<Character> tre = new BinTre<>(); 
 		int[] p = {1,2,3,4,5,6,7,10,11,13,14,22,23,28,29};
 		//String v = "EIBGAHKLODNMCJF";    
-		String v = "LINEGOFBHDCAKMJ";
+		String v = "EIOBGDMAHNCKLJF";
 
 		for (int i = 0; i < p.length; i++)
 			tre.leggInn(p[i],v.charAt(i));
 
 		Tegnstreng s = new Tegnstreng(); 
 
-		tre.inorden( s ); 
+		tre.preorden( s ); 
 		System.out.println( s );
 
 	}
