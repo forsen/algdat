@@ -171,4 +171,23 @@ public class BinTre<T>
 		antall--; 
 		return verdi; 
 	}
+
+	public void nivåorden( Oppgave<? super T> oppgave )
+	{
+		if( tom() )
+			return; 
+
+		Ko<Node<T>> kø = new TabellKo<>(); 
+		kø.leggInn( rot ); 
+
+		while( !kø.tom() )
+		{
+			Node<T> p = kø.taUt(); 
+			oppgave.utførOppgave( p.verdi ); 
+			if( p.venstre != null )
+				kø.leggInn( p.venstre );
+			if( p.høyre != null ) 
+				kø.leggInn( p.høyre ); 
+		} 
+	}
 }
