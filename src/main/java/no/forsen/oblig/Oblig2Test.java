@@ -1,8 +1,7 @@
 package no.forsen.oblig;
 
-import no.forsen.hjelpeklasser.*;
 import java.util.*;
-
+import no.forsen.hjelpeklasser.*;
 
 public class Oblig2Test
 {
@@ -520,6 +519,20 @@ public class Oblig2Test
       }
     }
 
+    liste.leggInn("A");
+
+    try
+    {
+      liste.fjern(0);
+      liste.omvendtString();
+    }
+    catch (Exception e)
+    {
+        System.out.println
+          ("Oppgave 7c: Feil når listen har kun en verdi!");
+        antallFeil++;
+    }
+
     String[] s = {"A","B","C","D","E","F","G"};
 
     for (int i = 0; i < s.length; i++)
@@ -531,13 +544,13 @@ public class Oblig2Test
     {
       liste.fjern(7);
       antallFeil++;
-      System.out.println("Oppgave 7c: Indeks 7 finnes ikke!");
+      System.out.println("Oppgave 7d: Indeks 7 finnes ikke!");
     }
     catch (Exception e)
     {
       if (!(e instanceof IndexOutOfBoundsException))
       {
-        System.out.println("Oppgave 7d: Metoden fjern(indeks) kaster feil type unntak!");
+        System.out.println("Oppgave 7e: Metoden fjern(indeks) kaster feil type unntak!");
         antallFeil++;
       }
     }
@@ -546,13 +559,13 @@ public class Oblig2Test
     {
       liste.fjern(-1);
       antallFeil++;
-      System.out.println("Oppgave 7e: Indeks -1 finnes ikke!");
+      System.out.println("Oppgave 7f: Indeks -1 finnes ikke!");
     }
     catch (Exception e)
     {
       if (!(e instanceof IndexOutOfBoundsException))
       {
-        System.out.println("Oppgave 7f: Metoden fjern(indeks) kaster feil type unntak!");
+        System.out.println("Oppgave 7g: Metoden fjern(indeks) kaster feil type unntak!");
         antallFeil++;
       }
     }
@@ -560,7 +573,7 @@ public class Oblig2Test
     if (!liste.fjern(3).equals("D"))
     {
       antallFeil++;
-      System.out.println("Oppgave 7g: Feil returverdi i metoden fjern(indeks)!");
+      System.out.println("Oppgave 7h: Feil returverdi i metoden fjern(indeks)!");
     }
 
     liste.fjern(0);  // fjerner A
@@ -569,55 +582,52 @@ public class Oblig2Test
     if (liste.antall() != 4)
     {
       antallFeil++;
-      System.out.println("Oppgave 7h: Feil i antall-oppdateringen!");
+      System.out.println("Oppgave 7i: Feil i antall-oppdateringen!");
     }
 
     if (!liste.toString().equals("[B, C, E, F]"))
     {
       antallFeil++;
-      System.out.println("Oppgave 7i: Feil i fjern(indeks)-metoden!");
+      System.out.println("Oppgave 7j: Feil i fjern(indeks)-metoden!");
     }
 
     if (!liste.omvendtString().equals("[F, E, C, B]"))
     {
       antallFeil++;
-      System.out.println("Oppgave 7j: Feil i fjern(indeks)-metoden!");
+      System.out.println("Oppgave 7k: Feil i fjern(indeks)-metoden!");
     }
 
     liste.leggInn("H");
     liste.leggInn("I");
-
 
     if (liste.fjern(" ") == true
         || liste.fjern("G") == true
         || liste.fjern("J") == true)
     {
       antallFeil++;
-      System.out.println("Oppgave 7k: Feil returverdi i metoden fjern(T)!");
+      System.out.println("Oppgave 7l: Feil returverdi i metoden fjern(T)!");
     }
-
 
 
     if (liste.fjern("B") != true
         || liste.fjern("F") != true
         || liste.fjern("I") != true)
     {
-
       antallFeil++;
       System.out.println
-        ("Oppgave 7l: Feil returverdi i metoden fjern(T)!");
+        ("Oppgave 7m: Feil returverdi i metoden fjern(T)!");
     }
 
     if (!liste.toString().equals("[C, E, H]"))
     {
       antallFeil++;
-      System.out.println("Oppgave 7m: Feil i metoden fjern(T)!");
+      System.out.println("Oppgave 7n: Feil i metoden fjern(T)!");
     }
 
     if (!liste.omvendtString().equals("[H, E, C]"))
     {
       antallFeil++;
-      System.out.println("Oppgave 7n: Feil i metoden fjern(T)!");
+      System.out.println("Oppgave 7o: Feil i metoden fjern(T)!");
     }
 
     liste.fjern("H");
@@ -627,20 +637,20 @@ public class Oblig2Test
     if (!liste.toString().equals("[]"))
     {
       antallFeil++;
-      System.out.println("Oppgave 7o: Feil i metoden fjern(T)!");
+      System.out.println("Oppgave 7p: Feil i metoden fjern(T)!");
     }
 
     if (!liste.omvendtString().equals("[]"))
     {
       antallFeil++;
-      System.out.println("Oppgave 7p: Feil i metoden fjern(T)!");
+      System.out.println("Oppgave 7q: Feil i metoden fjern(T)!");
     }
 
     if (liste.antall() != 0)
     {
       antallFeil++;
       System.out.println(
-        "Oppgave 7q: Feil i antall-oppdateringen metoden fjern(T)!");
+        "Oppgave 7r: Feil i antall-oppdateringen metoden fjern(T)!");
     }
 
     return antallFeil;
