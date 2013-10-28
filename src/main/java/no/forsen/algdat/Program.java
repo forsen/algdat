@@ -24,8 +24,6 @@ public class Program
 
 		BinTre<Character> tre2 = new BinTre<>( c, d );
 
-		System.out.println( tre2 );
-
 		int[] e = {5,23,2,10,3,11,47,1,22,44};
 		Integer[] f = {4,8,2,5,3,6,10,1,7,9}; 
 		Arrays.sort(e);
@@ -48,5 +46,20 @@ public class Program
 			node *= 2; 
 			antall++; 
 		}
+
+		BinTre<Integer> tre6 = new BinTre<>(); 
+
+		int n = 15; 
+		int k = 1; 
+
+		for( int i = 1; i <= n; i++ )
+		{
+			tre6.leggInn( k, i ); 
+			if( i % 2  == 0 )
+				k = 2*k - 1; 
+			else
+				k++; 
+		}
+
 	}
 }
