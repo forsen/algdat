@@ -13,6 +13,16 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		// D I H L O B A E N G K M J F C 
+		BinTre<Character> tre = new BinTre<>(); 
+		int[] p = {1,2,3,4,5,6,7,10,11,13,14,22,23,28,29};
+		String v = "EIBGAHKLODNMCJF";    
+		for (int i = 0; i < p.length; i++)
+			tre.leggInn(p[i],v.charAt(i));
+
+		Tegnstreng s = new Tegnstreng(); 
+
+		tre.nivåorden( s ); 
+		System.out.println( s );
+
 	}
 }
