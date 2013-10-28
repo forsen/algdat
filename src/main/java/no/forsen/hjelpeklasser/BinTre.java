@@ -125,4 +125,19 @@ public class BinTre<T>
 
 		return p; 
 	}
+
+	public int nodetype( int k ) 
+	{
+		if( k < 1 )
+			throw new IllegalArgumentException( "Må ha k > 0!" );
+
+		Node<T> p = finnNode( k ); 
+
+		if( p == null )
+			return -1; 
+		else if( p.venstre != null || p.høyre != null )
+			return 0; 
+		else 
+			return 1; 
+	}
 }
