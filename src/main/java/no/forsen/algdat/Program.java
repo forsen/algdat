@@ -32,5 +32,11 @@ public class Program
 		Arrays.sort(f);
 
 		BinTre<Integer> tre3 = new BinTre<>( e, f );
+
+		BinTre<Integer> tre4 = new BinTre<>(); 
+
+		for( int i = 1; i <= 15; i++ )
+			tre4.leggInn( i, i);
+	
 	}
 }
