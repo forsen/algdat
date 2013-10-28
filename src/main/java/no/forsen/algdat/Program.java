@@ -13,53 +13,6 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		int[] a = {1,2,3,5,6,7,10,11,12,13,21,24,25,42,43};
-
-		Character[] b = {'D','I','H','L','O','B','A','E','N','G','K','M','J','F','C'};
-
-		BinTre<Character> tre = new BinTre<>( a, b ); 
-
-		int[] c = {1,2,3,4,5,6,7,10,11,13,14,22,23,28,29};
-		Character[] d = {'E','I','B','G','A','H','K','L','O','D','N','M','C','J','F'};
-
-		BinTre<Character> tre2 = new BinTre<>( c, d );
-
-		int[] e = {5,23,2,10,3,11,47,1,22,44};
-		Integer[] f = {4,8,2,5,3,6,10,1,7,9}; 
-		Arrays.sort(e);
-		Arrays.sort(f);
-
-		BinTre<Integer> tre3 = new BinTre<>( e, f );
-
-		BinTre<Integer> tre4 = new BinTre<>(); 
-
-		for( int i = 1; i <= 15; i++ )
-			tre4.leggInn( i, i);
-	
-		BinTre<Integer> tre5 = new BinTre<>(); 
-
-		int antall = 0; 
-		int node = 1; 
-		while( antall < 15 )
-		{
-			tre5.leggInn(node, node);
-			node *= 2; 
-			antall++; 
-		}
-
-		BinTre<Integer> tre6 = new BinTre<>(); 
-
-		int n = 15; 
-		int k = 1; 
-
-		for( int i = 1; i <= n; i++ )
-		{
-			tre6.leggInn( k, i ); 
-			if( i % 2  == 0 )
-				k = 2*k - 1; 
-			else
-				k++; 
-		}
-
+		// D I H L O B A E N G K M J F C 
 	}
 }
