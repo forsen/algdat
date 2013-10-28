@@ -140,4 +140,35 @@ public class BinTre<T>
 		else 
 			return 1; 
 	}
+
+	public T fjern( int k ) 
+	{
+		if( k < 1 )
+			throw new IllegalArgumentException( "Må ha k > 0!" );
+
+		Node<T> p = finnNode( k );
+		if( p == null )
+			throw new IllegalArgumentException( "Posisjon k(" + k + ") er ukjent!" );
+		else if( p.venstre != null || p.høyre != null )
+			throw new IllegalArgumentException( "Posisjon k(" + k + ") er ikke en bladnode. Kan ikke fjernes!" ); 
+
+		T verdi = p.verdi; 
+		
+		if( k == 1 )
+		{
+			rot = null; 
+			antall = 0;
+			return verdi; 
+		}
+
+		Node<T> q = finnNode( k/2 );
+
+		if( k % 2 == 0 )
+			q.venstre = null; 
+		else 
+			q.høyre = null; 
+		p = null; 
+		antall--; 
+		return verdi; 
+	}
 }
