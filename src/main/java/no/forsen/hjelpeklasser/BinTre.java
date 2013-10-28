@@ -220,4 +220,19 @@ public class BinTre<T>
 		if( rot != null )
 			inorden( rot, oppgave ); 
 	}
+
+	private static <T> void postorden( Node<T> p, Oppgave<? super T> oppgave )
+	{
+		if( p.venstre != null )
+			postorden( p.venstre, oppgave );
+		if( p.høyre != null )
+			postorden( p.høyre, oppgave );
+		oppgave.utførOppgave( p.verdi );
+	}
+
+	public void postorden( Oppgave<? super T> oppgave )
+	{
+		if( rot != null )
+			postorden( rot, oppgave );
+	}
 }
