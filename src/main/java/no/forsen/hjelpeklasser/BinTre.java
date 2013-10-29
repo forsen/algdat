@@ -234,10 +234,38 @@ public class BinTre<T>
 		oppgave.utførOppgave( p.verdi );
 	}
 
-	public void postorden( Oppgave<? super T> oppgave )
+/*	public void postorden( Oppgave<? super T> oppgave )
 	{
 		if( rot != null )
 			postorden( rot, oppgave );
+	}
+*/
+	public void postorden( Oppgave<? super T> oppgave )
+	{
+		if( tom() )
+			return; 
+
+		Stakk<Node<T>> s = new TabellStakk<>(); 
+		Node<T> p = rot; 
+
+		while( true )
+		{
+			if( p.venstre != null )
+			{
+				if( p.høyre != null )
+					s.leggInn( p.høyre );
+				p = p.venstre; 
+			}
+			else if ( p.høyre != null )
+				p = p.høyre; 
+			else if( !s.tom() )
+			{
+				p = s.taUt();
+				oppgave.utførOppgave( p.verdi ); 
+			}
+			else
+				break; 
+		}
 	}
 
 	public String toNivåString()
