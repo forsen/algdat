@@ -193,11 +193,15 @@ public class BinTre<T>
 
 	private static <T> void preorden( Node<T> p, Oppgave<? super T> oppgave )
 	{
-		oppgave.utførOppgave( p.verdi );
-		if( p.venstre != null )
-			preorden( p.venstre, oppgave );
-		if( p.høyre != null )
-			preorden( p.høyre, oppgave ); 
+		while( true )
+		{
+			oppgave.utførOppgave( p.verdi );
+			if( p.venstre != null )
+				preorden( p.venstre, oppgave );
+			p = p.høyre; 
+			if( p == null ) 
+				return;
+		}
 	}
 
 	public void preorden( Oppgave<? super T> oppgave )
