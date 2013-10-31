@@ -1,8 +1,9 @@
 package no.forsen.hjelpeklasser; 
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-
-public class BinTre<T>
+public class BinTre<T> implements Iterable<T>
 {
 	private static final class Node<T>
 	{
@@ -22,6 +23,108 @@ public class BinTre<T>
 			this.verdi = verdi;
 		}
 	}
+
+	private class InordenIterator implements Iterator<T>
+	{
+		private Stakk<Node<T>> s = new TabellStakk<>(); 
+		private Node<T> p = null; 
+
+		private Node<T> først( Node<T> q )
+		{
+			while( q.venstre != null )
+			{
+				s.leggInn( q );
+				q = q.venstre; 
+			}
+			return q; 
+		}
+
+		private InordenIterator()
+		{
+			if( rot == null )
+				return;
+			p = først( rot );
+		}
+
+		public T next()
+		{
+			if( !hasNext() )
+				throw new NoSuchElementException(); 
+
+			T verdi = p.verdi; 
+
+			if( p.høyre != null )
+				p = først( p.høyre );
+			else if( !s.tom() )
+				p = s.taUt();
+			else
+				p = null; 
+
+			return verdi; 
+		}
+
+		public boolean hasNext()
+		{
+			return p != null; 
+		}
+
+		public void remove()
+		{
+			throw new UnsupportedOperationException();
+		}
+	
+	}
+
+	private class OmvendtInordenIterator implements Iterator<T>
+	{
+		private Stakk<Node<T>> s = new TabellStakk<>(); 
+		private Node<T> p = null; 
+
+		private Node<T> sist( Node<T> q )
+		{
+			while( q.høyre != null )
+			{
+				s.leggInn( q );
+				q = q.høyre; 
+			}
+			return q; 
+		}
+
+		private OmvendtInordenIterator()
+		{
+			if( rot == null )
+				return; 
+			s.leggInn( null );
+			p = sist( rot );
+		}
+
+		public T next()
+		{
+			if( !hasNext() )
+				throw new NoSuchElementException();
+
+			T verdi = p.verdi; 
+
+			if( p.venstre != null )
+				p = sist( p.venstre );
+			else 
+				p = s.taUt();
+
+			return verdi;
+		}
+
+		public boolean hasNext()
+		{
+			return p != null;
+		}
+
+		public void remove()
+		{
+			throw new UnsupportedOperationException();
+		}
+	}
+
+
 	private Node<T> rot; 
 	private int antall; 
 
@@ -38,6 +141,16 @@ public class BinTre<T>
 
 		for( int i = 0; i < p.length; i++ )
 			leggInn( p[i], v[i] );
+	}
+
+	public Iterator<T> iterator()
+	{
+		return new InordenIterator(); 
+	}
+
+	public Iterator<T> omvendtiterator()
+	{
+		return new OmvendtInordenIterator(); 
 	}
 
 	public int antall()
