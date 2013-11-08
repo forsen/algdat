@@ -1,6 +1,7 @@
 package no.forsen.oblig;
 
 import java.util.*;
+import no.forsen.hjelpeklasser.*;
 
 public class SBinTre2<T> implements Beholder<T>
 {
