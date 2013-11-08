@@ -22,6 +22,7 @@ public class Program
 			tre.leggInn(p[i],v.charAt(i));
 
 		System.out.println( tre.toPostString() );
+		tre.postorden( new KonsollUtskrift(20));
 
 	}
 }
