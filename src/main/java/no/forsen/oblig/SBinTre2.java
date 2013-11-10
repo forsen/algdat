@@ -91,6 +91,9 @@ public class SBinTre2<T> implements Beholder<T>
 	{
 		rot = null;
 		antall = 0;
+		antallIngenBarn = 0; 
+		antallEttBarn = 0; 
+		antallToBarn = 0; 
 	}
 
 	public boolean leggInn(T verdi)
@@ -336,7 +339,44 @@ public class SBinTre2<T> implements Beholder<T>
 
 	public T minFjern()
 	{
-		return null;  // foreløpig kode
+		if( tom() )
+			throw new NoSuchElementException( "Treet er tomt!" );
+
+		Node<T> p = rot, q = rot; 
+
+		while( p.venstre != null )
+		{
+			q = p; 
+			p = p.venstre; 
+		}
+
+		T verdi = p.verdi;
+
+		if( p == rot )
+		{
+			nullstill(); 
+			return verdi; 
+		}
+		else if( p.høyre == null )
+		{
+			q.venstre = null; 
+			if( q.høyre != null )
+			{
+				antallToBarn--; 
+				antallEttBarn++;
+				antallIngenBarn--; 
+			}
+			else
+				antallEttBarn--;
+		}
+		else
+		{
+			q.venstre = p.høyre; 
+			antallEttBarn--; 
+		}
+
+		return verdi;
+
 	}
 
 	public T maks()

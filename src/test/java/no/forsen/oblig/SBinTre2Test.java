@@ -136,4 +136,34 @@ public class SBinTre2Test extends TestCase
 		Integer actual = tre.nestMaks();
 		assertEquals( expected, actual );		
 	}
+
+	public void test_fjern_min()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
+		tre.leggInn( 4 );
+		tre.leggInn( 2 );
+		tre.leggInn( 5 );
+		tre.leggInn( 9 ); 
+		tre.leggInn( 1 ); 
+
+		Integer expected = 1; 
+		Integer actual = tre.minFjern(); 
+		assertEquals( expected, actual );
+	}
+	public void test_fjern_min2()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
+		tre.leggInn( 4 );
+		tre.leggInn( 2 );
+		tre.leggInn( 5 );
+		tre.leggInn( 9 ); 
+		tre.leggInn( 1 ); 
+
+		tre.minFjern(); 
+		
+		int expected = 4; 
+		int actual = tre.antallToBarn() + tre.antallEttBarn() + tre.antallIngenBarn(); 
+
+		assertEquals( expected, actual );	
+	}
 }
