@@ -95,4 +95,45 @@ public class SBinTre2Test extends TestCase
 
 		assertEquals( expected, actual );
 	}
+
+	public void test_nest_min()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
+		tre.leggInn( 5 );
+		tre.leggInn( 2 );
+		tre.leggInn( 8 ); 
+		tre.leggInn( 3 );
+
+		Integer expected = 3;
+		Integer actual = tre.nestMin();
+		assertEquals( expected, actual );
+	}
+
+	public void test_maks()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
+		tre.leggInn( 8 );
+		tre.leggInn( 7 );
+		tre.leggInn( 12 );
+		tre.leggInn( 45 ); 
+		tre.leggInn( 32 );
+
+		Integer expected = 45; 
+		Integer actual = tre.maks();
+		assertEquals( expected, actual );
+	}
+
+	public void test_nest_maks()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
+		tre.leggInn( 8 );
+		tre.leggInn( 7 );
+		tre.leggInn( 12 );
+		tre.leggInn( 45 ); 
+		tre.leggInn( 32 );
+
+		Integer expected = 32; 
+		Integer actual = tre.nestMaks();
+		assertEquals( expected, actual );		
+	}
 }

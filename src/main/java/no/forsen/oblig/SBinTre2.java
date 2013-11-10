@@ -315,7 +315,23 @@ public class SBinTre2<T> implements Beholder<T>
 
 	public T nestMin()
 	{
-		return null;  // foreløpig kode
+		if( antall() < 2 )
+			throw new NoSuchElementException( "Treet har mindre enn 2 elementer!" );
+
+		if( rot.venstre == null )
+			return rot.høyre.verdi; 
+
+		Node<T> p = rot, q = rot;
+
+		while( p.venstre != null )
+		{
+			q = p; 
+			p = p.venstre; 
+		} 
+		if( p.høyre != null )
+			return p.høyre.verdi; 
+
+		return q.verdi; 
 	}
 
 	public T minFjern()
@@ -325,12 +341,33 @@ public class SBinTre2<T> implements Beholder<T>
 
 	public T maks()
 	{
-		return null;
+		if( tom() )
+			throw new NoSuchElementException( "Treet er tomt!" );
+
+		Node<T> p = rot; 
+		while( p.høyre != null )
+			p = p.høyre; 
+		return p.verdi; 
 	}
 
 	public T nestMaks()
 	{
-		return null;
+		if( antall() < 2 )
+			throw new NoSuchElementException( "Treen har mindre enn 2 elementer!" );
+
+		if( rot.høyre == null )
+			return rot.venstre.verdi; 
+
+		Node<T> p = rot, q = rot; 
+
+		while( p.høyre != null )
+		{
+			q = p; 
+			p = p.høyre; 
+		}
+		if( p.venstre != null )
+			return p.venstre.verdi;
+		return q.verdi; 
 	}
 
 	public int maksFjernAlle()
