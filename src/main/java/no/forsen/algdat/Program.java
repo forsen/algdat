@@ -13,16 +13,18 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		BinTre<Character> tre = new BinTre<>(); 
-		int[] p = {1,2,3,4,5,6,7,10,11,13,14,22,23,28,29};
-		//String v = "EIBGAHKLODNMCJF";    
-		String v = "EIOBGDMAHNCKLJF";
+		SBinTre2<String> tre = SBinTre2.lagTre(); 
 
-		for (int i = 0; i < p.length; i++)
-			tre.leggInn(p[i],v.charAt(i));
+		tre.leggInn("Første");
+		tre.leggInn("Andre");
+		tre.leggInn("Tredje");
+		tre.leggInn("Fjerde");
 
-		System.out.println( tre.toPostString() );
-		tre.postorden( new KonsollUtskrift(20));
+		System.out.println( tre );
 
+		for( String k : tre ) 
+		{
+			System.out.println( k );
+		}
 	}
 }

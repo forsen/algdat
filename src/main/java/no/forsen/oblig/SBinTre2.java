@@ -263,7 +263,26 @@ public class SBinTre2<T> implements Beholder<T>
 
 	public int antall(T verdi)
 	{
-		return 0;  // foreløpig kode
+		if (verdi == null) 
+			return 0;
+
+		int antall = 0; 
+
+		Node<T> p = rot;                            // starter i roten
+		while (p != null)                           // sjekker p
+		{
+			int cmp = comp.compare(verdi,p.verdi);     // sammenligner
+			if (cmp < 0) 
+				p = p.venstre;               // går til venstre
+			else if (cmp > 0) 
+				p = p.høyre;            // går til høyre
+			else 
+			{
+				antall++;                         // cmp == 0, funnet
+				p = p.høyre; 
+			}
+		}
+		return antall;                               // ikke funnet	
 	}
 
 	public T min()
