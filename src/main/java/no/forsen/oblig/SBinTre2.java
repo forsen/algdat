@@ -100,22 +100,41 @@ public class SBinTre2<T> implements Beholder<T>
 
 		Node<T> p = rot, q = null;               // p starter i roten
 		int cmp = 0;                             // hjelpevariabel
+		int trehøyde = 1; 
 
 		while (p != null)       // fortsetter til p er ute av treet
 		{
 			q = p;                                 // q forelder til p
 			cmp = comp.compare(verdi,p.verdi);      // bruker komparatoren
 			p = cmp < 0 ? p.venstre : p.høyre;     // flytter p
+			trehøyde++; 
 		}
 
 		p = new Node<>(verdi);                   // oppretter en ny node
+		antallIngenBarn++; 
 
-		if (q == null) rot = p;                  // rotnoden
-		else if (cmp < 0) q.venstre = p;         // til venstre for q
-		else q.høyre = p;                        // til høyre for q
+		if (q == null) 
+			rot = p;          
+		else if (cmp < 0) 
+			q.venstre = p;         // til venstre for q
+		else 
+			q.høyre = p;                        // til høyre for q
+		
+		if( q != null && (q.høyre == null || q.venstre == null) )
+		{
+			antallEttBarn++;
+			antallIngenBarn--;
+		}
+		else
+		{
+			antallToBarn++; 
+			antallEttBarn--;
+		}
+
 
 		endringer++;                             // en endring
-		antall++;                                // en ny verdi i treet
+		antall++;
+		høyde = trehøyde;                              // en ny verdi i treet
 
 		return true;
 	}

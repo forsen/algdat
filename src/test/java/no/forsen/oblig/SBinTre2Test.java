@@ -61,4 +61,38 @@ public class SBinTre2Test extends TestCase
 		int actual = tre.antall( 9 );
 		assertEquals( expected, actual );		
 	}
+
+	public void test_instansvariabler()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre();
+		tre.leggInn( 4 );
+		tre.leggInn( 5 ); 
+		tre.leggInn( 6 );
+		tre.leggInn( 7 );
+		tre.leggInn( 12 ); 
+		tre.leggInn( 1 ); 
+		tre.leggInn( 5 );
+
+		int expected = tre.antall(); 
+		int actual = tre.antallIngenBarn() + tre.antallEttBarn() + tre.antallToBarn(); 
+
+		assertEquals( expected, actual );
+	}
+
+	public void test_høyde()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
+		tre.leggInn( 2 );
+		tre.leggInn( 8 );
+		tre.leggInn( 3 );
+		tre.leggInn( 5 ); 
+		tre.leggInn( 12 ); 
+		tre.leggInn( 43 );
+		tre.leggInn( 88 ); 
+
+		int expected = 5; 
+		int actual = tre.høyde();
+
+		assertEquals( expected, actual );
+	}
 }
