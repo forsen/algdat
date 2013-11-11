@@ -324,21 +324,37 @@ public class SBinTre2<T> implements Beholder<T>
 	{
 		if( antall() < 2 )
 			throw new NoSuchElementException( "Treet har mindre enn 2 elementer!" );
-
-		if( rot.venstre == null )
-			return rot.høyre.verdi; 
-
+		
 		Node<T> p = rot, q = rot;
-
 		while( p.venstre != null )
 		{
 			q = p; 
 			p = p.venstre; 
-		} 
+		}
+		T nestmin; 
 		if( p.høyre != null )
-			return p.høyre.verdi; 
+			nestmin = p.høyre.verdi; 
+		
+		else
+			nestmin = q.verdi;
 
-		return q.verdi; 
+
+		while( p != null )
+		{
+			if( p.venstre != null )
+			{
+				p = p.venstre; 
+				if( comp.compare( p.verdi, nestmin ) < 0 )
+					nestmin = p.verdi;
+			}
+			else if( p.høyre != null )
+				p = p.høyre; 
+			else
+				break; 
+		}
+
+		return nestmin; 
+
 	}
 
 	public T minFjern()
@@ -358,8 +374,16 @@ public class SBinTre2<T> implements Beholder<T>
 
 		if( p == rot )
 		{
-			nullstill(); 
-			return verdi; 
+
+			if( p.høyre == null )
+			{
+				nullstill(); 
+				return verdi; 
+			}
+
+			rot = rot.høyre; 
+			antallEttBarn--;
+
 		}
 		else if( p.høyre == null )
 		{
@@ -379,6 +403,8 @@ public class SBinTre2<T> implements Beholder<T>
 			antallEttBarn--; 
 		}
 
+		antall--; 
+
 		return verdi;
 
 	}
@@ -397,21 +423,37 @@ public class SBinTre2<T> implements Beholder<T>
 	public T nestMaks()
 	{
 		if( antall() < 2 )
-			throw new NoSuchElementException( "Treen har mindre enn 2 elementer!" );
-
-		if( rot.høyre == null )
-			return rot.venstre.verdi; 
-
-		Node<T> p = rot, q = rot; 
-
+			throw new NoSuchElementException( "Treet har mindre enn 2 elementer!" );
+		
+		Node<T> p = rot, q = rot;
 		while( p.høyre != null )
 		{
 			q = p; 
 			p = p.høyre; 
 		}
+		T nestmaks; 
 		if( p.venstre != null )
-			return p.venstre.verdi;
-		return q.verdi; 
+			nestmaks = p.venstre.verdi; 
+		
+		else
+			nestmaks = q.verdi;
+
+
+		while( p != null )
+		{
+			if( p.høyre != null )
+			{
+				p = p.høyre; 
+				if( comp.compare( p.verdi, nestmaks ) > 0 )
+					nestmaks = p.verdi;
+			}
+			else if( p.venstre != null )
+				p = p.venstre; 
+			else
+				break; 
+		}
+
+		return nestmaks; 
 	}
 
 	public int maksFjernAlle()
@@ -426,7 +468,7 @@ public class SBinTre2<T> implements Beholder<T>
 			return 1;
 		}
 
-		Node<T> p = rot, q = null; 
+		Node<T> p = rot, q = rot; 
 
 		int antallFjernes = 1; 
 
@@ -465,6 +507,15 @@ public class SBinTre2<T> implements Beholder<T>
 				antallEttBarn--; 
 
 			q.høyre = q.høyre.venstre; 
+		}
+		else if( q.verdi.equals( p.verdi ) )
+		{
+			rot = rot.venstre; 
+
+			antallIngenBarn--;
+			antallEttBarn = antallEttBarn - (antallFjernes - 2);
+			antallToBarn--;
+
 		}
 		else
 		{
@@ -603,23 +654,57 @@ public class SBinTre2<T> implements Beholder<T>
 
 	private class BladnodeIterator implements Iterator<T>
 	{
-	// Instansvariabler, konstruktør og eventuelle
-	// hjelpemetoder skal inn her
 
-	public boolean hasNext()
-	{
-		return false;  // foreløpig kode
-	}
+		private Stakk<Node<T>> s = new TabellStakk<>();  // for traversering
+		private Node<T> p = null;                        // nodepeker
+		private int iteratorendringer;                   // iteratorendringer
 
-	public T next()
-	{
-		return null;  // foreløpig koden
-	}
+		private Node<T> først(Node<T> q)   // en hjelpemetode
+		{
+			while (q.venstre != null)        // starter i q
+			{
+				s.leggInn(q);                  // legger q på stakken
+				q = q.venstre;                 // går videre mot venstre
+			}
+			
+			return q;                        // q er lengst ned til venstre
+		}
 
-	public void remove()
-	{
-		throw new UnsupportedOperationException();
-	}
+		public BladnodeIterator()  // konstruktør
+		{
+			if (rot == null) return;         // treet er tomt
+			p = først(rot);                  // bruker hjelpemetoden
+			iteratorendringer = endringer;   // setter treets endringer
+		}
+
+		public T next()
+		{
+			if (iteratorendringer != endringer)
+				throw new ConcurrentModificationException();
+
+			if (!hasNext()) throw new NoSuchElementException();
+
+			T verdi = p.verdi;               // tar vare på verdien i noden p
+
+			if (p.høyre != null) p = først(p.høyre);  // p har høyre subtre
+			else if (!s.tom()) p = s.taUt();          // p har ikke høyre subtre
+			else p = null;                            // stakken er tom
+
+			while( p != null && p.høyre != null && p.venstre != null ) 
+				next();
+
+			return verdi;                    // returnerer verdien
+		}
+
+		public boolean hasNext()
+		{
+			return p != null;
+		}
+
+		public void remove()
+		{
+			throw new UnsupportedOperationException();
+		}
 
 	}  // BladnodeIterator
 

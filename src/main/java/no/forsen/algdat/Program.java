@@ -13,14 +13,15 @@ public class Program
 {
 	public static void main( String[] args )
 	{
+	    SBinTre2<Integer> tre = SBinTre2.lagTre();
 
-		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
 
-		tre.leggInn( 10 );
 
-		System.out.println( tre.antallIngenBarn() );
-		System.out.println( tre.antallEttBarn() );
-		System.out.println( tre.antallToBarn() );
-		System.out.println( tre.høyde() );
+	    tre.leggInn( 10 ); 
+	    Iterator<Integer> i = tre.bladnodeiterator();
+	    System.out.println( i.next() );
+	    System.out.println( i.next() );
+	    System.out.println( i.next() );
+
 	}
 }
