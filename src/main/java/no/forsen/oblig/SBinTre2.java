@@ -94,6 +94,7 @@ public class SBinTre2<T> implements Beholder<T>
 		antallIngenBarn = 0; 
 		antallEttBarn = 0; 
 		antallToBarn = 0; 
+		høyde = -1;
 	}
 
 	public boolean leggInn(T verdi)
@@ -103,7 +104,7 @@ public class SBinTre2<T> implements Beholder<T>
 
 		Node<T> p = rot, q = null;               // p starter i roten
 		int cmp = 0;                             // hjelpevariabel
-		int trehøyde = 1; 
+		int trehøyde = 0; 
 
 		while (p != null)       // fortsetter til p er ute av treet
 		{
@@ -518,12 +519,86 @@ public class SBinTre2<T> implements Beholder<T>
 
 	public String omvendtString()
 	{
-		return null;  // foreløpig kode    
+		if( tom() )
+			return "[]";
+
+		Stakk<T> s = new TabellStakk<>(); 
+
+		Iterator<T> it = iterator(); 
+
+		while( it.hasNext() )
+			s.leggInn( it.next() ); 
+
+		StringBuilder sb = new StringBuilder();
+
+		sb.append( '[' ).append( s.taUt() ); 
+
+		while( !s.tom() )
+			sb.append( ',').append(' ').append( s.taUt() );
+
+		sb.append( ']' );
+		return sb.toString();
+
 	}
 
 	public String[] grener()
 	{
-		return null;  // foreløpig kode    
+		if( tom() )
+			return new String[0]; 
+
+		int veierigjen = antallIngenBarn; 
+
+		String[] retur = new String[ veierigjen ];
+		int[] nestevei = new int[veierigjen+1];
+		boolean[] forrigevei = new boolean[høyde+1]; 
+		int j = 1;  
+		for( int i = 0; i < veierigjen; i++ )   
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.append( '[' );
+			Node<T> p = rot; 
+			while( p != null )
+			{
+				sb.append(p.verdi).append(',').append(' ');
+				if( j == nestevei[i] )
+				{	
+					p = p.høyre; 
+					forrigevei[j] = true;
+					for( int k = j + 1; k < forrigevei.length; k++) 
+						forrigevei[k] = false; 
+				}
+
+				else if( p.venstre != null  && !forrigevei[j]  )
+				{
+					if( p.høyre != null )
+						nestevei[i+1] = j; 
+
+					p = p.venstre;
+
+				}
+				else
+				{
+					p = p.høyre; 
+					//forrigevei[j] = false; 
+				}
+
+
+				j++; 
+
+			}
+
+			sb.deleteCharAt( sb.length() - 1);
+			sb.deleteCharAt( sb.length() - 1);
+			sb.append(']');
+
+			retur[i] = sb.toString();
+
+			j = 1; 
+
+		}
+
+		return retur; 
 	}
 
 	private class BladnodeIterator implements Iterator<T>

@@ -13,33 +13,14 @@ public class Program
 {
 	public static void main( String[] args )
 	{
-		SBinTre2<Integer> tre = SBinTre2.lagTre();
-//		tre.leggInn( 5 );
-//		tre.leggInn( 3 );
-//		tre.leggInn( 8 );
-//		tre.leggInn( 7 );
-//		tre.leggInn( 10 );
-//		tre.leggInn( 9 );
-//		tre.leggInn( 10 );
-//		tre.leggInn( 10 );
-//		tre.leggInn( 11 );
 
-		System.out.println( tre.høyreGren() );
-/*
-		System.out.println( "antall: " + tre.antall() );
-		System.out.println( "ingen: " + tre.antallIngenBarn() );
-		System.out.println( "ett: " + tre.antallEttBarn() );
-		System.out.println( "to: " + tre.antallToBarn() );
-		System.out.println( tre );
+		SBinTre2<Integer> tre = SBinTre2.lagTre(); 
 
-		System.out.println( tre.maksFjernAlle() );
-		
+		tre.leggInn( 10 );
 
-		System.out.println( "antall: " + tre.antall() );
-		System.out.println( "ingen: " + tre.antallIngenBarn() );
-		System.out.println( "ett: " + tre.antallEttBarn() );
-		System.out.println( "to: " + tre.antallToBarn() );
-		System.out.println( tre );
-*/
+		System.out.println( tre.antallIngenBarn() );
+		System.out.println( tre.antallEttBarn() );
+		System.out.println( tre.antallToBarn() );
+		System.out.println( tre.høyde() );
 	}
 }
