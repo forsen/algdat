@@ -166,4 +166,23 @@ public class SBinTre2Test extends TestCase
 
 		assertEquals( expected, actual );	
 	}
+
+	public void test_fjern_maks_alle_returverdi()
+	{
+		SBinTre2<Integer> tre = SBinTre2.lagTre();
+		tre.leggInn( 5 );
+		tre.leggInn( 3 );
+		tre.leggInn( 8 );
+		tre.leggInn( 7 );
+		tre.leggInn( 10 );
+		tre.leggInn( 9 );
+		tre.leggInn( 10 );
+		tre.leggInn( 10 );
+	
+
+		Integer expected = 3;
+		Integer actual = tre.maksFjernAlle();
+
+		assertEquals( expected, actual );
+	}
 }

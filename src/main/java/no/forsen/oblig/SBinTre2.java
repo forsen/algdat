@@ -123,15 +123,18 @@ public class SBinTre2<T> implements Beholder<T>
 		else 
 			q.høyre = p;                        // til høyre for q
 		
-		if( q != null && (q.høyre == null || q.venstre == null) )
+		if( q != null )
 		{
-			antallEttBarn++;
-			antallIngenBarn--;
-		}
-		else
-		{
-			antallToBarn++; 
-			antallEttBarn--;
+			if( q.høyre == null || q.venstre == null )
+			{
+				antallEttBarn++;
+				antallIngenBarn--;
+			}
+			else 
+			{
+				antallToBarn++; 
+				antallEttBarn--;
+			}
 		}
 
 
@@ -412,7 +415,79 @@ public class SBinTre2<T> implements Beholder<T>
 
 	public int maksFjernAlle()
 	{
-		return 0;  // foreløpig kode
+		if( tom() )
+			return 0;
+		if( antall() == 1 )
+		{
+			rot = null; 
+			antall--;
+			antallIngenBarn--; 
+			return 1;
+		}
+
+		Node<T> p = rot, q = null; 
+
+		int antallFjernes = 1; 
+
+		while( p.høyre != null )
+		{
+			if( p.verdi != p.høyre.verdi )
+			{
+				antallFjernes = 1; 
+				q = p; 
+				p = p.høyre;
+			}
+			else
+			{
+				antallFjernes++; 
+				p = p.høyre; 
+			}
+		}
+
+		if( p == rot )
+		{
+			rot = rot.venstre; 
+			antall--; 
+			antallEttBarn--; 
+			return 1; 
+		}
+
+		if( q.høyre.venstre != null )
+		{
+			if( q.høyre.høyre != null )
+			{
+				antallToBarn--; 
+				antallEttBarn = antallEttBarn - (antallFjernes - 2); 
+				antallIngenBarn--;
+			}
+			else
+				antallEttBarn--; 
+
+			q.høyre = q.høyre.venstre; 
+		}
+		else
+		{
+			q.høyre = null; 
+			if( q.venstre != null )
+			{
+				antallToBarn--; 
+				antallEttBarn++;
+				antallIngenBarn--; 
+			}
+			else
+				antallEttBarn--;
+			
+			if( antallFjernes > 1 )
+				antallEttBarn = antallEttBarn - (antallFjernes - 1) ; 
+			
+		}
+
+		antall -= antallFjernes;
+
+		return antallFjernes;
+
+
+
 	}
 
 	public String høyreGren()
