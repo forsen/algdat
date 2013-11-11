@@ -476,7 +476,7 @@ public class SBinTre2<T> implements Beholder<T>
 			}
 			else
 				antallEttBarn--;
-			
+
 			if( antallFjernes > 1 )
 				antallEttBarn = antallEttBarn - (antallFjernes - 1) ; 
 			
@@ -492,7 +492,28 @@ public class SBinTre2<T> implements Beholder<T>
 
 	public String høyreGren()
 	{
-		return null;  // foreløpig kode
+		if( tom() )
+			return "[]"; 
+		StringBuilder s = new StringBuilder();
+
+		s.append( '[' );
+		s.append( rot.verdi ); 
+
+		Node<T> p = rot; 
+
+		p = p.høyre != null ? p.høyre : p.venstre; 
+
+		while( p != null )
+		{
+			s.append( ',' ).append( ' ' ).append( p.verdi ); 
+			if( p.høyre != null )
+				p = p.høyre; 
+			else
+				p = p.venstre; 
+		}
+
+		s.append( ']' );
+		return s.toString(); 
 	}
 
 	public String omvendtString()
