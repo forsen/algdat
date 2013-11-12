@@ -690,7 +690,8 @@ public class SBinTre2<T> implements Beholder<T>
 			else if (!s.tom()) p = s.taUt();          // p har ikke høyre subtre
 			else p = null;                            // stakken er tom
 
-			while( p != null && p.høyre != null && p.venstre != null ) 
+			
+			if( p != null && ( p.høyre != null || p.venstre != null ))
 				next();
 
 			return verdi;                    // returnerer verdien

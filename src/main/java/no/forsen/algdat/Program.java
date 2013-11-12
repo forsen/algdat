@@ -20,8 +20,7 @@ public class Program
 	    tre.leggInn( 10 ); 
 	    Iterator<Integer> i = tre.bladnodeiterator();
 	    System.out.println( i.next() );
-	    System.out.println( i.next() );
-	    System.out.println( i.next() );
+
 
 	}
 }
