@@ -1,5 +1,5 @@
 /**
- * Et interface for stakker / køer o.l.
+ * Et interface lister
  * @author Erik Haider Forsén
  */
 
