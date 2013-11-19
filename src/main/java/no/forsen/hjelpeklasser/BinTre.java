@@ -150,7 +150,7 @@ public class BinTre<T> implements Iterable<T>
 				s.leggInn( p.venstre ); 
 			
 			p = s.taUt(); 
-			
+
 			return verdi; 
 		}
 
@@ -163,9 +163,63 @@ public class BinTre<T> implements Iterable<T>
 		{
 			throw new UnsupportedOperationException();
 		}
-
 	}
 
+	private class PostordenIterator implements Iterator<T>
+	{
+		private Stakk<Node<T>> s = new TabellStakk<>(); 
+		private Node<T> p = null; 
+
+		private Node<T> først( Node<T> p )
+		{
+	
+			while( p.venstre != null || p.høyre != null )
+			{
+				s.leggInn( p );
+				p = p.venstre != null ? p.venstre : p.høyre;
+			}
+
+			return p;
+		}
+
+		private PostordenIterator()
+		{
+			if( rot == null )
+				return;
+			s.leggInn( null );
+			p = først( rot ); 
+		}
+		
+		public T next()
+		{
+			if( !hasNext() )
+				throw new NoSuchElementException();
+
+			T verdi = p.verdi; 
+
+			Node<T> f = s.kikk(); 
+
+			if( f == null )
+				p = null; 
+			else if( f.høyre == null || p == f.høyre )
+				p = s.taUt();
+			else 
+				p = først( f.høyre );
+
+			return verdi;
+		}
+
+		public boolean hasNext()
+		{
+			return p != null; 
+		}
+
+		public void remove()
+		{
+			throw new UnsupportedOperationException();
+		}
+	
+	}
 
 	private Node<T> rot; 
 	private int antall; 
@@ -198,6 +252,11 @@ public class BinTre<T> implements Iterable<T>
 	public Iterator<T> preordeniterator()  
 	{
 		return new PreordenIterator(); 		
+	}
+
+	public Iterator<T> postordeniterator()
+	{
+		return new PostordenIterator(); 
 	}
 
 	public int antall()
@@ -394,12 +453,12 @@ public class BinTre<T> implements Iterable<T>
 		oppgave.utførOppgave( p.verdi );
 	}
 
-/*	public void postorden( Oppgave<? super T> oppgave )
+	public void postorden( Oppgave<? super T> oppgave )
 	{
 		if( rot != null )
 			postorden( rot, oppgave );
 	}
-*/
+/*
 	public void postorden( Oppgave<? super T> oppgave )
 	{
 		if( tom() )
@@ -427,7 +486,7 @@ public class BinTre<T> implements Iterable<T>
 				break; 
 		}
 	}
-
+*/
 	public String toNivåString()
 	{
 		Tegnstreng s = new Tegnstreng();
