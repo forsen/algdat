@@ -1,3 +1,9 @@
+/*
+	Erik Haider Forsén
+	s188086
+	2AA
+*/
+
 package no.forsen.oblig;
 
 import java.util.*;
@@ -404,6 +410,7 @@ public class SBinTre2<T> implements Beholder<T>
 		}
 
 		antall--; 
+		endringer++; 
 
 		return verdi;
 
@@ -492,6 +499,7 @@ public class SBinTre2<T> implements Beholder<T>
 			rot = rot.venstre; 
 			antall--; 
 			antallEttBarn--; 
+			endringer++; 
 			return 1; 
 		}
 
@@ -535,7 +543,7 @@ public class SBinTre2<T> implements Beholder<T>
 		}
 
 		antall -= antallFjernes;
-
+		endringer++; 
 		return antallFjernes;
 
 
@@ -626,15 +634,10 @@ public class SBinTre2<T> implements Beholder<T>
 						nestevei[i+1] = j; 
 
 					p = p.venstre;
-
 				}
 				else
-				{
 					p = p.høyre; 
-					//forrigevei[j] = false; 
-				}
-
-
+ 
 				j++; 
 
 			}
