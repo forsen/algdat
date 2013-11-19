@@ -221,6 +221,45 @@ public class BinTre<T> implements Iterable<T>
 	
 	}
 
+	private class NivåordenIterator implements Iterator<T> 
+	{
+		private Ko<Node<T>> ko = new TabellKo<>();
+		private Node<T> p = null; 
+
+		private NivåordenIterator()
+		{
+			if( rot == null )
+				return;
+			p = rot; 
+		}
+
+		public T next()
+		{
+			if( !hasNext() )
+				throw new NoSuchElementException();
+
+			T verdi = p.verdi; 
+
+			if( p.venstre != null ) 
+				ko.leggInn( p.venstre );
+			if( p.høyre != null )
+				ko.leggInn( p.høyre );
+			p = ko.tom() ? null : ko.taUt();
+
+			return verdi; 
+		}
+
+		public boolean hasNext()
+		{
+			return p != null;
+		}
+
+		public void remove()
+		{
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	private Node<T> rot; 
 	private int antall; 
 
@@ -257,6 +296,11 @@ public class BinTre<T> implements Iterable<T>
 	public Iterator<T> postordeniterator()
 	{
 		return new PostordenIterator(); 
+	}
+
+	public Iterator<T> nivåordeniterator()
+	{
+		return new NivåordenIterator();
 	}
 
 	public int antall()
