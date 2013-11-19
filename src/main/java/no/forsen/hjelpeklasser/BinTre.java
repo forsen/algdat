@@ -124,6 +124,48 @@ public class BinTre<T> implements Iterable<T>
 		}
 	}
 
+	private class PreordenIterator implements Iterator<T> 
+	{
+		private Stakk<Node<T>> s = new TabellStakk<>(); 
+		private Node<T> p = null; 
+
+		private PreordenIterator()
+		{
+			if( rot == null )
+				return; 
+			s.leggInn( null ); 
+			p = rot; 
+		}
+
+		public T next()
+		{
+			if( !hasNext() )
+				throw new NoSuchElementException(); 
+
+			T verdi = p.verdi; 
+
+			if( p.høyre != null )
+				s.leggInn( p.høyre );
+			if( p.venstre != null )
+				s.leggInn( p.venstre ); 
+			
+			p = s.taUt(); 
+			
+			return verdi; 
+		}
+
+		public boolean hasNext()
+		{
+			return p != null;
+		}
+
+		public void remove()
+		{
+			throw new UnsupportedOperationException();
+		}
+
+	}
+
 
 	private Node<T> rot; 
 	private int antall; 
@@ -151,6 +193,11 @@ public class BinTre<T> implements Iterable<T>
 	public Iterator<T> omvendtiterator()
 	{
 		return new OmvendtInordenIterator(); 
+	}
+
+	public Iterator<T> preordeniterator()  
+	{
+		return new PreordenIterator(); 		
 	}
 
 	public int antall()
