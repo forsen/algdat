@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser; 
-
+//å
 public interface Stakk<T> 
 {
 	public void leggInn( T t );

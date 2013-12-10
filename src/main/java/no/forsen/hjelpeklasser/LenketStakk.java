@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser; 
-
+//å
 import java.util.*;
 
 public class LenketStakk<T> implements Stakk<T>

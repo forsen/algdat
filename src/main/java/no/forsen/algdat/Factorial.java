@@ -1,5 +1,5 @@
 package no.forsen.algdat; 
-
+//å
 public class Factorial
 {
 	public static long fac( int n )

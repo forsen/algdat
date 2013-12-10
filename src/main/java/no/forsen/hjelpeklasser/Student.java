@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser; 
-
+//å
 public class Student extends Person
 {
 	private final String klasse;

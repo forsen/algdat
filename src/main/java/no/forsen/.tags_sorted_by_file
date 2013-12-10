@@ -1,0 +1,525 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+Factorial	algdat/Factorial.java	/^public class Factorial$/;"	c
+fac	algdat/Factorial.java	/^	public static long fac( int n )$/;"	m	class:Factorial
+no.forsen.algdat	algdat/Factorial.java	/^package no.forsen.algdat; $/;"	p
+Minmax	algdat/Minmax.java	/^public class Minmax$/;"	c
+max	algdat/Minmax.java	/^	public static int max( int[] a )$/;"	m	class:Minmax
+max	algdat/Minmax.java	/^	public static int max( int[] a, int from, int to )$/;"	m	class:Minmax
+min	algdat/Minmax.java	/^	public static int min( int[] a )$/;"	m	class:Minmax
+minmax	algdat/Minmax.java	/^	public static int[] minmax( int[] a )$/;"	m	class:Minmax
+no.forsen.algdat	algdat/Minmax.java	/^package no.forsen.algdat;$/;"	p
+Program	algdat/Program.java	/^public class Program$/;"	c
+main	algdat/Program.java	/^	public static void main( String[] args )$/;"	m	class:Program
+no.forsen.algdat	algdat/Program.java	/^package no.forsen.algdat;$/;"	p
+Beholder	hjelpeklasser/Beholder.java	/^public interface Beholder<T> extends Iterable<T> $/;"	i
+antall	hjelpeklasser/Beholder.java	/^    public int antall();$/;"	m	interface:Beholder
+fjern	hjelpeklasser/Beholder.java	/^    public boolean fjern(T t);$/;"	m	interface:Beholder
+inneholder	hjelpeklasser/Beholder.java	/^    public boolean inneholder(T t);$/;"	m	interface:Beholder
+iterator	hjelpeklasser/Beholder.java	/^    public Iterator<T> iterator();$/;"	m	interface:Beholder
+leggInn	hjelpeklasser/Beholder.java	/^    public boolean leggInn(T t);$/;"	m	interface:Beholder
+no.forsen.hjelpeklasser	hjelpeklasser/Beholder.java	/^package no.forsen.hjelpeklasser;$/;"	p
+nullstill	hjelpeklasser/Beholder.java	/^    public void nullstill();$/;"	m	interface:Beholder
+tom	hjelpeklasser/Beholder.java	/^    public boolean tom();$/;"	m	interface:Beholder
+BinTre	hjelpeklasser/BinTre.java	/^	public BinTre( int[] p, T[] v )$/;"	m	class:BinTre
+BinTre	hjelpeklasser/BinTre.java	/^	public BinTre()$/;"	m	class:BinTre
+BinTre	hjelpeklasser/BinTre.java	/^public class BinTre<T> implements Iterable<T>$/;"	c
+InordenIterator	hjelpeklasser/BinTre.java	/^		private InordenIterator()$/;"	m	class:BinTre.InordenIterator	file:
+InordenIterator	hjelpeklasser/BinTre.java	/^	private class InordenIterator implements Iterator<T>$/;"	c	class:BinTre
+Node	hjelpeklasser/BinTre.java	/^		private Node( T verdi )$/;"	m	class:BinTre.Node	file:
+Node	hjelpeklasser/BinTre.java	/^		private Node( T verdi, Node<T> v, Node<T> h )$/;"	m	class:BinTre.Node	file:
+Node	hjelpeklasser/BinTre.java	/^	private static final class Node<T>$/;"	c	class:BinTre
+OmvendtInordenIterator	hjelpeklasser/BinTre.java	/^		private OmvendtInordenIterator()$/;"	m	class:BinTre.OmvendtInordenIterator	file:
+OmvendtInordenIterator	hjelpeklasser/BinTre.java	/^	private class OmvendtInordenIterator implements Iterator<T>$/;"	c	class:BinTre
+String	hjelpeklasser/BinTre.java	/^	public String toNivåString()$/;"	m	class:BinTre
+antall	hjelpeklasser/BinTre.java	/^	private int antall; $/;"	f	class:BinTre	file:
+antall	hjelpeklasser/BinTre.java	/^	public int antall()$/;"	m	class:BinTre
+finnNode	hjelpeklasser/BinTre.java	/^	public Node<T> finnNode( int k ) $/;"	m	class:BinTre
+finnes	hjelpeklasser/BinTre.java	/^	public boolean finnes( int k  ) $/;"	m	class:BinTre
+fjern	hjelpeklasser/BinTre.java	/^	public T fjern( int k ) $/;"	m	class:BinTre
+hasNext	hjelpeklasser/BinTre.java	/^		public boolean hasNext()$/;"	m	class:BinTre.InordenIterator
+hasNext	hjelpeklasser/BinTre.java	/^		public boolean hasNext()$/;"	m	class:BinTre.OmvendtInordenIterator
+hent	hjelpeklasser/BinTre.java	/^	public T hent( int k ) $/;"	m	class:BinTre
+inorden	hjelpeklasser/BinTre.java	/^	private static <T> void inorden( Node<T> p, Oppgave<? super T> oppgave )$/;"	m	class:BinTre	file:
+inorden	hjelpeklasser/BinTre.java	/^	public void inorden( Oppgave<? super T> oppgave )$/;"	m	class:BinTre
+iterator	hjelpeklasser/BinTre.java	/^	public Iterator<T> iterator()$/;"	m	class:BinTre
+leggInn	hjelpeklasser/BinTre.java	/^	public void leggInn( int k, T verdi ) $/;"	m	class:BinTre
+next	hjelpeklasser/BinTre.java	/^		public T next()$/;"	m	class:BinTre.InordenIterator
+next	hjelpeklasser/BinTre.java	/^		public T next()$/;"	m	class:BinTre.OmvendtInordenIterator
+no.forsen.hjelpeklasser	hjelpeklasser/BinTre.java	/^package no.forsen.hjelpeklasser; $/;"	p
+nodetype	hjelpeklasser/BinTre.java	/^	public int nodetype( int k ) $/;"	m	class:BinTre
+omvendtiterator	hjelpeklasser/BinTre.java	/^	public Iterator<T> omvendtiterator()$/;"	m	class:BinTre
+oppdater	hjelpeklasser/BinTre.java	/^	public T oppdater( int k, T nyverdi )$/;"	m	class:BinTre
+orden	hjelpeklasser/BinTre.java	/^	public void nivåorden( Oppgave<? super T> oppgave )$/;"	m	class:BinTre
+p	hjelpeklasser/BinTre.java	/^		private Node<T> p = null; $/;"	f	class:BinTre.InordenIterator	file:
+p	hjelpeklasser/BinTre.java	/^		private Node<T> p = null; $/;"	f	class:BinTre.OmvendtInordenIterator	file:
+postorden	hjelpeklasser/BinTre.java	/^	private static <T> void postorden( Node<T> p, Oppgave<? super T> oppgave )$/;"	m	class:BinTre	file:
+postorden	hjelpeklasser/BinTre.java	/^	public void postorden( Oppgave<? super T> oppgave )$/;"	m	class:BinTre
+preorden	hjelpeklasser/BinTre.java	/^	private static <T> void preorden( Node<T> p, Oppgave<? super T> oppgave )$/;"	m	class:BinTre	file:
+preorden	hjelpeklasser/BinTre.java	/^	public void preorden( Oppgave<? super T> oppgave )$/;"	m	class:BinTre
+remove	hjelpeklasser/BinTre.java	/^		public void remove()$/;"	m	class:BinTre.InordenIterator
+remove	hjelpeklasser/BinTre.java	/^		public void remove()$/;"	m	class:BinTre.OmvendtInordenIterator
+rot	hjelpeklasser/BinTre.java	/^	private Node<T> rot; $/;"	f	class:BinTre	file:
+rst	hjelpeklasser/BinTre.java	/^		private Node<T> først( Node<T> q )$/;"	m	class:BinTre.InordenIterator	file:
+s	hjelpeklasser/BinTre.java	/^		private Stakk<Node<T>> s = new TabellStakk<>(); $/;"	f	class:BinTre.InordenIterator	file:
+s	hjelpeklasser/BinTre.java	/^		private Stakk<Node<T>> s = new TabellStakk<>(); $/;"	f	class:BinTre.OmvendtInordenIterator	file:
+sist	hjelpeklasser/BinTre.java	/^		private Node<T> sist( Node<T> q )$/;"	m	class:BinTre.OmvendtInordenIterator	file:
+toPostString	hjelpeklasser/BinTre.java	/^	public String toPostString()$/;"	m	class:BinTre
+toPreString	hjelpeklasser/BinTre.java	/^	public String toPreString()$/;"	m	class:BinTre
+tom	hjelpeklasser/BinTre.java	/^	public boolean tom()$/;"	m	class:BinTre
+venstre	hjelpeklasser/BinTre.java	/^		private Node<T> venstre;$/;"	f	class:BinTre.Node	file:
+verdi	hjelpeklasser/BinTre.java	/^		private T verdi;$/;"	f	class:BinTre.Node	file:
+yre	hjelpeklasser/BinTre.java	/^		private Node<T> høyre;$/;"	f	class:BinTre.Node	file:
+Dato	hjelpeklasser/Dato.java	/^	public Dato( int dag, String måned, int år )$/;"	m	class:Dato
+Dato	hjelpeklasser/Dato.java	/^	public Dato( int dag, int mnd, int år )$/;"	m	class:Dato
+Dato	hjelpeklasser/Dato.java	/^public class Dato implements Comparable<Dato>$/;"	c
+compareTo	hjelpeklasser/Dato.java	/^	public int compareTo( Dato d ) $/;"	m	class:Dato
+dag	hjelpeklasser/Dato.java	/^	private final int dag, mnd, år; $/;"	f	class:Dato	file:
+equals	hjelpeklasser/Dato.java	/^	public boolean equals( Object o )$/;"	m	class:Dato
+hashCode	hjelpeklasser/Dato.java	/^	public int hashCode()$/;"	m	class:Dato
+mnd	hjelpeklasser/Dato.java	/^	private final int dag, mnd, år; $/;"	f	class:Dato	file:
+ned	hjelpeklasser/Dato.java	/^	private final String måned;$/;"	f	class:Dato	file:
+no.forsen.hjelpeklasser	hjelpeklasser/Dato.java	/^package no.forsen.hjelpeklasser;$/;"	p
+r	hjelpeklasser/Dato.java	/^	private final int dag, mnd, år; $/;"	f	class:Dato	file:
+toString	hjelpeklasser/Dato.java	/^	public String toString()$/;"	m	class:Dato
+EnkeltLenketListe	hjelpeklasser/EnkeltLenketListe.java	/^	public EnkeltLenketListe( Iterable<T> itererbar )$/;"	m	class:EnkeltLenketListe
+EnkeltLenketListe	hjelpeklasser/EnkeltLenketListe.java	/^	public EnkeltLenketListe()$/;"	m	class:EnkeltLenketListe
+EnkeltLenketListe	hjelpeklasser/EnkeltLenketListe.java	/^public class EnkeltLenketListe<T> implements Liste<T>$/;"	c
+EnkeltLenketListeIterator	hjelpeklasser/EnkeltLenketListe.java	/^	private class EnkeltLenketListeIterator implements Iterator<T> $/;"	c	class:EnkeltLenketListe
+Node	hjelpeklasser/EnkeltLenketListe.java	/^		private Node( T verdi, Node<T> neste )$/;"	m	class:EnkeltLenketListe.Node	file:
+Node	hjelpeklasser/EnkeltLenketListe.java	/^	private static final class Node<T>$/;"	c	class:EnkeltLenketListe
+antall	hjelpeklasser/EnkeltLenketListe.java	/^	private int antall;$/;"	f	class:EnkeltLenketListe	file:
+antall	hjelpeklasser/EnkeltLenketListe.java	/^	public int antall()$/;"	m	class:EnkeltLenketListe
+antallEndringer	hjelpeklasser/EnkeltLenketListe.java	/^	private int antallEndringer;$/;"	f	class:EnkeltLenketListe	file:
+finnNode	hjelpeklasser/EnkeltLenketListe.java	/^	private Node<T> finnNode(int indeks )$/;"	m	class:EnkeltLenketListe	file:
+fjern	hjelpeklasser/EnkeltLenketListe.java	/^	public T fjern( int indeks )$/;"	m	class:EnkeltLenketListe
+fjern	hjelpeklasser/EnkeltLenketListe.java	/^	public boolean fjern( T t )$/;"	m	class:EnkeltLenketListe
+fjernOK	hjelpeklasser/EnkeltLenketListe.java	/^		private boolean fjernOK = false; $/;"	f	class:EnkeltLenketListe.EnkeltLenketListeIterator	file:
+hale	hjelpeklasser/EnkeltLenketListe.java	/^	private Node<T> hale;  $/;"	f	class:EnkeltLenketListe	file:
+hasNext	hjelpeklasser/EnkeltLenketListe.java	/^		public boolean hasNext()$/;"	m	class:EnkeltLenketListe.EnkeltLenketListeIterator
+hent	hjelpeklasser/EnkeltLenketListe.java	/^	public T hent( int indeks )$/;"	m	class:EnkeltLenketListe
+hode	hjelpeklasser/EnkeltLenketListe.java	/^	private Node<T> hode;$/;"	f	class:EnkeltLenketListe	file:
+indeksKontroll	hjelpeklasser/EnkeltLenketListe.java	/^	private void indeksKontroll( int indeks )$/;"	m	class:EnkeltLenketListe	file:
+indeksTil	hjelpeklasser/EnkeltLenketListe.java	/^	public int indeksTil( T t )$/;"	m	class:EnkeltLenketListe
+inneholder	hjelpeklasser/EnkeltLenketListe.java	/^	public boolean inneholder( T t )$/;"	m	class:EnkeltLenketListe
+iterator	hjelpeklasser/EnkeltLenketListe.java	/^	public Iterator<T> iterator()$/;"	m	class:EnkeltLenketListe
+leggInn	hjelpeklasser/EnkeltLenketListe.java	/^	public boolean leggInn( T t )$/;"	m	class:EnkeltLenketListe
+leggInn	hjelpeklasser/EnkeltLenketListe.java	/^	public void leggInn( int indeks, T t )$/;"	m	class:EnkeltLenketListe
+neste	hjelpeklasser/EnkeltLenketListe.java	/^		private Node<T> neste;$/;"	f	class:EnkeltLenketListe.Node	file:
+next	hjelpeklasser/EnkeltLenketListe.java	/^		public T next()$/;"	m	class:EnkeltLenketListe.EnkeltLenketListeIterator
+no.forsen.hjelpeklasser	hjelpeklasser/EnkeltLenketListe.java	/^package no.forsen.hjelpeklasser;$/;"	p
+nullTest	hjelpeklasser/EnkeltLenketListe.java	/^	private static <T> void nullTest( T t )$/;"	m	class:EnkeltLenketListe	file:
+nullstill	hjelpeklasser/EnkeltLenketListe.java	/^	public void nullstill()$/;"	m	class:EnkeltLenketListe
+oppdater	hjelpeklasser/EnkeltLenketListe.java	/^	public T oppdater( int indeks, T t )$/;"	m	class:EnkeltLenketListe
+p	hjelpeklasser/EnkeltLenketListe.java	/^		private Node<T> p = hode; $/;"	f	class:EnkeltLenketListe.EnkeltLenketListeIterator	file:
+remove	hjelpeklasser/EnkeltLenketListe.java	/^		public void remove()$/;"	m	class:EnkeltLenketListe.EnkeltLenketListeIterator
+toString	hjelpeklasser/EnkeltLenketListe.java	/^	public String toString()$/;"	m	class:EnkeltLenketListe
+tom	hjelpeklasser/EnkeltLenketListe.java	/^	public boolean tom()$/;"	m	class:EnkeltLenketListe
+verdi	hjelpeklasser/EnkeltLenketListe.java	/^		private T verdi;$/;"	f	class:EnkeltLenketListe.Node	file:
+FornavnKomparator	hjelpeklasser/FornavnKomparator.java	/^public class FornavnKomparator implements Comparator<Person>$/;"	c
+compare	hjelpeklasser/FornavnKomparator.java	/^	public int compare( Person p1, Person p2 )$/;"	m	class:FornavnKomparator
+no.forsen.hjelpeklasser	hjelpeklasser/FornavnKomparator.java	/^package no.forsen.hjelpeklasser;$/;"	p
+Heltall	hjelpeklasser/Heltall.java	/^	public Heltall( int verdi )$/;"	m	class:Heltall
+Heltall	hjelpeklasser/Heltall.java	/^public final class Heltall implements Comparable<Heltall>$/;"	c
+compareTo	hjelpeklasser/Heltall.java	/^	public int compareTo( Heltall h )$/;"	m	class:Heltall
+equals	hjelpeklasser/Heltall.java	/^	public boolean equals( Heltall h )$/;"	m	class:Heltall
+equals	hjelpeklasser/Heltall.java	/^	public boolean equals( Object o )$/;"	m	class:Heltall
+intVerdi	hjelpeklasser/Heltall.java	/^	public int intVerdi()$/;"	m	class:Heltall
+no.forsen.hjelpeklasser	hjelpeklasser/Heltall.java	/^package no.forsen.hjelpeklasser;$/;"	p
+toString	hjelpeklasser/Heltall.java	/^	public String toString()$/;"	m	class:Heltall
+verdi	hjelpeklasser/Heltall.java	/^	private final int verdi; $/;"	f	class:Heltall	file:
+KlasseKomparator	hjelpeklasser/KlasseKomparator.java	/^public class KlasseKomparator implements Comparator<Student>$/;"	c
+compare	hjelpeklasser/KlasseKomparator.java	/^	public int compare( Student s1, Student s2 )$/;"	m	class:KlasseKomparator
+no.forsen.hjelpeklasser	hjelpeklasser/KlasseKomparator.java	/^package no.forsen.hjelpeklasser;$/;"	p
+Ko	hjelpeklasser/Ko.java	/^public interface Ko<T>$/;"	i
+antall	hjelpeklasser/Ko.java	/^	public int antall();$/;"	m	interface:Ko
+kikk	hjelpeklasser/Ko.java	/^	public T kikk();$/;"	m	interface:Ko
+leggInn	hjelpeklasser/Ko.java	/^	public void leggInn( T t );$/;"	m	interface:Ko
+no.forsen.hjelpeklasser	hjelpeklasser/Ko.java	/^package no.forsen.hjelpeklasser;$/;"	p
+nullstill	hjelpeklasser/Ko.java	/^	public void nullstill();$/;"	m	interface:Ko
+taUt	hjelpeklasser/Ko.java	/^	public T taUt();$/;"	m	interface:Ko
+tom	hjelpeklasser/Ko.java	/^	public boolean tom();$/;"	m	interface:Ko
+Komparator	hjelpeklasser/Komparator.java	/^	private Komparator()$/;"	m	class:Komparator	file:
+Komparator	hjelpeklasser/Komparator.java	/^public class Komparator$/;"	c
+Naturlig	hjelpeklasser/Komparator.java	/^	private static class Naturlig<T extends Comparable<? super T>> implements Comparator<T>$/;"	c	class:Komparator
+Omvendt1	hjelpeklasser/Komparator.java	/^	private static class Omvendt1<T extends Comparable<? super T>> implements Comparator<T> $/;"	c	class:Komparator
+Omvendt2	hjelpeklasser/Komparator.java	/^		private Omvendt2( Comparator<? super T> c )$/;"	m	class:Komparator.Omvendt2	file:
+Omvendt2	hjelpeklasser/Komparator.java	/^	private static class Omvendt2<T> implements Comparator<T> $/;"	c	class:Komparator
+c	hjelpeklasser/Komparator.java	/^		private Comparator<? super T> c;$/;"	f	class:Komparator.Omvendt2	file:
+compare	hjelpeklasser/Komparator.java	/^		public int compare( T t1, T t2 )$/;"	m	class:Komparator.Naturlig
+compare	hjelpeklasser/Komparator.java	/^		public int compare( T t1, T t2 )$/;"	m	class:Komparator.Omvendt1
+compare	hjelpeklasser/Komparator.java	/^		public int compare( T t1, T t2 )$/;"	m	class:Komparator.Omvendt2
+naturlig	hjelpeklasser/Komparator.java	/^	public static <T extends Comparable<? super T>> Comparator<T> naturlig()$/;"	m	class:Komparator
+no.forsen.hjelpeklasser	hjelpeklasser/Komparator.java	/^package no.forsen.hjelpeklasser;$/;"	p
+omvendt	hjelpeklasser/Komparator.java	/^	public static <T extends Comparable<? super T>> Comparator<T> omvendt()$/;"	m	class:Komparator
+omvendt	hjelpeklasser/Komparator.java	/^	public static <T> Comparator<T> omvendt( Comparator<? super T> c )$/;"	m	class:Komparator
+KonsollUtskrift	hjelpeklasser/KonsollUtskrift.java	/^	public KonsollUtskrift( int n )$/;"	m	class:KonsollUtskrift
+KonsollUtskrift	hjelpeklasser/KonsollUtskrift.java	/^public class KonsollUtskrift<T> implements Oppgave<T>$/;"	c
+antall	hjelpeklasser/KonsollUtskrift.java	/^	private int n, antall; $/;"	f	class:KonsollUtskrift	file:
+n	hjelpeklasser/KonsollUtskrift.java	/^	private int n, antall; $/;"	f	class:KonsollUtskrift	file:
+no.forsen.hjelpeklasser	hjelpeklasser/KonsollUtskrift.java	/^package no.forsen.hjelpeklasser;$/;"	p
+rOppgave	hjelpeklasser/KonsollUtskrift.java	/^	public void utførOppgave( T verdi )$/;"	m	class:KonsollUtskrift
+LenketStakk	hjelpeklasser/LenketStakk.java	/^	public LenketStakk()$/;"	m	class:LenketStakk
+LenketStakk	hjelpeklasser/LenketStakk.java	/^public class LenketStakk<T> implements Stakk<T>$/;"	c
+Node	hjelpeklasser/LenketStakk.java	/^		Node( T verdi, Node<T> neste )$/;"	m	class:LenketStakk.Node
+Node	hjelpeklasser/LenketStakk.java	/^	private static final class Node<T>$/;"	c	class:LenketStakk
+antall	hjelpeklasser/LenketStakk.java	/^	private int antall; $/;"	f	class:LenketStakk	file:
+antall	hjelpeklasser/LenketStakk.java	/^	public int antall()$/;"	m	class:LenketStakk
+hode	hjelpeklasser/LenketStakk.java	/^	private Node<T> hode; $/;"	f	class:LenketStakk	file:
+kikk	hjelpeklasser/LenketStakk.java	/^	public T kikk()$/;"	m	class:LenketStakk
+leggInn	hjelpeklasser/LenketStakk.java	/^	public void leggInn( T verdi )$/;"	m	class:LenketStakk
+neste	hjelpeklasser/LenketStakk.java	/^		Node<T> neste; $/;"	f	class:LenketStakk.Node
+no.forsen.hjelpeklasser	hjelpeklasser/LenketStakk.java	/^package no.forsen.hjelpeklasser; $/;"	p
+nullstill	hjelpeklasser/LenketStakk.java	/^	public void nullstill()$/;"	m	class:LenketStakk
+taUt	hjelpeklasser/LenketStakk.java	/^	public T taUt()$/;"	m	class:LenketStakk
+toString	hjelpeklasser/LenketStakk.java	/^	public String toString()$/;"	m	class:LenketStakk
+tom	hjelpeklasser/LenketStakk.java	/^	public boolean tom()$/;"	m	class:LenketStakk
+verdi	hjelpeklasser/LenketStakk.java	/^		T verdi; $/;"	f	class:LenketStakk.Node
+Liste	hjelpeklasser/Liste.java	/^public interface Liste<T> extends Beholder<T>$/;"	i
+antall	hjelpeklasser/Liste.java	/^    public int antall();                      \/\/ Antallet i listen$/;"	m	interface:Liste
+fjern	hjelpeklasser/Liste.java	/^    public T fjern(int indeks);               \/\/ Fjern element på plass indeks$/;"	m	interface:Liste
+fjern	hjelpeklasser/Liste.java	/^    public boolean fjern(T t);                \/\/ Fjern objektet t$/;"	m	interface:Liste
+hent	hjelpeklasser/Liste.java	/^    public T hent(int indeks);                \/\/ Hent element på plass indeks$/;"	m	interface:Liste
+indeksTil	hjelpeklasser/Liste.java	/^    public int indeksTil(T t);                \/\/ Hvor ligger t?$/;"	m	interface:Liste
+inneholder	hjelpeklasser/Liste.java	/^    public boolean inneholder(T t);           \/\/ Er t i listen?$/;"	m	interface:Liste
+iterator	hjelpeklasser/Liste.java	/^    public Iterator<T> iterator();            \/\/ En iterator$/;"	m	interface:Liste
+leggInn	hjelpeklasser/Liste.java	/^    public boolean leggInn(T t);              \/\/ Nytt element bakerst$/;"	m	interface:Liste
+leggInn	hjelpeklasser/Liste.java	/^    public void leggInn(int indeks, T t);     \/\/ Nytt element på plass indeks$/;"	m	interface:Liste
+no.forsen.hjelpeklasser	hjelpeklasser/Liste.java	/^package no.forsen.hjelpeklasser;$/;"	p
+nullstill	hjelpeklasser/Liste.java	/^    public void nullstill();                  \/\/ Listen nullstilles (og tømmes)$/;"	m	interface:Liste
+oppdater	hjelpeklasser/Liste.java	/^    public T oppdater(int indeks, T t);       \/\/ Oppdater på plass indeks$/;"	m	interface:Liste
+tom	hjelpeklasser/Liste.java	/^    public boolean tom();                     \/\/ Er listen tom?$/;"	m	interface:Liste
+Oppgave	hjelpeklasser/Oppgave.java	/^public interface Oppgave<T>$/;"	i
+no.forsen.hjelpeklasser	hjelpeklasser/Oppgave.java	/^package no.forsen.hjelpeklasser;$/;"	p
+rOppgave	hjelpeklasser/Oppgave.java	/^	public void utførOppgave( T verdi );$/;"	m	interface:Oppgave
+Person	hjelpeklasser/Person.java	/^	public Person( String fornavn, String etternavn )$/;"	m	class:Person
+Person	hjelpeklasser/Person.java	/^public class Person implements Comparable<Person>$/;"	c
+compareTo	hjelpeklasser/Person.java	/^	public int compareTo( Person p )$/;"	m	class:Person
+equals	hjelpeklasser/Person.java	/^	public boolean equals( Object o )$/;"	m	class:Person
+etternavn	hjelpeklasser/Person.java	/^	private String etternavn;$/;"	f	class:Person	file:
+etternavn	hjelpeklasser/Person.java	/^	public String etternavn()$/;"	m	class:Person
+fornavn	hjelpeklasser/Person.java	/^	private String fornavn;$/;"	f	class:Person	file:
+fornavn	hjelpeklasser/Person.java	/^	public String fornavn() $/;"	m	class:Person
+no.forsen.hjelpeklasser	hjelpeklasser/Person.java	/^package no.forsen.hjelpeklasser; $/;"	p
+toString	hjelpeklasser/Person.java	/^	public String toString()$/;"	m	class:Person
+Node	hjelpeklasser/SBinTre.java	/^		private Node( T verdi )$/;"	m	class:SBinTre.Node	file:
+Node	hjelpeklasser/SBinTre.java	/^		private Node( T verdi, Node<T> v, Node<T> h )$/;"	m	class:SBinTre.Node	file:
+Node	hjelpeklasser/SBinTre.java	/^	private static final class Node<T>$/;"	c	class:SBinTre
+SBinTre	hjelpeklasser/SBinTre.java	/^	public SBinTre( Comparator<? super T> c )$/;"	m	class:SBinTre
+SBinTre	hjelpeklasser/SBinTre.java	/^public class SBinTre<T>$/;"	c
+antall	hjelpeklasser/SBinTre.java	/^	private int antall; $/;"	f	class:SBinTre	file:
+antall	hjelpeklasser/SBinTre.java	/^	public int antall()$/;"	m	class:SBinTre
+comp	hjelpeklasser/SBinTre.java	/^	private final Comparator<? super T> comp; $/;"	f	class:SBinTre	file:
+no.forsen.hjelpeklasser	hjelpeklasser/SBinTre.java	/^package no.forsen.hjelpeklasser;$/;"	p
+nullstill	hjelpeklasser/SBinTre.java	/^	public void nullstill()$/;"	m	class:SBinTre
+rot	hjelpeklasser/SBinTre.java	/^	private Node<T> rot; $/;"	f	class:SBinTre	file:
+tom	hjelpeklasser/SBinTre.java	/^	public boolean tom()$/;"	m	class:SBinTre
+venstre	hjelpeklasser/SBinTre.java	/^		private Node<T> venstre, høyre; $/;"	f	class:SBinTre.Node	file:
+verdi	hjelpeklasser/SBinTre.java	/^		private T verdi; $/;"	f	class:SBinTre.Node	file:
+yre	hjelpeklasser/SBinTre.java	/^		private Node<T> venstre, høyre; $/;"	f	class:SBinTre.Node	file:
+Stakk	hjelpeklasser/Stakk.java	/^public interface Stakk<T> $/;"	i
+antall	hjelpeklasser/Stakk.java	/^	public int antall(); $/;"	m	interface:Stakk
+kikk	hjelpeklasser/Stakk.java	/^	public T kikk();$/;"	m	interface:Stakk
+leggInn	hjelpeklasser/Stakk.java	/^	public void leggInn( T t );$/;"	m	interface:Stakk
+no.forsen.hjelpeklasser	hjelpeklasser/Stakk.java	/^package no.forsen.hjelpeklasser; $/;"	p
+nullstill	hjelpeklasser/Stakk.java	/^	public void nullstill(); $/;"	m	interface:Stakk
+taUt	hjelpeklasser/Stakk.java	/^	public T taUt(); $/;"	m	interface:Stakk
+tom	hjelpeklasser/Stakk.java	/^	public boolean tom();$/;"	m	interface:Stakk
+StrenglengdeKomparator	hjelpeklasser/StrenglengdeKomparator.java	/^public class StrenglengdeKomparator implements Comparator<String>$/;"	c
+compare	hjelpeklasser/StrenglengdeKomparator.java	/^	public int compare( String a, String b )$/;"	m	class:StrenglengdeKomparator
+no.forsen.hjelpeklasser	hjelpeklasser/StrenglengdeKomparator.java	/^package no.forsen.hjelpeklasser;$/;"	p
+Student	hjelpeklasser/Student.java	/^	public Student( String fornavn, String etternavn, String klasse )$/;"	m	class:Student
+Student	hjelpeklasser/Student.java	/^public class Student extends Person$/;"	c
+klasse	hjelpeklasser/Student.java	/^	private final String klasse;$/;"	f	class:Student	file:
+klasse	hjelpeklasser/Student.java	/^	public String klasse() $/;"	m	class:Student
+no.forsen.hjelpeklasser	hjelpeklasser/Student.java	/^package no.forsen.hjelpeklasser; $/;"	p
+toString	hjelpeklasser/Student.java	/^	public String toString()$/;"	m	class:Student
+Tabell	hjelpeklasser/Tabell.java	/^	private Tabell(){}$/;"	m	class:Tabell	file:
+Tabell	hjelpeklasser/Tabell.java	/^public class Tabell$/;"	c
+bytt	hjelpeklasser/Tabell.java	/^	public static void bytt( Object[] a, int i, int j ) $/;"	m	class:Tabell
+bytt	hjelpeklasser/Tabell.java	/^	public static void bytt( char[] c, int i, int j )$/;"	m	class:Tabell
+bytt	hjelpeklasser/Tabell.java	/^	public static void bytt(int[] a, int i, int j)$/;"	m	class:Tabell
+differans	hjelpeklasser/Tabell.java	/^	public static int differans( int[] a, int m, int[] b, int n, int[] c )$/;"	m	class:Tabell
+erSortertAvtagende	hjelpeklasser/Tabell.java	/^	public static boolean erSortertAvtagende( int[] a )$/;"	m	class:Tabell
+erSortertStigende	hjelpeklasser/Tabell.java	/^	public static boolean erSortertStigende( int[] a, int fra, int til )$/;"	m	class:Tabell
+flett	hjelpeklasser/Tabell.java	/^	private static void flett( int[] a, int[] b, int fra, int m, int til )$/;"	m	class:Tabell	file:
+flett	hjelpeklasser/Tabell.java	/^	public static int flett( int[] a, int m, int[] b, int n, int[] c )$/;"	m	class:Tabell
+flettesortering	hjelpeklasser/Tabell.java	/^	public static void flettesortering( int[] a )$/;"	m	class:Tabell
+flettesortering	hjelpeklasser/Tabell.java	/^	public static void flettesortering( int[] a, int[] b, int fra, int til )$/;"	m	class:Tabell
+fratilKontroll	hjelpeklasser/Tabell.java	/^	private static void fratilKontroll(int tablengde, int fra, int til)$/;"	m	class:Tabell	file:
+heleTall	hjelpeklasser/Tabell.java	/^	public static int[] heleTall( int fra, int til )$/;"	m	class:Tabell
+inklusjon	hjelpeklasser/Tabell.java	/^	public static boolean inklusjon( int[] a, int m, int[] b, int n )$/;"	m	class:Tabell
+innsettingssortering	hjelpeklasser/Tabell.java	/^	public static <T extends Comparable<? super T>> void innsettingssortering( T[] a )$/;"	m	class:Tabell
+innsettingssortering	hjelpeklasser/Tabell.java	/^	public static <T extends Comparable<? super T>> void innsettingssortering( T[] a, int fra, int til )$/;"	m	class:Tabell
+innsettingssortering	hjelpeklasser/Tabell.java	/^	public static <T> void innsettingssortering(T[] a, Comparator<? super T> c )$/;"	m	class:Tabell
+k	hjelpeklasser/Tabell.java	/^	public static int binærsøk( int[] a, int fra, int til, int verdi )$/;"	m	class:Tabell
+k	hjelpeklasser/Tabell.java	/^	public static int binærsøk( int[] a, int verdi )$/;"	m	class:Tabell
+k	hjelpeklasser/Tabell.java	/^	public static int kvikksøk( Integer[] a, int k )$/;"	m	class:Tabell
+k	hjelpeklasser/Tabell.java	/^	public static int lineærsøk( int[] a, int k, int verdi )$/;"	m	class:Tabell
+k	hjelpeklasser/Tabell.java	/^	public static int lineærsøk( int[] a, int verdi )$/;"	m	class:Tabell
+kUsortert	hjelpeklasser/Tabell.java	/^	public static int søkUsortert( int[] a, int verdi )$/;"	m	class:Tabell
+kvikksortering	hjelpeklasser/Tabell.java	/^	public static <T extends Comparable<? super T>> void kvikksortering( T[] a )$/;"	m	class:Tabell
+kvikksortering	hjelpeklasser/Tabell.java	/^	public static <T extends Comparable<? super T>> void kvikksortering( T[] a, int v, int h )$/;"	m	class:Tabell
+maks	hjelpeklasser/Tabell.java	/^	public static <T extends Comparable<? super T>> int maks( T[] a ) $/;"	m	class:Tabell
+maks	hjelpeklasser/Tabell.java	/^	public static int maks( char[] a ) $/;"	m	class:Tabell
+maks	hjelpeklasser/Tabell.java	/^	public static int maks( double[] a )$/;"	m	class:Tabell
+maks	hjelpeklasser/Tabell.java	/^	public static int maks( int[] a )$/;"	m	class:Tabell
+maks	hjelpeklasser/Tabell.java	/^	public static int maks( int[] a, int fra, int til )$/;"	m	class:Tabell
+median	hjelpeklasser/Tabell.java	/^	public static double median( Integer[] a )$/;"	m	class:Tabell
+min	hjelpeklasser/Tabell.java	/^	public static int min( int[] a )$/;"	m	class:Tabell
+min	hjelpeklasser/Tabell.java	/^	public static int min( int[] a, int fra, int til )$/;"	m	class:Tabell
+minimumssortering	hjelpeklasser/Tabell.java	/^	public static void minimumssortering( int[] a )$/;"	m	class:Tabell
+naturligeTall	hjelpeklasser/Tabell.java	/^	public static int[] naturligeTall( int n )$/;"	m	class:Tabell
+nestMaks	hjelpeklasser/Tabell.java	/^	public static int[] nestMaks(int[] a)$/;"	m	class:Tabell
+nestMin	hjelpeklasser/Tabell.java	/^	public static int[] nestMin( int[] a )$/;"	m	class:Tabell
+nestePermutasjon	hjelpeklasser/Tabell.java	/^	public static boolean nestePermutasjon( int[] a )$/;"	m	class:Tabell
+no.forsen.hjelpeklasser	hjelpeklasser/Tabell.java	/^package no.forsen.hjelpeklasser;$/;"	p
+parter	hjelpeklasser/Tabell.java	/^	public static <T extends Comparable<? super T>> int parter(T[] a, int v, int h, T skilleverdi)$/;"	m	class:Tabell
+randPerm	hjelpeklasser/Tabell.java	/^	public static int[] randPerm(int n)$/;"	m	class:Tabell
+randPerm	hjelpeklasser/Tabell.java	/^	public static void randPerm( int[] a )$/;"	m	class:Tabell
+randPermInteger	hjelpeklasser/Tabell.java	/^	public static Integer[] randPermInteger( int n ) $/;"	m	class:Tabell
+sParter	hjelpeklasser/Tabell.java	/^	public static <T extends Comparable<? super T>> int sParter( T[] a, int v, int h, int indeks )$/;"	m	class:Tabell
+skriv	hjelpeklasser/Tabell.java	/^	public static <T extends Number> void skriv( T t )$/;"	m	class:Tabell
+skriv	hjelpeklasser/Tabell.java	/^	public static void skriv( Object... a ) $/;"	m	class:Tabell
+skriv	hjelpeklasser/Tabell.java	/^	public static void skriv( Object[] a, int fra, int til ) $/;"	m	class:Tabell
+skriv	hjelpeklasser/Tabell.java	/^	public static void skriv( char... c )$/;"	m	class:Tabell
+skriv	hjelpeklasser/Tabell.java	/^	public static void skriv( char[] c, int fra, int til )$/;"	m	class:Tabell
+skriv	hjelpeklasser/Tabell.java	/^	public static void skriv( int[] a, int fra, int til )$/;"	m	class:Tabell
+skriv	hjelpeklasser/Tabell.java	/^	public static void skriv(int... a )$/;"	m	class:Tabell
+skrivln	hjelpeklasser/Tabell.java	/^	public static void skrivln( Object[] a ) $/;"	m	class:Tabell
+skrivln	hjelpeklasser/Tabell.java	/^	public static void skrivln( Object[] a, int fra, int til ) $/;"	m	class:Tabell
+skrivln	hjelpeklasser/Tabell.java	/^	public static void skrivln( char... c )$/;"	m	class:Tabell
+skrivln	hjelpeklasser/Tabell.java	/^	public static void skrivln( char[] c, int fra, int til )$/;"	m	class:Tabell
+skrivln	hjelpeklasser/Tabell.java	/^	public static void skrivln( int... a )$/;"	m	class:Tabell
+skrivln	hjelpeklasser/Tabell.java	/^	public static void skrivln( int[] a, int fra, int til )$/;"	m	class:Tabell
+snu	hjelpeklasser/Tabell.java	/^	public static void snu( int[] a )$/;"	m	class:Tabell
+snu	hjelpeklasser/Tabell.java	/^	public static void snu( int[] a, int v, int h )$/;"	m	class:Tabell
+sortering	hjelpeklasser/Tabell.java	/^	public static void sortering( int[] a )$/;"	m	class:Tabell
+utvalgssortering	hjelpeklasser/Tabell.java	/^	public static void utvalgssortering( int[] a )$/;"	m	class:Tabell
+vhKontroll	hjelpeklasser/Tabell.java	/^	private static void vhKontroll( int tablengde, int v, int h )$/;"	m	class:Tabell	file:
+xunion	hjelpeklasser/Tabell.java	/^	public static int xunion( int[] a, int m, int[] b, int n, int[] c )$/;"	m	class:Tabell
+TabellKo	hjelpeklasser/TabellKo.java	/^	public TabellKo( int lengde )$/;"	m	class:TabellKo
+TabellKo	hjelpeklasser/TabellKo.java	/^	public TabellKo()$/;"	m	class:TabellKo
+TabellKo	hjelpeklasser/TabellKo.java	/^public class TabellKo<T> implements Ko<T>$/;"	c
+a	hjelpeklasser/TabellKo.java	/^	private T[] a; $/;"	f	class:TabellKo	file:
+antall	hjelpeklasser/TabellKo.java	/^	public int antall()$/;"	m	class:TabellKo
+fra	hjelpeklasser/TabellKo.java	/^	private int fra;$/;"	f	class:TabellKo	file:
+indeksTil	hjelpeklasser/TabellKo.java	/^	public int indeksTil( T t )$/;"	m	class:TabellKo
+kikk	hjelpeklasser/TabellKo.java	/^	public T kikk()$/;"	m	class:TabellKo
+leggInn	hjelpeklasser/TabellKo.java	/^	public void leggInn( T t )$/;"	m	class:TabellKo
+no.forsen.hjelpeklasser	hjelpeklasser/TabellKo.java	/^package no.forsen.hjelpeklasser;$/;"	p
+nullstill	hjelpeklasser/TabellKo.java	/^	public void nullstill()$/;"	m	class:TabellKo
+taUt	hjelpeklasser/TabellKo.java	/^	public T taUt()$/;"	m	class:TabellKo
+til	hjelpeklasser/TabellKo.java	/^	private int til; $/;"	f	class:TabellKo	file:
+toString	hjelpeklasser/TabellKo.java	/^	public String toString()$/;"	m	class:TabellKo
+tom	hjelpeklasser/TabellKo.java	/^	public boolean tom()$/;"	m	class:TabellKo
+utvidTabell	hjelpeklasser/TabellKo.java	/^	public T[] utvidTabell( int lengde )$/;"	m	class:TabellKo
+TabellListe	hjelpeklasser/TabellListe.java	/^	public TabellListe( int størrelse )$/;"	m	class:TabellListe
+TabellListe	hjelpeklasser/TabellListe.java	/^	public TabellListe()$/;"	m	class:TabellListe
+TabellListe	hjelpeklasser/TabellListe.java	/^public class TabellListe<T> implements Liste<T>$/;"	c
+TabellListeIterator	hjelpeklasser/TabellListe.java	/^	private class TabellListeIterator implements Iterator<T>$/;"	c	class:TabellListe
+a	hjelpeklasser/TabellListe.java	/^	private T[] a;$/;"	f	class:TabellListe	file:
+antall	hjelpeklasser/TabellListe.java	/^	private int antall;$/;"	f	class:TabellListe	file:
+antall	hjelpeklasser/TabellListe.java	/^	public int antall()$/;"	m	class:TabellListe
+antallEndringer	hjelpeklasser/TabellListe.java	/^	private int antallEndringer = 0; $/;"	f	class:TabellListe	file:
+denne	hjelpeklasser/TabellListe.java	/^		private int denne = 0; $/;"	f	class:TabellListe.TabellListeIterator	file:
+fjern	hjelpeklasser/TabellListe.java	/^	public T fjern( int indeks )$/;"	m	class:TabellListe
+fjern	hjelpeklasser/TabellListe.java	/^	public boolean fjern( T t )$/;"	m	class:TabellListe
+forventetAntallEndringer	hjelpeklasser/TabellListe.java	/^		private int forventetAntallEndringer = antallEndringer; $/;"	f	class:TabellListe.TabellListeIterator	file:
+hasNext	hjelpeklasser/TabellListe.java	/^		public boolean hasNext()$/;"	m	class:TabellListe.TabellListeIterator
+hent	hjelpeklasser/TabellListe.java	/^	public T hent( int indeks )$/;"	m	class:TabellListe
+indeksKontroll	hjelpeklasser/TabellListe.java	/^	private void indeksKontroll( int indeks )$/;"	m	class:TabellListe	file:
+indeksTil	hjelpeklasser/TabellListe.java	/^	public int indeksTil( T t )$/;"	m	class:TabellListe
+inneholder	hjelpeklasser/TabellListe.java	/^	public boolean inneholder( T t )$/;"	m	class:TabellListe
+iterator	hjelpeklasser/TabellListe.java	/^	public Iterator<T> iterator()$/;"	m	class:TabellListe
+leggInn	hjelpeklasser/TabellListe.java	/^	public boolean leggInn( T t )$/;"	m	class:TabellListe
+leggInn	hjelpeklasser/TabellListe.java	/^	public void leggInn( int indeks, T t )$/;"	m	class:TabellListe
+next	hjelpeklasser/TabellListe.java	/^		public T next()$/;"	m	class:TabellListe.TabellListeIterator
+no.forsen.hjelpeklasser	hjelpeklasser/TabellListe.java	/^package no.forsen.hjelpeklasser;$/;"	p
+nullstill	hjelpeklasser/TabellListe.java	/^	public void nullstill()$/;"	m	class:TabellListe
+oppdater	hjelpeklasser/TabellListe.java	/^	public T oppdater( int indeks, T t )$/;"	m	class:TabellListe
+remove	hjelpeklasser/TabellListe.java	/^		public void remove()$/;"	m	class:TabellListe.TabellListeIterator
+removeOk	hjelpeklasser/TabellListe.java	/^		private boolean removeOk = false;$/;"	f	class:TabellListe.TabellListeIterator	file:
+toString	hjelpeklasser/TabellListe.java	/^	public String toString()$/;"	m	class:TabellListe
+tom	hjelpeklasser/TabellListe.java	/^	public boolean tom()$/;"	m	class:TabellListe
+TabellStakk	hjelpeklasser/TabellStakk.java	/^	public TabellStakk( int lengde )$/;"	m	class:TabellStakk
+TabellStakk	hjelpeklasser/TabellStakk.java	/^	public TabellStakk()$/;"	m	class:TabellStakk
+TabellStakk	hjelpeklasser/TabellStakk.java	/^public class TabellStakk<T> implements Stakk<T> $/;"	c
+a	hjelpeklasser/TabellStakk.java	/^	private T[] a;$/;"	f	class:TabellStakk	file:
+antall	hjelpeklasser/TabellStakk.java	/^	private int antall;$/;"	f	class:TabellStakk	file:
+antall	hjelpeklasser/TabellStakk.java	/^	public int antall() $/;"	m	class:TabellStakk
+kikk	hjelpeklasser/TabellStakk.java	/^	public T kikk()$/;"	m	class:TabellStakk
+leggInn	hjelpeklasser/TabellStakk.java	/^	public void leggInn( T verdi ) $/;"	m	class:TabellStakk
+no.forsen.hjelpeklasser	hjelpeklasser/TabellStakk.java	/^package no.forsen.hjelpeklasser; $/;"	p
+nullstill	hjelpeklasser/TabellStakk.java	/^	public void nullstill() $/;"	m	class:TabellStakk
+taUt	hjelpeklasser/TabellStakk.java	/^	public T taUt()  $/;"	m	class:TabellStakk
+toString	hjelpeklasser/TabellStakk.java	/^	public String toString()$/;"	m	class:TabellStakk
+tom	hjelpeklasser/TabellStakk.java	/^	public boolean tom() $/;"	m	class:TabellStakk
+Tegnstreng	hjelpeklasser/Tegnstreng.java	/^	public Tegnstreng()$/;"	m	class:Tegnstreng
+Tegnstreng	hjelpeklasser/Tegnstreng.java	/^public class Tegnstreng implements Oppgave<Object>$/;"	c
+no.forsen.hjelpeklasser	hjelpeklasser/Tegnstreng.java	/^package no.forsen.hjelpeklasser; $/;"	p
+rOppgave	hjelpeklasser/Tegnstreng.java	/^	public void utførOppgave( Object verdi )$/;"	m	class:Tegnstreng
+toString	hjelpeklasser/Tegnstreng.java	/^	public String toString()$/;"	m	class:Tegnstreng
+utskrift	hjelpeklasser/Tegnstreng.java	/^	private StringBuilder utskrift; $/;"	f	class:Tegnstreng	file:
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+DobbeltLenketListe	oblig/DobbeltLenketListe.java	/^	public DobbeltLenketListe()  \/\/ konstruktør$/;"	m	class:DobbeltLenketListe
+DobbeltLenketListe	oblig/DobbeltLenketListe.java	/^public class DobbeltLenketListe<T> implements Liste<T>$/;"	c
+DobbeltLenketListeIterator	oblig/DobbeltLenketListe.java	/^		private DobbeltLenketListeIterator( int indeks )$/;"	m	class:DobbeltLenketListe.DobbeltLenketListeIterator	file:
+DobbeltLenketListeIterator	oblig/DobbeltLenketListe.java	/^		private DobbeltLenketListeIterator()$/;"	m	class:DobbeltLenketListe.DobbeltLenketListeIterator	file:
+DobbeltLenketListeIterator	oblig/DobbeltLenketListe.java	/^	private class DobbeltLenketListeIterator implements Iterator<T>$/;"	c	class:DobbeltLenketListe
+Node	oblig/DobbeltLenketListe.java	/^		private Node(T verdi, Node<T> forrige, Node<T> neste)   \/\/ konstruktør$/;"	m	class:DobbeltLenketListe.Node	file:
+Node	oblig/DobbeltLenketListe.java	/^	private static final class Node<T>       \/\/ en indre nodeklasse$/;"	c	class:DobbeltLenketListe
+antall	oblig/DobbeltLenketListe.java	/^	private int antall;           \/\/ antall noder i listen$/;"	f	class:DobbeltLenketListe	file:
+antall	oblig/DobbeltLenketListe.java	/^	public int antall()$/;"	m	class:DobbeltLenketListe
+antallEndringer	oblig/DobbeltLenketListe.java	/^	private int antallEndringer;  \/\/ antall endringer i listen$/;"	f	class:DobbeltLenketListe	file:
+finnNode	oblig/DobbeltLenketListe.java	/^	private Node<T> finnNode(int indeks)$/;"	m	class:DobbeltLenketListe	file:
+fjern	oblig/DobbeltLenketListe.java	/^	public T fjern(int indeks)$/;"	m	class:DobbeltLenketListe
+fjern	oblig/DobbeltLenketListe.java	/^	public boolean fjern(T verdi)$/;"	m	class:DobbeltLenketListe
+fjernOK	oblig/DobbeltLenketListe.java	/^		private boolean fjernOK;$/;"	f	class:DobbeltLenketListe.DobbeltLenketListeIterator	file:
+forrige	oblig/DobbeltLenketListe.java	/^		private Node<T> forrige, neste;$/;"	f	class:DobbeltLenketListe.Node	file:
+forventetAntallEndringer	oblig/DobbeltLenketListe.java	/^		private int forventetAntallEndringer;$/;"	f	class:DobbeltLenketListe.DobbeltLenketListeIterator	file:
+hale	oblig/DobbeltLenketListe.java	/^	private Node<T> hale;         \/\/ peker til den siste i listen$/;"	f	class:DobbeltLenketListe	file:
+hasNext	oblig/DobbeltLenketListe.java	/^		public boolean hasNext()$/;"	m	class:DobbeltLenketListe.DobbeltLenketListeIterator
+hent	oblig/DobbeltLenketListe.java	/^	public T hent(int indeks)$/;"	m	class:DobbeltLenketListe
+hode	oblig/DobbeltLenketListe.java	/^	private Node<T> hode;         \/\/ peker til den første i listen$/;"	f	class:DobbeltLenketListe	file:
+indeksKontroll	oblig/DobbeltLenketListe.java	/^	private void indeksKontroll(int indeks)$/;"	m	class:DobbeltLenketListe	file:
+indeksTil	oblig/DobbeltLenketListe.java	/^	public int indeksTil(T verdi)$/;"	m	class:DobbeltLenketListe
+inneholder	oblig/DobbeltLenketListe.java	/^	public boolean inneholder(T verdi)$/;"	m	class:DobbeltLenketListe
+iterator	oblig/DobbeltLenketListe.java	/^	public Iterator<T> iterator()$/;"	m	class:DobbeltLenketListe
+iterator	oblig/DobbeltLenketListe.java	/^	public Iterator<T> iterator(int indeks)$/;"	m	class:DobbeltLenketListe
+leggInn	oblig/DobbeltLenketListe.java	/^	public boolean leggInn(T verdi)$/;"	m	class:DobbeltLenketListe
+leggInn	oblig/DobbeltLenketListe.java	/^	public void leggInn(int indeks, T verdi)$/;"	m	class:DobbeltLenketListe
+maks	oblig/DobbeltLenketListe.java	/^	public static <T> int maks( Liste<T> liste, Comparator<? super T> c ) $/;"	m	class:DobbeltLenketListe
+neste	oblig/DobbeltLenketListe.java	/^		private Node<T> forrige, neste;$/;"	f	class:DobbeltLenketListe.Node	file:
+next	oblig/DobbeltLenketListe.java	/^		public T next()$/;"	m	class:DobbeltLenketListe.DobbeltLenketListeIterator
+no.forsen.oblig	oblig/DobbeltLenketListe.java	/^package no.forsen.oblig; $/;"	p
+nullSjekk	oblig/DobbeltLenketListe.java	/^	private static <T> void nullSjekk(T verdi)$/;"	m	class:DobbeltLenketListe	file:
+nullstill	oblig/DobbeltLenketListe.java	/^	public void nullstill()$/;"	m	class:DobbeltLenketListe
+omvendtString	oblig/DobbeltLenketListe.java	/^	public String omvendtString()$/;"	m	class:DobbeltLenketListe
+oppdater	oblig/DobbeltLenketListe.java	/^	public T oppdater(int indeks, T nyverdi)$/;"	m	class:DobbeltLenketListe
+p	oblig/DobbeltLenketListe.java	/^		private Node<T> p;$/;"	f	class:DobbeltLenketListe.DobbeltLenketListeIterator	file:
+remove	oblig/DobbeltLenketListe.java	/^		public void remove()$/;"	m	class:DobbeltLenketListe.DobbeltLenketListeIterator
+toString	oblig/DobbeltLenketListe.java	/^	public String toString()$/;"	m	class:DobbeltLenketListe
+tom	oblig/DobbeltLenketListe.java	/^	public boolean tom()$/;"	m	class:DobbeltLenketListe
+verdi	oblig/DobbeltLenketListe.java	/^		private T verdi;$/;"	f	class:DobbeltLenketListe.Node	file:
+Oblig1	oblig/Oblig1.java	/^public class Oblig1$/;"	c
+antallUlikeSortert	oblig/Oblig1.java	/^	public static int antallUlikeSortert( int[] a )$/;"	m	class:Oblig1
+antallUlikeUsortert	oblig/Oblig1.java	/^	public static int antallUlikeUsortert( int[] a )$/;"	m	class:Oblig1
+bokstavfrekvens	oblig/Oblig1.java	/^	public static int[] bokstavfrekvens( String url ) throws IOException$/;"	m	class:Oblig1
+kMinst	oblig/Oblig1.java	/^	public static int[] kMinst( int[] a, int k )$/;"	m	class:Oblig1
+maks	oblig/Oblig1.java	/^	public static int maks( int[] a )$/;"	m	class:Oblig1
+no.forsen.oblig	oblig/Oblig1.java	/^package no.forsen.oblig; $/;"	p
+rotasjon	oblig/Oblig1.java	/^	public static void rotasjon( char[] a )$/;"	m	class:Oblig1
+rotasjon	oblig/Oblig1.java	/^	public static void rotasjon( char[] a, int k )$/;"	m	class:Oblig1
+sortering	oblig/Oblig1.java	/^	public static void sortering( int[] a )$/;"	m	class:Oblig1
+toString	oblig/Oblig1.java	/^	public static String toString( int[] a, char v, char h, String mellomrom )$/;"	m	class:Oblig1
+tredjeMinst	oblig/Oblig1.java	/^	public static int[] tredjeMinst( int[] a )$/;"	m	class:Oblig1
+tredjeMinstTest	oblig/Oblig1.java	/^	public static void tredjeMinstTest()$/;"	m	class:Oblig1
+Oblig1Test	oblig/Oblig1Test.java	/^public class Oblig1Test$/;"	c
+bytt	oblig/Oblig1Test.java	/^  public static void bytt(int[] a, int i, int j)$/;"	m	class:Oblig1Test
+main	oblig/Oblig1Test.java	/^  public static void main(String[] args) throws IOException$/;"	m	class:Oblig1Test
+nestePermutasjon	oblig/Oblig1Test.java	/^  public static boolean nestePermutasjon(int[] a)$/;"	m	class:Oblig1Test
+no.forsen.oblig	oblig/Oblig1Test.java	/^package no.forsen.oblig;$/;"	p
+oppgave1	oblig/Oblig1Test.java	/^  public static int oppgave1()$/;"	m	class:Oblig1Test
+oppgave10	oblig/Oblig1Test.java	/^  public static int oppgave10() throws IOException$/;"	m	class:Oblig1Test
+oppgave2	oblig/Oblig1Test.java	/^  public static int oppgave2()$/;"	m	class:Oblig1Test
+oppgave3	oblig/Oblig1Test.java	/^  public static int oppgave3()$/;"	m	class:Oblig1Test
+oppgave4	oblig/Oblig1Test.java	/^  public static int oppgave4()$/;"	m	class:Oblig1Test
+oppgave5	oblig/Oblig1Test.java	/^  public static int oppgave5()$/;"	m	class:Oblig1Test
+oppgave6	oblig/Oblig1Test.java	/^  public static int oppgave6()$/;"	m	class:Oblig1Test
+oppgave7	oblig/Oblig1Test.java	/^  public static int oppgave7()$/;"	m	class:Oblig1Test
+oppgave8	oblig/Oblig1Test.java	/^  public static int oppgave8()$/;"	m	class:Oblig1Test
+oppgave9	oblig/Oblig1Test.java	/^  public static int oppgave9()$/;"	m	class:Oblig1Test
+randPerm	oblig/Oblig1Test.java	/^  public static int[] randPerm(int n)  \/\/ en effektiv versjon$/;"	m	class:Oblig1Test
+Oblig2Test	oblig/Oblig2Test.java	/^public class Oblig2Test$/;"	c
+main	oblig/Oblig2Test.java	/^  public static void main(String[] args)$/;"	m	class:Oblig2Test
+no.forsen.oblig	oblig/Oblig2Test.java	/^package no.forsen.oblig;$/;"	p
+oppgave10	oblig/Oblig2Test.java	/^  public static int oppgave10()$/;"	m	class:Oblig2Test
+oppgave11	oblig/Oblig2Test.java	/^  public static int oppgave11()$/;"	m	class:Oblig2Test
+oppgave2	oblig/Oblig2Test.java	/^  public static int oppgave2()$/;"	m	class:Oblig2Test
+oppgave3	oblig/Oblig2Test.java	/^  public static int oppgave3()$/;"	m	class:Oblig2Test
+oppgave4	oblig/Oblig2Test.java	/^  public static int oppgave4()$/;"	m	class:Oblig2Test
+oppgave5	oblig/Oblig2Test.java	/^  public static int oppgave5()$/;"	m	class:Oblig2Test
+oppgave6	oblig/Oblig2Test.java	/^  public static int oppgave6()$/;"	m	class:Oblig2Test
+oppgave7	oblig/Oblig2Test.java	/^  public static int oppgave7()$/;"	m	class:Oblig2Test
+oppgave8	oblig/Oblig2Test.java	/^  public static int oppgave8()$/;"	m	class:Oblig2Test
+oppgave9	oblig/Oblig2Test.java	/^  public static int oppgave9()$/;"	m	class:Oblig2Test
+Oblig3Test	oblig/Oblig3Test.java	/^public class Oblig3Test$/;"	c
+bytt	oblig/Oblig3Test.java	/^  public static void bytt(int[] a, int i, int j)$/;"	m	class:Oblig3Test
+main	oblig/Oblig3Test.java	/^  public static void main(String[] args)$/;"	m	class:Oblig3Test
+nestePermutasjon	oblig/Oblig3Test.java	/^  public static boolean nestePermutasjon(int[] a)$/;"	m	class:Oblig3Test
+no.forsen.oblig	oblig/Oblig3Test.java	/^package no.forsen.oblig;$/;"	p
+oppgave1	oblig/Oblig3Test.java	/^  public static int oppgave1()$/;"	m	class:Oblig3Test
+oppgave2	oblig/Oblig3Test.java	/^  public static int oppgave2()$/;"	m	class:Oblig3Test
+oppgave3	oblig/Oblig3Test.java	/^  public static int oppgave3()$/;"	m	class:Oblig3Test
+oppgave4	oblig/Oblig3Test.java	/^  public static int oppgave4()$/;"	m	class:Oblig3Test
+oppgave5	oblig/Oblig3Test.java	/^  public static int oppgave5()$/;"	m	class:Oblig3Test
+oppgave6	oblig/Oblig3Test.java	/^  public static int oppgave6()$/;"	m	class:Oblig3Test
+oppgave7	oblig/Oblig3Test.java	/^  public static int oppgave7()$/;"	m	class:Oblig3Test
+oppgave8	oblig/Oblig3Test.java	/^  public static int oppgave8()$/;"	m	class:Oblig3Test
+oppgave9	oblig/Oblig3Test.java	/^  public static int oppgave9()$/;"	m	class:Oblig3Test
+BladnodeIterator	oblig/SBinTre2.java	/^		public BladnodeIterator()  \/\/ konstruktør$/;"	m	class:SBinTre2.BladnodeIterator
+BladnodeIterator	oblig/SBinTre2.java	/^	private class BladnodeIterator implements Iterator<T>$/;"	c	class:SBinTre2
+InordenIterator	oblig/SBinTre2.java	/^		public InordenIterator()  \/\/ konstruktør$/;"	m	class:SBinTre2.InordenIterator
+InordenIterator	oblig/SBinTre2.java	/^	private class InordenIterator implements Iterator<T>$/;"	c	class:SBinTre2
+Node	oblig/SBinTre2.java	/^		private Node(T verdi)  \/\/ konstruktør$/;"	m	class:SBinTre2.Node	file:
+Node	oblig/SBinTre2.java	/^		private Node(T verdi, Node<T> v, Node<T> h)  \/\/ konstruktør$/;"	m	class:SBinTre2.Node	file:
+Node	oblig/SBinTre2.java	/^	private static final class Node<T>   \/\/ en indre nodeklasse$/;"	c	class:SBinTre2
+SBinTre2	oblig/SBinTre2.java	/^	public SBinTre2(Comparator<? super T> c)    \/\/ konstruktør$/;"	m	class:SBinTre2
+SBinTre2	oblig/SBinTre2.java	/^public class SBinTre2<T> implements Beholder<T>$/;"	c
+antall	oblig/SBinTre2.java	/^	private int antall;                   \/\/ antall noder$/;"	f	class:SBinTre2	file:
+antall	oblig/SBinTre2.java	/^	public int antall()        \/\/ antall verdier i treet$/;"	m	class:SBinTre2
+antall	oblig/SBinTre2.java	/^	public int antall(T verdi)$/;"	m	class:SBinTre2
+antallEttBarn	oblig/SBinTre2.java	/^	private int antallEttBarn;            \/\/ antall noder med kun ett barn$/;"	f	class:SBinTre2	file:
+antallEttBarn	oblig/SBinTre2.java	/^	public int antallEttBarn()$/;"	m	class:SBinTre2
+antallIngenBarn	oblig/SBinTre2.java	/^	private int antallIngenBarn;          \/\/ antall bladnoder$/;"	f	class:SBinTre2	file:
+antallIngenBarn	oblig/SBinTre2.java	/^	public int antallIngenBarn()$/;"	m	class:SBinTre2
+antallToBarn	oblig/SBinTre2.java	/^	private int antallToBarn;             \/\/ antall noder med to barn$/;"	f	class:SBinTre2	file:
+antallToBarn	oblig/SBinTre2.java	/^	public int antallToBarn()$/;"	m	class:SBinTre2
+bladnodeiterator	oblig/SBinTre2.java	/^	public Iterator<T> bladnodeiterator()$/;"	m	class:SBinTre2
+comp	oblig/SBinTre2.java	/^	private final Comparator<? super T> comp;  \/\/ komparator$/;"	f	class:SBinTre2	file:
+endringer	oblig/SBinTre2.java	/^	private int endringer;                \/\/ antall endringer$/;"	f	class:SBinTre2	file:
+fjern	oblig/SBinTre2.java	/^	public boolean fjern(T verdi)$/;"	m	class:SBinTre2
+grener	oblig/SBinTre2.java	/^	public String[] grener()$/;"	m	class:SBinTre2
+hasNext	oblig/SBinTre2.java	/^		public boolean hasNext()$/;"	m	class:SBinTre2.BladnodeIterator
+hasNext	oblig/SBinTre2.java	/^		public boolean hasNext()$/;"	m	class:SBinTre2.InordenIterator
+inneholder	oblig/SBinTre2.java	/^	public boolean inneholder(T verdi)$/;"	m	class:SBinTre2
+iterator	oblig/SBinTre2.java	/^	public Iterator<T> iterator()$/;"	m	class:SBinTre2
+iteratorendringer	oblig/SBinTre2.java	/^		private int iteratorendringer;                   \/\/ iteratorendringer$/;"	f	class:SBinTre2.BladnodeIterator	file:
+iteratorendringer	oblig/SBinTre2.java	/^		private int iteratorendringer;                   \/\/ iteratorendringer$/;"	f	class:SBinTre2.InordenIterator	file:
+lagTre	oblig/SBinTre2.java	/^	public static <T extends Comparable<? super T>> SBinTre2<T> lagTre()$/;"	m	class:SBinTre2
+lagTre	oblig/SBinTre2.java	/^	public static <T> SBinTre2<T> lagTre(Comparator<? super T> c)$/;"	m	class:SBinTre2
+leggInn	oblig/SBinTre2.java	/^	public boolean leggInn(T verdi)$/;"	m	class:SBinTre2
+maks	oblig/SBinTre2.java	/^	public T maks()$/;"	m	class:SBinTre2
+maksFjernAlle	oblig/SBinTre2.java	/^	public int maksFjernAlle()$/;"	m	class:SBinTre2
+min	oblig/SBinTre2.java	/^	public T min()$/;"	m	class:SBinTre2
+minFjern	oblig/SBinTre2.java	/^	public T minFjern()$/;"	m	class:SBinTre2
+nestMaks	oblig/SBinTre2.java	/^	public T nestMaks()$/;"	m	class:SBinTre2
+nestMin	oblig/SBinTre2.java	/^	public T nestMin()$/;"	m	class:SBinTre2
+next	oblig/SBinTre2.java	/^		public T next()$/;"	m	class:SBinTre2.BladnodeIterator
+next	oblig/SBinTre2.java	/^		public T next()$/;"	m	class:SBinTre2.InordenIterator
+no.forsen.oblig	oblig/SBinTre2.java	/^package no.forsen.oblig;$/;"	p
+nullstill	oblig/SBinTre2.java	/^	public void nullstill()$/;"	m	class:SBinTre2
+omvendtString	oblig/SBinTre2.java	/^	public String omvendtString()$/;"	m	class:SBinTre2
+p	oblig/SBinTre2.java	/^		private Node<T> p = null;                        \/\/ nodepeker$/;"	f	class:SBinTre2.BladnodeIterator	file:
+p	oblig/SBinTre2.java	/^		private Node<T> p = null;                        \/\/ nodepeker$/;"	f	class:SBinTre2.InordenIterator	file:
+remove	oblig/SBinTre2.java	/^		public void remove()$/;"	m	class:SBinTre2.BladnodeIterator
+remove	oblig/SBinTre2.java	/^		public void remove()$/;"	m	class:SBinTre2.InordenIterator
+rot	oblig/SBinTre2.java	/^	private Node<T> rot;                  \/\/ peker til rotnoden$/;"	f	class:SBinTre2	file:
+rst	oblig/SBinTre2.java	/^		private Node<T> først(Node<T> q)   \/\/ en hjelpemetode$/;"	m	class:SBinTre2.BladnodeIterator	file:
+rst	oblig/SBinTre2.java	/^		private Node<T> først(Node<T> q)   \/\/ en hjelpemetode$/;"	m	class:SBinTre2.InordenIterator	file:
+s	oblig/SBinTre2.java	/^		private Stakk<Node<T>> s = new TabellStakk<>();  \/\/ for traversering$/;"	f	class:SBinTre2.BladnodeIterator	file:
+s	oblig/SBinTre2.java	/^		private Stakk<Node<T>> s = new TabellStakk<>();  \/\/ for traversering$/;"	f	class:SBinTre2.InordenIterator	file:
+toString	oblig/SBinTre2.java	/^		public String toString(){ return "" + verdi;}$/;"	m	class:SBinTre2.Node
+toString	oblig/SBinTre2.java	/^	private static <T> void toString(Node<T> p, StringBuilder s)$/;"	m	class:SBinTre2	file:
+toString	oblig/SBinTre2.java	/^	public String toString()$/;"	m	class:SBinTre2
+tom	oblig/SBinTre2.java	/^	public boolean tom()       \/\/ er treet tomt?$/;"	m	class:SBinTre2
+venstre	oblig/SBinTre2.java	/^		private Node<T> venstre, høyre;    \/\/ venstre og høyre barn$/;"	f	class:SBinTre2.Node	file:
+verdi	oblig/SBinTre2.java	/^		private T verdi;                   \/\/ nodens verdi$/;"	f	class:SBinTre2.Node	file:
+yde	oblig/SBinTre2.java	/^	private int høyde;                    \/\/ treets høyde$/;"	f	class:SBinTre2	file:
+yde	oblig/SBinTre2.java	/^	public int høyde()$/;"	m	class:SBinTre2
+yre	oblig/SBinTre2.java	/^		private Node<T> venstre, høyre;    \/\/ venstre og høyre barn$/;"	f	class:SBinTre2.Node	file:
+yreGren	oblig/SBinTre2.java	/^	public String høyreGren()$/;"	m	class:SBinTre2

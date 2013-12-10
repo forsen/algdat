@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser; 
-
+//å
 public class Person implements Comparable<Person>
 {
 	private String fornavn;
@@ -44,4 +44,4 @@ public class Person implements Comparable<Person>
 	{
 		return fornavn + " " + etternavn;
 	}
-}
+} 

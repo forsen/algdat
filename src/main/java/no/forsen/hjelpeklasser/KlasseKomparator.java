@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser;
-
+//å
 import java.util.Comparator;
 
 public class KlasseKomparator implements Comparator<Student>

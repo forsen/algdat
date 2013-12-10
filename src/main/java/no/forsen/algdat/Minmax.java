@@ -1,5 +1,5 @@
 package no.forsen.algdat;
-
+//å
 public class Minmax
 {
 	public static int max( int[] a )

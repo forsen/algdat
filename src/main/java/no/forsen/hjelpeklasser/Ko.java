@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser;
-
+//å
 public interface Ko<T>
 {
 	public void leggInn( T t );

@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser;
-
+//å
 public final class Heltall implements Comparable<Heltall>
 {
 	private final int verdi; 

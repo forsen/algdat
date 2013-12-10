@@ -1,5 +1,5 @@
 package no.forsen.hjelpeklasser;
-
+//å
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
