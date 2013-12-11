@@ -143,6 +143,7 @@ public class SBinTre3<T>
 			else
 				return q.verdi; 
 		}
+		
 
 	}
 
