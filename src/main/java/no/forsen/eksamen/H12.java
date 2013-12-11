@@ -70,7 +70,11 @@ public class H12
 		for( int k : a )
 			tre.leggInn( k ); 
 
-		System.out.println( tre.inneholder( 0 ) );
+		// oppgave 3B 
+		//System.out.println( tre.inneholder( 0 ) );
+
+		// oppgave 3C
+		System.out.println( tre.andrePostorden() );
 	}
 
 }

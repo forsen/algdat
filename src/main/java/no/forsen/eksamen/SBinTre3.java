@@ -111,7 +111,39 @@ public class SBinTre3<T>
 
 	public T andrePostorden()
 	{
-		
+		Node<T> p = rot, q = null; 
+
+		while( true )
+		{
+			if( p.venstre != null )
+			{
+				q = p;
+				p = p.venstre; 
+			}
+			else if( p.høyre != null )
+			{
+				q = p; 
+				p = p.høyre;
+			}
+			else
+				break; 
+		}
+
+		if( q.høyre != null )
+			q = q.høyre; 
+		else
+			return q.verdi; 
+
+		while( true )
+		{
+			if( q.venstre != null )
+				q = q.venstre; 
+			else if( q.høyre != null )
+				q = q.høyre;
+			else
+				return q.verdi; 
+		}
+
 	}
 
 	public static <T> SBinTre3<T> kopi( SBinTre3<T> tre )
