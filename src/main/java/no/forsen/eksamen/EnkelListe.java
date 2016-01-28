@@ -52,16 +52,19 @@ public class EnkelListe<T>
 
 	public void snu()
 	{
+
 		Node<T> p = hode.neste;
 		hode.neste = null;  
- 
+
 		while( p != null )
 		{
+
 			Node<T> q = p.neste; 
 			p.neste = hode; 
 			hode = p; 
-			p = q; 
+			p = q;
 		}
+
 	}
 
 	public String toString()

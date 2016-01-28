@@ -20,6 +20,21 @@ public class V13
 	}
 	public static void main( String[] args )
 	{
+
+
+		EnkelListe<Integer> l = new EnkelListe<>(); 
+
+		l.leggInnFørst(5);
+		l.leggInnFørst(4);
+		l.leggInnFørst(3);
+		l.leggInnFørst(2);
+		l.leggInnFørst(1);
+
+		System.out.println( l );
+		l.snu();
+		System.out.println( l );
+
+
 /*	
 		Ko<Integer> a = new TabellKo<>();
 		Ko<Integer> b = new TabellKo<>(); 

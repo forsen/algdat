@@ -1,5 +1,7 @@
 package no.forsen.eksamen; 
 
+import java.util.*;
+
 public class SBinTre4<T>
 {
 	private static final class Node<T>
@@ -73,7 +75,7 @@ public class SBinTre4<T>
 		return null;
 	}
 
-	public void preorden( Oppgave<T> oppgave )
+	public void preorden()
 	{
 
 	}
